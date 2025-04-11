@@ -34,9 +34,9 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
 
   const handleChoice = (isCorrect: boolean, explanation: string) => {
     if (isCorrect) {
-      setBossHP((hp) => hp - 1);
+      setBossHP(hp => hp - 1);
     } else {
-      setLives((l) => l - 1);
+      setLives(l => l - 1);
     }
 
     setShowResult({ correct: isCorrect, explanation });
@@ -51,11 +51,11 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
       }
 
       if (current < quiz.length - 1) {
-        setCurrent((i) => i + 1);
+        setCurrent(i => i + 1);
       } else {
         if (bossHP - (isCorrect ? 1 : 0) <= 0) {
           setCompleted('win');
-          setTimeout(() => onWin(), 2000);
+          setTimeout(() => onWin(), 1500);
         } else {
           setCompleted('lose');
           onLose?.();
@@ -70,8 +70,6 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
     setLives(1);
     setCompleted(null);
   };
-
-  const currentQuestion = quiz[current];
 
   return (
     <div className="space-y-4">
@@ -91,11 +89,11 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
         </div>
       </div>
 
-      {completed === null && currentQuestion && (
+      {completed === null && (
         <div className="p-4 bg-black/30 rounded-lg border border-red-500 space-y-4">
-          <p className="text-lg font-semibold">{currentQuestion.question}</p>
+          <p className="text-lg font-semibold">{quiz[current].question}</p>
           <div className="grid gap-2">
-            {currentQuestion.choices.map((choice, idx) => (
+            {quiz[current].choices.map((choice, idx) => (
               <button
                 key={idx}
                 onClick={() => handleChoice(choice.correct, choice.explanation)}
@@ -109,11 +107,7 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
       )}
 
       {showResult && (
-        <div
-          className={`p-4 rounded-lg flex items-center gap-2 ${
-            showResult.correct ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
-          }`}
-        >
+        <div className={`p-4 rounded-lg flex items-center gap-2 ${showResult.correct ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
           {showResult.correct ? <CheckCircle className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
           <span>{showResult.explanation}</span>
         </div>

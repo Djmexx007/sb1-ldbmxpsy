@@ -2,94 +2,92 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter2: Chapter = {
   id: 'health-insurance-ch2',
-  title: 'Assurance offrant une protection du revenu',
+  title: '⚖️ Revenu en Péril : Mission Protection',
   summary: `
-    🎮 Agent, bienvenue dans le monde de la protection du revenu !
+    🎮 Agent, le Quartier Général vous envoie sur une mission critique : préserver le revenu des citoyens contre l’invalidité !
 
-    Votre mission : maîtriser l'art de protéger le revenu en cas d'invalidité.
+    Ce chapitre vous révèlera :
+    - Les forces obscures de l’incapacité 🧟‍♂️
+    - Les outils sacrés des polices d’assurance 🔮
+    - Les secrets bien gardés des contrats non résiliables 📜
+    - Les combos gagnants entre délais de carence et garanties spéciales ⚔️
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'assurance invalidité 💰
-    - L'art des différentes sources de protection 🛡️
-    - La magie des polices individuelles ✨
-    - Le pouvoir des garanties spéciales ⚡
-
-    Souvenez-vous : Un revenu protégé est un avenir assuré ! 
+    Préparez votre cerveau, car chaque choix aura un impact sur la stabilité financière de vos protégés !
   `,
-  
+
   quiz: [
     {
-      question: "Qu'est-ce que l'assurance invalidité ?",
+      question: "🧠 Dans une stratégie de planification du revenu, pourquoi l’assurance invalidité est-elle considérée comme un pilier fondamental ?",
       choices: [
         {
-          text: "Une assurance qui remplace le revenu en cas d'incapacité de travail",
+          text: "Elle permet de maintenir un flux de revenus même en cas d’incapacité à travailler",
           correct: true,
-          explanation: "Elle assure un revenu continu même si vous ne pouvez pas travailler."
+          explanation: "Elle agit comme un filet de sécurité pour éviter la chute brutale de la stabilité financière."
         },
         {
-          text: "Une assurance qui double votre salaire",
+          text: "Elle permet de partir plus vite à la retraite",
           correct: false,
-          explanation: "Elle remplace une partie du revenu perdu, elle ne l'augmente pas !"
+          explanation: "Ce n’est pas une stratégie d’évasion professionnelle, mais de protection !"
         },
         {
-          text: "Une assurance qui vous trouve un nouveau travail",
+          text: "Elle réduit le stress de l’employeur",
           correct: false,
-          explanation: "Elle protège votre revenu, elle ne cherche pas d'emploi !"
+          explanation: "L’assurance vise d’abord la personne assurée, pas la santé mentale du patron."
         },
         {
-          text: "Une assurance qui paie vos vacances",
+          text: "Elle donne accès à un coach de vie",
           correct: false,
-          explanation: "Elle couvre la perte de revenu, pas les loisirs !"
+          explanation: "Ce serait sympa, mais non, ce n’est pas inclus dans la couverture."
         }
       ]
     },
     {
-      question: "Quelle est la différence entre une police non résiliable et résiliable ?",
+      question: "🧾 Qu'est-ce qu'une police d’assurance non résiliable offre comme super-pouvoir à l’assuré ?",
       choices: [
         {
-          text: "La non résiliable garantit le maintien des conditions et primes",
+          text: "Une prime stable et des conditions garanties jusqu’à 65 ans",
           correct: true,
-          explanation: "Elle offre la meilleure garantie de stabilité à long terme."
+          explanation: "C’est l’option la plus solide pour les travailleurs qui planifient à long terme."
         },
         {
-          text: "La non résiliable est plus colorée",
+          text: "Une couverture qui change chaque année",
           correct: false,
-          explanation: "La différence est dans les garanties, pas dans l'apparence !"
+          explanation: "C’est l’opposé de la stabilité offerte par la police non résiliable."
         },
         {
-          text: "La résiliable dure plus longtemps",
+          text: "Une option d’annulation automatique après 10 ans",
           correct: false,
-          explanation: "C'est l'inverse, la non résiliable offre plus de stabilité !"
+          explanation: "Ce serait plutôt inquiétant que rassurant !"
         },
         {
-          text: "Il n'y a aucune différence",
+          text: "Des vacances payées si on reste en santé",
           correct: false,
-          explanation: "Il y a des différences importantes dans les garanties !"
+          explanation: "Non, mais si c’était le cas, on appellerait ça une police plaisir, pas invalidité."
         }
       ]
     },
     {
-      question: "Quels facteurs influencent la prime d'une assurance invalidité ?",
+      question: "📊 Quels facteurs influencent la prime d’une assurance invalidité ?",
       choices: [
         {
-          text: "Âge, profession, santé et montant de protection choisi",
+          text: "L’âge, la profession, la santé et le montant de couverture",
           correct: true,
-          explanation: "Ces facteurs déterminent le niveau de risque et donc le coût."
+          explanation: "Ce sont les éléments évalués pour déterminer le risque et fixer le coût."
         },
         {
-          text: "La couleur préférée du client",
+          text: "Le nombre de jours fériés pris dans l’année",
           correct: false,
-          explanation: "Les préférences personnelles n'affectent pas le risque !"
+          explanation: "Même si votre boss aimerait bien, ça ne change rien à la tarification."
         },
         {
-          text: "Le nombre d'amis sur les réseaux sociaux",
+          text: "Le type de café consommé au travail",
           correct: false,
-          explanation: "La popularité n'influence pas le risque d'invalidité !"
+          explanation: "Espresso ou décaf, ça ne change rien aux probabilités actuarielles."
         },
         {
-          text: "La marque de voiture du client",
+          text: "La fidélité à un club de lecture",
           correct: false,
-          explanation: "Le type de véhicule n'affecte pas le risque d'invalidité !"
+          explanation: "Cultivé ou pas, le facteur risque se base sur autre chose."
         }
       ]
     }
@@ -97,17 +95,16 @@ export const chapter2: Chapter = {
 
   minigame: {
     type: 'income-guardian',
-    title: "Le Gardien du Revenu",
+    title: "🛡️ Le Gardien du Revenu",
     description: `
-      🎮 Devenez le Gardien du Revenu dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Protégez les revenus de vos clients
-      - Gérez différents types de polices
-      - Optimisez les délais de carence
-      - Maximisez les prestations
-      
-      Attention aux exclusions et aux conditions particulières !
+      🎮 Mission : Défendez le revenu de vos clients contre les imprévus de la vie !
+
+      Dans ce mini-jeu :
+      - Analysez les professions à risque élevé
+      - Choisissez les bonnes polices et délais de carence
+      - Gérez un portefeuille client pour maximiser stabilité et performance
+
+      ⚠️ Attention : un mauvais choix et c’est le chaos budgétaire !
     `,
     rewards: {
       xp: 350,
@@ -116,63 +113,66 @@ export const chapter2: Chapter = {
     }
   },
 
- boss: {
-  name: "🧠 Le Démon Déductif",
-  description: "Il teste ta logique jusqu’à l’épuisement mental. Seuls les agents capables d’analyser finement les types de polices et leurs prestations peuvent le vaincre.",
-  difficulty: 4,
-  quiz: [
-    {
-      question: "Quelle est la principale caractéristique d’une police non résiliable ?",
-      choices: [
-        { text: "L’assureur peut l’annuler à tout moment", correct: false, explanation: "C’est justement l’inverse : l’assureur NE peut PAS résilier la police unilatéralement." },
-        { text: "Les primes peuvent augmenter chaque année", correct: false, explanation: "Non, les primes sont fixes pour la durée du contrat." },
-        { text: "Le titulaire a droit au renouvellement sans modification", correct: true, explanation: "Exact ! C’est le plus haut niveau de garantie pour l’assuré." },
-        { text: "Elle couvre uniquement les accidents de travail", correct: false, explanation: "Elle peut couvrir plus que cela, ce n’est pas sa spécificité." }
-      ]
-    },
-    {
-      question: "Qu’est-ce qui distingue une assurance invalidité individuelle d’une assurance hypothécaire ?",
-      choices: [
-        { text: "Les prestations sont versées directement au prêteur", correct: false, explanation: "Cela s’applique à l’assurance hypothécaire." },
-        { text: "Le bénéficiaire est l’institution financière", correct: false, explanation: "Encore une fois, c’est typique des assurances de prêt." },
-        { text: "L’assuré décide de l’utilisation des prestations", correct: true, explanation: "Oui ! C’est un des avantages majeurs de l’assurance invalidité individuelle." },
-        { text: "Elle est automatiquement incluse dans tous les prêts", correct: false, explanation: "Faux. Elle doit être souscrite volontairement." }
-      ]
-    },
-    {
-      question: "Quel facteur influence directement la prime d’une assurance invalidité ?",
-      choices: [
-        { text: "La couleur des yeux", correct: false, explanation: "Même si ça serait original, ce n’est pas un critère utilisé !" },
-        { text: "L’âge et le sexe", correct: true, explanation: "Exact. Les données actuarielles montrent que ces facteurs influencent les risques d’invalidité." },
-        { text: "Le lieu de vacances préféré", correct: false, explanation: "Aucun lien avec l’évaluation du risque." },
-        { text: "Le type de carte de crédit détenue", correct: false, explanation: "Inutile dans ce contexte." }
-      ]
-    },
-    {
-      question: "Que permet un avenant de garantie d’assurabilité future ?",
-      choices: [
-        { text: "Augmenter la prestation sans nouvelle preuve médicale", correct: true, explanation: "Exactement ! C’est un outil précieux pour les jeunes assurés." },
-        { text: "Réduire les primes automatiquement", correct: false, explanation: "Non, cela dépend d'autres facteurs." },
-        { text: "Changer de bénéficiaire sans consentement", correct: false, explanation: "Le bénéficiaire est défini contractuellement." },
-        { text: "Recevoir un paiement en cas de guérison", correct: false, explanation: "Ce n’est pas le rôle de cet avenant." }
-      ]
-    },
-    {
-      question: "Qu’est-ce qu’un délai de carence dans une police d’invalidité ?",
-      choices: [
-        { text: "Le temps pendant lequel l’assureur traite la demande", correct: false, explanation: "C’est la période avant le début des versements, pas une étape administrative." },
-        { text: "La période entre la souscription et la couverture réelle", correct: false, explanation: "Ce serait plutôt une période d’attente générale." },
-        { text: "Le temps entre le début de l’invalidité et le début des prestations", correct: true, explanation: "Parfait ! C’est bien cette période spécifique." },
-        { text: "La durée maximale de la police", correct: false, explanation: "La durée de la police est une autre notion." }
-      ]
+  boss: {
+    name: "🧠 Le Démon Déductif",
+    description: "Il teste ta logique jusqu’à l’épuisement mental. Seuls les agents capables d’analyser finement les types de polices et leurs prestations peuvent le vaincre.",
+    difficulty: 4,
+    quiz: [
+      {
+        question: "Quel est l’avantage clé d’un avenant d’assurabilité future ?",
+        choices: [
+          {
+            text: "Permet d’augmenter la couverture sans nouvelle preuve médicale",
+            correct: true,
+            explanation: "Parfait pour anticiper les besoins futurs tout en verrouillant l’assurabilité."
+          },
+          {
+            text: "Donne droit à des soins dentaires",
+            correct: false,
+            explanation: "Ça, c’est une autre branche d’assurance !"
+          },
+          {
+            text: "Permet de transférer la couverture à un proche",
+            correct: false,
+            explanation: "Non, la couverture n’est pas transférable."
+          },
+          {
+            text: "Prolonge la période d’attente",
+            correct: false,
+            explanation: "Ce serait un désavantage plutôt qu’un avantage."
+          }
+        ]
+      },
+      {
+        question: "Comment fonctionne le délai de carence dans une police d’invalidité ?",
+        choices: [
+          {
+            text: "C’est le nombre de jours à attendre avant de recevoir les prestations",
+            correct: true,
+            explanation: "Il permet à l’assureur de vérifier la validité de la réclamation."
+          },
+          {
+            text: "C’est une pénalité en cas de fraude",
+            correct: false,
+            explanation: "Non, ce n’est pas une mesure punitive."
+          },
+          {
+            text: "C’est le montant de franchise qu’on doit payer",
+            correct: false,
+            explanation: "Il n’est pas question d’un montant à payer ici, mais de temps."
+          },
+          {
+            text: "C’est la période de renouvellement du contrat",
+            correct: false,
+            explanation: "Ce sont deux notions complètement différentes."
+          }
+        ]
+      }
+    ],
+    rewards: {
+      xp: 500,
+      badge: "Logicien Vainqueur",
+      title: "Maître de l’Analyse"
     }
-  ],
-  rewards: {
-    xp: 500,
-    badge: "Logicien Vainqueur",
-    title: "Maître de l’Analyse"
   }
-}
-   };
-
-
+};

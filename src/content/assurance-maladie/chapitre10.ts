@@ -2,128 +2,151 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter10: Chapter = {
   id: 'health-insurance-ch10',
-  title: 'Le Protecteur du Public',
+  title: 'Assurance en contexte d’incapacité prolongée',
   summary: `
-    🎮 Agent, bienvenue au Bureau des Réclamations !
+    🧠 Bienvenue dans le dernier bastion de l’assurance maladie !
 
-    Votre mission : maîtriser l'art de la gestion des réclamations et de la protection du public.
+    Dans ce chapitre, vous découvrirez :
+    - Les mesures publiques et privées qui soutiennent les personnes en incapacité prolongée 🧾
+    - Les protections complémentaires offertes par les assureurs privés 🛡️
+    - Les rôles respectifs de l’Aide sociale, du RRQ et de l’assurance-emploi 🏛️
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets du processus de réclamation 📝
-    - L'art de la documentation 📄
-    - La magie de la résolution de conflits ⚖️
-    - Le pouvoir des organismes de protection 🛡️
-
-    Souvenez-vous : Une réclamation bien gérée est un client conservé ! 
+    Préparez-vous à maîtriser les rouages de l’assistance durable — et à clore votre aventure comme un(e) **Maître de la Résilience** !
   `,
-  
+
   quiz: [
     {
-      question: "Quelles sont les étapes clés d'une réclamation ?",
+      question: "🧾 Que couvre principalement l’aide sociale (Programme d’assistance sociale du Québec) ?",
       choices: [
         {
-          text: "Formulaire, preuves, analyse et paiement",
+          text: "Les besoins essentiels lorsqu’une personne est sans revenu ni autre recours",
           correct: true,
-          explanation: "Un processus structuré garantit un traitement efficace."
+          explanation: "Ce programme est une mesure de dernier recours pour les personnes sans ressources."
         },
         {
-          text: "Danser la macarena trois fois",
+          text: "Les vacances médicales à Cuba",
           correct: false,
-          explanation: "Les réclamations suivent un processus professionnel !"
+          explanation: "Même si le soleil peut faire du bien, ce n’est pas l’objectif du programme."
         },
         {
-          text: "Envoyer un pigeon voyageur",
+          text: "Les frais de scolarité universitaire",
           correct: false,
-          explanation: "Les communications modernes sont plus efficaces !"
+          explanation: "Ce n’est pas sa vocation, même si l’éducation est importante."
         },
         {
-          text: "Croiser les doigts et espérer",
+          text: "Un régime privé de soins dentaires",
           correct: false,
-          explanation: "Les réclamations nécessitent des actions concrètes !"
+          explanation: "L’aide sociale couvre uniquement les soins urgents dans ce domaine."
         }
       ]
     },
     {
-      question: "Que peut faire un client dont la réclamation est refusée ?",
+      question: "🏛️ Quelle affirmation est vraie concernant le Régime de rentes du Québec (RRQ) ?",
       choices: [
         {
-          text: "Demander des explications et contacter un organisme de protection",
+          text: "Il offre une rente d’invalidité seulement à partir de 65 ans",
+          correct: false,
+          explanation: "La rente d’invalidité est offerte aux cotisants admissibles avant 65 ans."
+        },
+        {
+          text: "Il couvre uniquement les blessures survenues en milieu de travail",
+          correct: false,
+          explanation: "C’est la CNESST qui gère les accidents du travail, pas la RRQ."
+        },
+        {
+          text: "Il prévoit une rente d’invalidité pour les cotisants gravement inaptes au travail",
           correct: true,
-          explanation: "Il existe des recours officiels pour protéger les droits des clients."
+          explanation: "Exact ! Cette rente vise ceux qui ne peuvent exercer aucun travail rémunérateur."
         },
         {
-          text: "Bouder dans son coin",
+          text: "Il est optionnel pour les travailleurs autonomes",
           correct: false,
-          explanation: "Une approche constructive est toujours préférable !"
-        },
-        {
-          text: "Devenir un super-vilain",
-          correct: false,
-          explanation: "La vengeance n'est pas une solution professionnelle !"
-        },
-        {
-          text: "Changer de planète",
-          correct: false,
-          explanation: "Les problèmes doivent être résolus, pas évités !"
+          explanation: "Les travailleurs autonomes doivent aussi cotiser."
         }
       ]
     },
     {
-      question: "Quel est le rôle des organismes de protection du public ?",
+      question: "📉 Qu’est-ce qui distingue une protection d’assurance invalidité de longue durée privée d’un régime public ?",
       choices: [
         {
-          text: "Aider les clients à faire valoir leurs droits et résoudre les conflits",
+          text: "Elle offre généralement une meilleure couverture du revenu à long terme",
           correct: true,
-          explanation: "Ces organismes sont des ressources précieuses pour la protection du consommateur."
+          explanation: "Les assurances privées peuvent remplacer jusqu’à 66 % du revenu, avec moins de restrictions."
         },
         {
-          text: "Distribuer des bonbons",
+          text: "Elle est gratuite pour tous les citoyens",
           correct: false,
-          explanation: "Leur rôle est sérieux et professionnel !"
+          explanation: "Elle nécessite une prime — elle n’est pas financée par l’État."
         },
         {
-          text: "Organiser des fêtes d'assurance",
+          text: "Elle ne couvre que les employés du gouvernement",
           correct: false,
-          explanation: "Ils ont un rôle de protection, pas d'animation !"
+          explanation: "Elle est offerte à divers groupes : travailleurs autonomes, salariés, etc."
         },
         {
-          text: "Donner des cours de danse",
+          text: "Elle couvre automatiquement les maladies infectieuses",
           correct: false,
-          explanation: "Leur mission est la protection du consommateur !"
+          explanation: "Cela dépend du contrat, ce n’est pas une garantie automatique."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'claims-master',
-    title: "Le Maître des Réclamations",
+    type: 'resilience-architect',
+    title: "🧱 L’Architecte de Résilience",
     description: `
-      🎮 Devenez le Maître des Réclamations dans ce mini-jeu stratégique !
-      
+      🎮 Construisez un filet de sécurité solide pour vos clients !
+
       Votre mission :
-      - Gérez les réclamations efficacement
-      - Collectez les documents nécessaires
-      - Naviguez dans les processus
-      - Protégez les droits des clients
-      
-      Attention aux délais et aux documents manquants !
+      - Assembler des solutions durables (publiques et privées)
+      - Réagir à des scénarios réalistes d’incapacité prolongée
+      - Préserver le niveau de vie malgré les coups durs
+
+      Gare aux failles dans la protection !
     `,
     rewards: {
-      xp: 750,
-      badge: "Maître des Réclamations",
-      title: "Protecteur du Public"
+      xp: 500,
+      badge: "Pilier de la Résilience",
+      title: "Architecte de la Sécurité"
     }
   },
 
   boss: {
-    name: "Le Juge des Réclamations",
-    description: "Un boss impartial qui teste votre maîtrise du processus de réclamation !",
+    name: "⛈️ L’Ombre de l’Incapacité",
+    description: "Il frappe quand les ressources s’épuisent. Seul un véritable stratège du soutien durable peut en triompher.",
     difficulty: 5,
+    quiz: [
+      {
+        question: "En contexte d’incapacité de longue durée, que permet généralement un avenant de remboursement de prime ?",
+        choices: [
+          {
+            text: "Obtenir un remboursement partiel des primes si aucune réclamation n’a été faite",
+            correct: true,
+            explanation: "C’est un incitatif à long terme pour les assurés."
+          },
+          {
+            text: "Annuler automatiquement le contrat après 10 ans",
+            correct: false,
+            explanation: "L’avenant vise une compensation, pas une résiliation."
+          },
+          {
+            text: "Doubler les prestations sans condition",
+            correct: false,
+            explanation: "Cela dépend toujours du contrat et des exclusions."
+          },
+          {
+            text: "Transformer la police en assurance voyage",
+            correct: false,
+            explanation: "Pas du tout ! L’objectif est la gestion du risque d’invalidité."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 1300,
-      badge: "Maître du Chapitre 10",
-      title: "Champion des Droits"
+      xp: 800,
+      badge: "Dominateur de l’Ombre",
+      title: "Stratège du Soutien Permanent"
     }
   }
 };

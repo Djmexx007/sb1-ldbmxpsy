@@ -2,128 +2,153 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter9: Chapter = {
   id: 'health-insurance-ch9',
-  title: 'Le Gardien des Contrats',
+  title: "Préparer l'Avenir : Assurance et Fin de Vie",
   summary: `
-    🎮 Agent, bienvenue au Centre de Suivi !
+    🌅 Bienvenue, Agent de l'Ultime Préparation !
 
-    Votre mission : maîtriser l'art du suivi et de l'évolution des contrats d'assurance.
+    Dans ce dernier chapitre, vous explorerez l'univers délicat mais crucial de l'assurance en fin de vie.
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets du suivi client 🔄
-    - L'art du renouvellement 📅
-    - La magie des modifications de contrat ✨
-    - Le pouvoir du remplacement stratégique 🔄
+    Vous apprendrez à :
+    - Comprendre les types de couverture pour les soins palliatifs 🕊️
+    - Anticiper les besoins de services à domicile 🏡
+    - Soutenir la dignité et la sécurité financière jusqu'au dernier souffle 🛡️
 
-    Souvenez-vous : Un contrat qui évolue est un client qui reste ! 
+    💡 Une couverture bien choisie aujourd'hui peut alléger un fardeau immense demain. Soyez le pilier de compassion et de prévoyance.
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi est-il important de faire un suivi régulier des contrats ?",
+      question: "🏥 Quel est le principal objectif d'une couverture en soins palliatifs dans une assurance santé ?",
       choices: [
         {
-          text: "Pour adapter la protection aux changements de vie du client",
+          text: "Permettre un accès à des soins de confort et d'accompagnement en fin de vie",
           correct: true,
-          explanation: "La vie évolue, les besoins changent, le contrat doit suivre !"
+          explanation: "Les soins palliatifs visent à soulager la douleur et préserver la qualité de vie du patient en phase terminale."
         },
         {
-          text: "Pour avoir plus de réunions",
+          text: "Offrir une opération gratuite pour prolonger la vie",
           correct: false,
-          explanation: "Le suivi sert à protéger le client, pas à remplir l'agenda !"
+          explanation: "Ce n'est pas le but principal. Les soins palliatifs ne sont pas curatifs."
         },
         {
-          text: "Pour collectionner des signatures",
+          text: "Permettre une réduction automatique des primes",
           correct: false,
-          explanation: "Le suivi vise l'adaptation de la protection, pas la paperasse !"
+          explanation: "La prime n'est pas liée à la fin de vie, mais au profil global de risque."
         },
         {
-          text: "Pour battre le record de modifications",
+          text: "Assurer un revenu de retraite complémentaire",
           correct: false,
-          explanation: "Les modifications doivent être pertinentes, pas nombreuses !"
+          explanation: "Ce rôle revient plutôt aux rentes ou produits de retraite, pas aux soins palliatifs."
         }
       ]
     },
     {
-      question: "Que doit-on vérifier lors d'un remplacement de contrat ?",
+      question: "💡 Quelle est une caractéristique clé de l’assurance de soins de longue durée à domicile ?",
       choices: [
         {
-          text: "Les différences de couverture et éviter les périodes sans protection",
+          text: "Elle couvre les frais liés à la perte d’autonomie, comme l’aide-ménagère ou l’assistance médicale",
           correct: true,
-          explanation: "Le remplacement doit être avantageux et sécuritaire pour le client."
+          explanation: "Ce type de police soutient le maintien à domicile en cas de dépendance."
         },
         {
-          text: "La couleur du nouveau contrat",
+          text: "Elle rembourse les abonnements Netflix pendant la convalescence",
           correct: false,
-          explanation: "L'apparence du contrat n'a aucune importance !"
+          explanation: "Aussi relaxant que cela puisse être, ce n’est pas couvert."
         },
         {
-          text: "Le poids du papier utilisé",
+          text: "Elle s’applique uniquement aux personnes de moins de 40 ans",
           correct: false,
-          explanation: "Les aspects matériels ne sont pas pertinents !"
+          explanation: "Au contraire, elle cible plutôt les personnes âgées ou fragilisées."
         },
         {
-          text: "Le nombre de pages",
+          text: "Elle n’est offerte que si le patient vit dans un château",
           correct: false,
-          explanation: "La quantité de pages n'est pas un critère de qualité !"
+          explanation: "Le lieu de résidence n’est pas un critère pour la protection."
         }
       ]
     },
     {
-      question: "Quelle est la meilleure pratique pour le renouvellement ?",
+      question: "🧾 Quelle clause permet à un proche d’agir à titre de mandataire pour gérer les demandes d’indemnisation ?",
       choices: [
         {
-          text: "Prévenir le client à l'avance et revoir ses besoins",
+          text: "La procuration médicale ou financière prévue au contrat",
           correct: true,
-          explanation: "Une approche proactive permet d'optimiser la protection."
+          explanation: "Elle permet légalement à un tiers désigné d’agir au nom du patient."
         },
         {
-          text: "Attendre que le client appelle",
+          text: "L’ajout de son nom sur la boîte aux lettres",
           correct: false,
-          explanation: "Le conseiller doit être proactif dans le suivi !"
+          explanation: "Ce n’est pas juridiquement suffisant pour représenter un assuré."
         },
         {
-          text: "Envoyer un message télépathique",
+          text: "L’achat d’un bouquet de fleurs à l’assureur",
           correct: false,
-          explanation: "La communication doit être claire et professionnelle !"
+          explanation: "Aussi charmant soit-il, cela ne suffit pas à accorder un pouvoir légal."
         },
         {
-          text: "Laisser le contrat se renouveler tout seul",
+          text: "Une signature sur une serviette de table",
           correct: false,
-          explanation: "Le renouvellement mérite une attention particulière !"
+          explanation: "Les documents informels n’ont pas de valeur légale dans ce contexte."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'contract-guardian',
-    title: "Le Gardien des Contrats",
+    type: 'end-of-life-strategist',
+    title: "Stratège de la Dignité",
     description: `
-      🎮 Devenez le Gardien des Contrats dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Gérez les renouvellements
-      - Optimisez les modifications
-      - Évitez les périodes sans protection
-      - Maximisez la satisfaction client
-      
-      Attention aux échéances et aux changements de situation !
+      🎮 Votre mission : guider une famille dans la planification de la fin de vie d’un proche.
+
+      À travers une série de scénarios émouvants, vous devrez :
+      - Choisir les bons types de couverture
+      - Comprendre les besoins éthiques, médicaux et financiers
+      - Éviter les pièges de l’impréparation
+
+      Gagnez en sagesse, et apportez réconfort, clarté et dignité.
     `,
     rewards: {
-      xp: 700,
-      badge: "Maître du Suivi",
-      title: "Gardien des Polices"
+      xp: 450,
+      badge: "Compagnon de Fin de Vie",
+      title: "Gardien de la Dignité"
     }
   },
 
   boss: {
-    name: "Le Chronométreur Suprême",
-    description: "Un boss méticuleux qui teste votre maîtrise du timing et du suivi !",
-    difficulty: 5,
+    name: "👻 L’Esprit de l’Oubli Préventif",
+    description: "Un esprit insaisissable qui se nourrit des plans de fin de vie non préparés. Il rôde dans les zones grises des contrats mal compris !",
+    difficulty: 4,
+    quiz: [
+      {
+        question: "Pourquoi est-il risqué de ne pas planifier ses besoins en soins de fin de vie ?",
+        choices: [
+          {
+            text: "Car cela peut entraîner des décisions précipitées et coûteuses pour les proches",
+            correct: true,
+            explanation: "Sans plan clair, la famille doit improviser sous pression, ce qui peut être émotionnellement et financièrement lourd."
+          },
+          {
+            text: "Parce qu’on ne pourra pas commander de pizza à temps",
+            correct: false,
+            explanation: "Même si manger est important, la planification concerne les soins et finances."
+          },
+          {
+            text: "Parce que les assurances deviennent gratuites sans plan",
+            correct: false,
+            explanation: "Rien n’est gratuit — surtout pas l’oubli !"
+          },
+          {
+            text: "Parce qu’on veut tester ses enfants",
+            correct: false,
+            explanation: "Ce n’est pas un test surprise, mais un acte de prévoyance."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 1200,
-      badge: "Maître du Chapitre 9",
-      title: "Champion du Suivi"
+      xp: 700,
+      badge: "Maître de la Sérénité",
+      title: "Architecte du Repos Paisible"
     }
   }
 };

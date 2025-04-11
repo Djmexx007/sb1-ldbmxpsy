@@ -2,128 +2,177 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter8: Chapter = {
   id: 'health-insurance-ch8',
-  title: 'Le Conseiller Stratégique',
+  title: 'Assurance accident et voyage',
   summary: `
-    🎮 Agent, bienvenue au Centre des Recommandations !
+    ✈️ Bienvenue, Agent Nomade !
 
-    Votre mission : maîtriser l'art de recommander la protection parfaite pour chaque client.
+    Ce chapitre vous embarque dans le monde imprévisible des accidents et des imprévus à l’étranger.
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'analyse des besoins 🎯
-    - L'art de l'optimisation des primes 💰
-    - La magie de l'adaptation des contrats ✨
-    - Le pouvoir de la communication claire 🗣️
+    Vous y apprendrez :
+    - Les différences entre les garanties accident et maladie en voyage 🧳
+    - Les exclusions les plus sournoises des contrats 🕵️‍♂️
+    - L’importance de la durée de séjour et des frais engagés ⏳💸
 
-    Souvenez-vous : Une bonne recommandation change une vie ! 
+    Que vous soyez sur une plage ou dans un dojo thaïlandais, la préparation est votre meilleure défense !
   `,
-  
+
   quiz: [
     {
-      question: "Sur quoi repose une bonne recommandation d'assurance ?",
+      question: "🌍 Quelle est la principale limite des régimes publics québécois en matière de soins reçus à l'étranger ?",
       choices: [
         {
-          text: "L'évaluation des besoins, la situation financière et les objectifs du client",
+          text: "Ils ne remboursent qu'une partie des frais, selon les tarifs du Québec",
           correct: true,
-          explanation: "Une recommandation efficace prend en compte tous ces aspects essentiels."
+          explanation: "Les régimes publics ne couvrent qu'une petite portion des frais engagés à l'étranger, souvent bien inférieurs aux coûts réels."
         },
         {
-          text: "Le produit le plus cher du catalogue",
+          text: "Ils remboursent tous les frais à 100%",
           correct: false,
-          explanation: "Le prix n'est pas le critère principal de recommandation !"
+          explanation: "C'est faux : les remboursements sont limités et souvent insuffisants."
         },
         {
-          text: "La couleur préférée du client",
+          text: "Ils obligent à être hospitalisé plus de 72 heures",
           correct: false,
-          explanation: "Les préférences esthétiques n'influencent pas le choix de la protection !"
+          explanation: "Aucune telle obligation n'existe."
         },
         {
-          text: "Le produit le plus facile à vendre",
+          text: "Ils couvrent uniquement les blessures sportives",
           correct: false,
-          explanation: "La facilité de vente ne doit pas guider la recommandation !"
+          explanation: "La couverture publique n'est pas aussi restrictive."
         }
       ]
     },
     {
-      question: "Comment peut-on ajuster une prime pour respecter le budget du client ?",
+      question: "✈️ Quelle clause peut rendre nulle la couverture d'assurance voyage lors d'une absence prolongée ?",
       choices: [
         {
-          text: "Modifier le délai de carence, la durée ou le montant des prestations",
+          text: "La durée maximale de séjour hors du Québec",
           correct: true,
-          explanation: "Ces ajustements permettent d'équilibrer protection et budget."
+          explanation: "La plupart des contrats imposent une durée maximale de séjour à l’extérieur du Québec pour maintenir la validité de la police."
         },
         {
-          text: "Négocier avec un magicien",
+          text: "L’achat de souvenirs coûteux",
           correct: false,
-          explanation: "Les ajustements de prime suivent des règles précises, pas de magie !"
+          explanation: "Ce n’est pas un facteur affectant la validité de la couverture."
         },
         {
-          text: "Payer en chocolat",
+          text: "La consommation d’aliments exotiques",
           correct: false,
-          explanation: "Les primes se paient en argent, pas en nature !"
+          explanation: "La gastronomie locale ne remet pas en cause la validité d’un contrat !"
         },
         {
-          text: "Croiser les doigts très fort",
+          text: "Le port de sandales dans des zones humides",
           correct: false,
-          explanation: "La superstition n'a pas sa place dans l'ajustement des primes !"
+          explanation: "Aucun assureur ne vérifie vos sandales."
         }
       ]
     },
     {
-      question: "Que doit faire le représentant face à des modifications imposées par l'assureur ?",
+      question: "💥 Quelle différence essentielle distingue une assurance accident d’une assurance maladie voyage ?",
       choices: [
         {
-          text: "Expliquer clairement les changements et obtenir l'accord du client",
+          text: "L'assurance accident couvre uniquement les événements soudains et involontaires",
           correct: true,
-          explanation: "La transparence et le consentement du client sont essentiels."
+          explanation: "Elle s’applique à des situations précises comme une chute ou un accident de la route."
         },
         {
-          text: "Les cacher dans les petits caractères",
+          text: "L'assurance accident couvre les frais vétérinaires",
           correct: false,
-          explanation: "La dissimulation d'information est contraire à l'éthique et illégale !"
+          explanation: "Elle couvre les frais humains, pas ceux de vos compagnons à quatre pattes."
         },
         {
-          text: "Blâmer la météo",
+          text: "L’assurance maladie couvre uniquement les allergies",
           correct: false,
-          explanation: "Les modifications ont des raisons précises qui doivent être expliquées !"
+          explanation: "Elle couvre bien plus que ça."
         },
         {
-          text: "Changer de sujet",
+          text: "L’assurance accident est plus chère qu’une assurance maladie",
           correct: false,
-          explanation: "Éviter le sujet ne résout pas la situation !"
+          explanation: "Pas nécessairement, cela dépend du contrat."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'recommendation-master',
-    title: "Le Maître des Recommandations",
+    type: 'travel-shield',
+    title: "🛡️ Bouclier du Voyageur",
     description: `
-      🎮 Devenez le Maître des Recommandations dans ce mini-jeu stratégique !
-      
+      🎮 Protégez votre agent lors d’un périple mondial rempli d’obstacles !
+
       Votre mission :
-      - Analysez les profils clients
-      - Optimisez les protections
-      - Équilibrez budget et couverture
-      - Communiquez efficacement
-      
-      Attention aux contraintes budgétaires et aux besoins spéciaux !
+      - Réagir à des imprévus médicaux en voyage
+      - Choisir la bonne assurance selon la situation
+      - Survivre aux exclusions vicieuses
+      - Respecter les limites de durée, territoires, et garanties
     `,
     rewards: {
-      xp: 650,
-      badge: "Maître Conseiller",
-      title: "Stratège des Solutions"
+      xp: 400,
+      badge: "Globe-Trotteur Assuré",
+      title: "Protecteur d'Aventure"
     }
   },
 
   boss: {
-    name: "L'Architecte des Polices",
-    description: "Un boss exigeant qui teste votre capacité à créer des recommandations parfaites !",
-    difficulty: 5,
+    name: "🌪️ Le Chaos Touristique",
+    description: "Ce boss simule les pires scénarios de voyage... sans couverture ! Serez-vous capable d'y survivre mentalement, juridiquement et financièrement ?",
+    difficulty: 4,
+    quiz: [
+      {
+        question: "🏖️ Une cliente est hospitalisée en Floride pour un accident. Quel réflexe lui permettrait d’éviter des dettes colossales ?",
+        choices: [
+          {
+            text: "Souscrire une assurance voyage privée avant son départ",
+            correct: true,
+            explanation: "Elle est indispensable puisque le régime public rembourse très peu à l'étranger."
+          },
+          {
+            text: "Avoir son permis de conduire international",
+            correct: false,
+            explanation: "Utile sur la route, inutile pour l’hôpital."
+          },
+          {
+            text: "Demander une chambre avec vue",
+            correct: false,
+            explanation: "Cela ne diminue pas les frais médicaux."
+          },
+          {
+            text: "S'enregistrer à l’ambassade canadienne",
+            correct: false,
+            explanation: "Recommandé, mais sans lien direct avec les remboursements."
+          }
+        ]
+      },
+      {
+        question: "🎢 Quelle situation typique est souvent exclue des contrats d’assurance voyage ?",
+        choices: [
+          {
+            text: "La participation à des sports extrêmes",
+            correct: true,
+            explanation: "Les contrats excluent souvent les activités à haut risque comme le parachutisme ou le deltaplane."
+          },
+          {
+            text: "Un rhume à la plage",
+            correct: false,
+            explanation: "Cela est généralement couvert."
+          },
+          {
+            text: "Une intoxication alimentaire dans un hôtel 4 étoiles",
+            correct: false,
+            explanation: "Les urgences médicales sont habituellement prises en charge."
+          },
+          {
+            text: "Un coup de soleil",
+            correct: false,
+            explanation: "Cela peut être couvert selon la gravité, mais ce n’est pas systématiquement exclu."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 1100,
-      badge: "Maître du Chapitre 8",
-      title: "Champion des Recommandations"
+      xp: 600,
+      badge: "Maître du Chaos Étranger",
+      title: "Pilote d’Urgence Internationale"
     }
   }
 };

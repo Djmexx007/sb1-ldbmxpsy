@@ -2,128 +2,177 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter7: Chapter = {
   id: 'health-insurance-ch7',
-  title: 'Le Maître des Contrats',
+  title: 'Fonds communs de placement et FNB',
   summary: `
-    🎮 Agent, bienvenue dans le labyrinthe fiscal des contrats d'assurance !
+    💹 Bienvenue dans le temple des investissements collectifs !
 
-    Votre mission : maîtriser l'art complexe des différents types de contrats et leur traitement fiscal.
+    Dans ce chapitre, vous apprendrez à jongler avec :
+    - Les fonds communs de placement (FCP) 🏛️
+    - Les FNB (fonds négociés en bourse) 📈
+    - Les frais, les avantages et les limites ⚖️
+    - Et comment choisir le bon produit pour vos clients ! 🎯
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets des contrats individuels et collectifs 📄
-    - L'art de la fiscalité des prestations 💰
-    - La magie des avantages fiscaux ✨
-    - Le pouvoir des règles spéciales pour entreprises 🏢
-
-    Souvenez-vous : Un bon agent connaît ses contrats sur le bout des doigts ! 
+    🧙‍♂️ Maîtrisez l'art des portefeuilles équilibrés et devenez le stratège de la croissance financière !
   `,
-  
+
   quiz: [
     {
-      question: "Quelle est la principale différence entre un contrat individuel et collectif ?",
+      question: "Quel est l'avantage principal d'un fonds commun de placement ?",
       choices: [
         {
-          text: "Le contrat individuel est personnalisé tandis que le collectif est standardisé pour un groupe",
+          text: "La diversification instantanée de l'investissement",
           correct: true,
-          explanation: "Les contrats individuels offrent plus de flexibilité mais sont généralement plus coûteux."
+          explanation: "Un FCP permet de répartir le risque en investissant dans plusieurs titres."
         },
         {
-          text: "Le contrat individuel est écrit à la main",
+          text: "Des rendements garantis par l'État",
           correct: false,
-          explanation: "Le format du contrat n'a rien à voir avec son type !"
+          explanation: "Les FCP sont soumis aux fluctuations du marché."
         },
         {
-          text: "Le contrat collectif nécessite une fête d'entreprise",
+          text: "Une immunité totale contre les pertes",
           correct: false,
-          explanation: "Les contrats collectifs sont des outils professionnels, pas des événements sociaux !"
+          explanation: "Aucun placement n’est exempt de risques."
         },
         {
-          text: "Le contrat individuel est plus petit en taille",
+          text: "Une exonération d’impôt permanente",
           correct: false,
-          explanation: "La taille physique du contrat n'est pas pertinente !"
+          explanation: "Les gains réalisés sont imposables selon le type de compte."
         }
       ]
     },
     {
-      question: "Comment sont imposées les prestations d'invalidité payées par l'employeur ?",
+      question: "Quel est un inconvénient courant des FNB par rapport aux FCP ?",
       choices: [
         {
-          text: "Elles sont imposables pour l'employé si l'employeur paie les primes",
+          text: "Les FNB peuvent entraîner des commissions de courtage",
           correct: true,
-          explanation: "C'est une règle fiscale fondamentale : qui paie la prime détermine l'imposition."
+          explanation: "Ils se négocient comme des actions, avec des frais à chaque achat/vente."
         },
         {
-          text: "Elles sont toujours non imposables",
+          text: "Ils sont obligatoires pour tous les REER",
           correct: false,
-          explanation: "L'imposition dépend de qui paie les primes !"
+          explanation: "Ils sont facultatifs, au même titre que les FCP."
         },
         {
-          text: "Elles sont imposables uniquement les jours fériés",
+          text: "Ils sont uniquement accessibles aux millionnaires",
           correct: false,
-          explanation: "L'imposition ne dépend pas du calendrier !"
+          explanation: "Les FNB sont accessibles à tous les investisseurs."
         },
         {
-          text: "Elles sont imposables selon l'humeur du fisc",
+          text: "Ils offrent moins de transparence",
           correct: false,
-          explanation: "Les règles fiscales sont précises et non arbitraires !"
+          explanation: "Au contraire, ils sont souvent très transparents dans leur composition."
         }
       ]
     },
     {
-      question: "Quel est l'avantage fiscal des primes d'assurance maladie pour une entreprise ?",
+      question: "Dans quel cas un client pourrait préférer un FNB à un FCP ?",
       choices: [
         {
-          text: "Elles sont généralement déductibles d'impôt pour l'entreprise",
+          text: "S’il cherche une gestion passive et des frais réduits",
           correct: true,
-          explanation: "C'est une dépense d'entreprise légitime qui peut être déduite."
+          explanation: "Les FNB sont souvent choisis pour leurs frais moindres et leur gestion indicielle."
         },
         {
-          text: "Elles transforment les impôts en crédits-vacances",
+          text: "S’il veut un portefeuille géré activement tous les jours",
           correct: false,
-          explanation: "Les avantages fiscaux sont financiers, pas des avantages en nature !"
+          explanation: "Ce serait plutôt un FCP à gestion active."
         },
         {
-          text: "Elles donnent droit à un trophée fiscal",
+          text: "S’il souhaite un rendement garanti de 10 %",
           correct: false,
-          explanation: "Il n'existe pas de trophées pour les déductions fiscales !"
+          explanation: "Aucun produit n’offre un rendement garanti aussi élevé."
         },
         {
-          text: "Elles permettent d'éviter tous les impôts",
+          text: "S’il veut éviter complètement le marché boursier",
           correct: false,
-          explanation: "Les déductions sont spécifiques et limitées, pas une exemption totale !"
+          explanation: "Les FNB sont exposés au marché boursier."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'tax-master',
-    title: "Le Maître des Impôts",
+    type: 'portfolio-master',
+    title: "🧠 Le Maître du Portefeuille",
     description: `
-      🎮 Devenez le Maître des Impôts dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Naviguez dans le labyrinthe fiscal
-      - Optimisez les avantages fiscaux
-      - Gérez différents types de contrats
-      - Maximisez les bénéfices pour vos clients
-      
-      Attention aux pièges fiscaux et aux règles spéciales !
+      🎮 Construisez le portefeuille parfait selon le profil du client !
+
+      Objectif :
+      - Équilibrer FCP et FNB 🏛️📈
+      - Réduire les frais sans sacrifier la diversification 💡
+      - Répondre à des objectifs variés (croissance, revenu, sécurité) 💼
+
+      Attention : chaque mauvaise allocation peut coûter des points !
     `,
     rewards: {
-      xp: 600,
-      badge: "Maître Fiscal",
-      title: "Expert des Contrats"
+      xp: 500,
+      badge: "Architecte de Portefeuille",
+      title: "Stratège en FNB"
     }
   },
 
   boss: {
-    name: "L'Inspecteur Suprême",
-    description: "Un boss redoutable qui teste votre maîtrise des contrats et de la fiscalité !",
+    name: "📊 L'Analyseur Absolu",
+    description: "Il vous bombardera de comparaisons entre FNB et FCP. Une seule erreur, et votre crédibilité s'effondre !",
     difficulty: 5,
+    quiz: [
+      {
+        question: "Un client veut investir en bourse avec de faibles frais et une grande liquidité. Quelle option recommandez-vous ?",
+        choices: [
+          {
+            text: "Un FNB indiciel",
+            correct: true,
+            explanation: "Les FNB indiciels sont parfaits pour une gestion passive avec peu de frais."
+          },
+          {
+            text: "Un CPG à 10 ans",
+            correct: false,
+            explanation: "Un CPG ne répond pas au besoin de liquidité ni à l’exposition boursière."
+          },
+          {
+            text: "Un fonds commun équilibré à frais élevés",
+            correct: false,
+            explanation: "Les frais élevés peuvent nuire à la performance à long terme."
+          },
+          {
+            text: "Un compte d’épargne à intérêt élevé",
+            correct: false,
+            explanation: "Ce n’est pas un produit d’investissement boursier."
+          }
+        ]
+      },
+      {
+        question: "Quelle est une caractéristique typique des FNB à gestion passive ?",
+        choices: [
+          {
+            text: "Ils répliquent un indice de marché sans intervention humaine constante",
+            correct: true,
+            explanation: "C’est le principe même de la gestion passive."
+          },
+          {
+            text: "Ils garantissent un rendement supérieur à la moyenne",
+            correct: false,
+            explanation: "Ils visent à reproduire la performance du marché, pas à le surpasser."
+          },
+          {
+            text: "Ils changent de stratégie tous les mois",
+            correct: false,
+            explanation: "La gestion passive est stable dans le temps."
+          },
+          {
+            text: "Ils sont uniquement accessibles aux courtiers agréés",
+            correct: false,
+            explanation: "Tout investisseur peut y avoir accès."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 1000,
-      badge: "Maître du Chapitre 7",
-      title: "Champion Fiscal"
+      xp: 800,
+      badge: "Maître des Marchés",
+      title: "Vainqueur de l’Analyseur"
     }
   }
 };

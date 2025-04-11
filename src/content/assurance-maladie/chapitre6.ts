@@ -2,128 +2,176 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter6: Chapter = {
   id: 'health-insurance-ch6',
-  title: 'L\'Évaluateur des Risques',
+  title: 'CPG, Comptes d’Épargne et Assurance',
   summary: `
-    🎮 Agent, bienvenue au Bureau d'Évaluation des Risques !
+    🏦 Bienvenue dans le coffre-fort de l’assurance !
 
-    Votre mission : maîtriser l'art délicat d'évaluer et d'accepter les risques en assurance.
+    Dans ce chapitre, vous découvrirez comment les produits de dépôt s’intègrent à la planification en assurance maladie :
+    - Les rôles du CPG, du CELI, du REER et du compte non enregistré 💼
+    - Leurs impacts sur l’accès aux prestations 🧾
+    - Les avantages fiscaux et pièges à éviter ⚠️
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'analyse des risques 🔍
-    - L'art de la sélection médicale 🏥
-    - La magie de la tarification 💰
-    - Le pouvoir de la note de couverture provisoire ✨
-
-    Souvenez-vous : Un bon évaluateur voit le risque avant qu'il ne devienne un problème ! 
+    Préparez vos neurones… et vos calculettes ! 🧠📊
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi l'assureur effectue-t-il une sélection des risques ?",
+      question: "💡 Pourquoi est-il important de connaître les actifs détenus dans un CELI lors d'une demande de prestation d'assurance maladie ?",
       choices: [
         {
-          text: "Pour évaluer le risque et fixer une prime équitable",
+          text: "Parce que les revenus du CELI sont imposables",
+          correct: false,
+          explanation: "Les revenus du CELI ne sont pas imposables, mais ils peuvent influencer l’admissibilité à certaines prestations si mal utilisés."
+        },
+        {
+          text: "Parce qu’ils peuvent être utilisés pour démontrer un besoin financier",
+          correct: false,
+          explanation: "Le CELI ne démontre pas nécessairement un besoin, mais sa structure a un impact sur les calculs."
+        },
+        {
+          text: "Parce que les retraits du CELI n’ont pas d’impact fiscal et peuvent être utilisés librement",
           correct: true,
-          explanation: "L'évaluation permet de protéger l'assureur et les autres assurés."
+          explanation: "Exact. Les retraits du CELI ne créent pas de revenu imposable, donc ne nuisent pas aux prestations."
         },
         {
-          text: "Pour tester la patience du client",
+          text: "Parce qu’un CELI est illégal à utiliser en assurance",
           correct: false,
-          explanation: "La sélection des risques est un processus sérieux, pas un test de patience !"
-        },
-        {
-          text: "Pour collectionner des informations médicales",
-          correct: false,
-          explanation: "Les informations sont utilisées pour l'évaluation, pas pour une collection !"
-        },
-        {
-          text: "Pour faire travailler les médecins",
-          correct: false,
-          explanation: "Les examens médicaux servent à évaluer le risque, pas à occuper les médecins !"
+          explanation: "Le CELI est tout à fait légal et courant."
         }
       ]
     },
     {
-      question: "Qu'est-ce qu'une note de couverture provisoire ?",
+      question: "📉 Quel est l'effet d’un revenu élevé généré par des placements non enregistrés sur une demande d'assurance maladie ?",
       choices: [
         {
-          text: "Une protection temporaire pendant l'étude du dossier",
+          text: "Il améliore les chances d’obtenir plus de prestations",
+          correct: false,
+          explanation: "Un revenu élevé peut réduire ou éliminer l’admissibilité à certaines prestations."
+        },
+        {
+          text: "Il est sans conséquence fiscale",
+          correct: false,
+          explanation: "Le revenu de placements non enregistrés est imposable."
+        },
+        {
+          text: "Il peut compromettre l'admissibilité à certaines prestations gouvernementales",
           correct: true,
-          explanation: "Elle offre une protection immédiate en attendant la décision finale."
+          explanation: "Exactement. Le revenu imposable peut nuire à l'accès à des programmes conditionnels."
         },
         {
-          text: "Un mot d'excuse pour le retard",
+          text: "Il permet de se qualifier pour une carte de crédit d’assurance",
           correct: false,
-          explanation: "C'est un véritable contrat temporaire, pas une excuse !"
-        },
-        {
-          text: "Une note de musique d'assurance",
-          correct: false,
-          explanation: "La note n'a rien à voir avec la musique !"
-        },
-        {
-          text: "Un bulletin scolaire pour l'assureur",
-          correct: false,
-          explanation: "C'est un document légal, pas une évaluation scolaire !"
+          explanation: "Une invention farfelue… mais non reconnue dans les manuels."
         }
       ]
     },
     {
-      question: "Que doit faire le représentant face aux informations du client ?",
+      question: "📊 Quel produit est le plus adapté pour un client désirant préserver son admissibilité à des prestations en cas de maladie ?",
       choices: [
         {
-          text: "Les transmettre fidèlement sans les modifier",
+          text: "Un compte non enregistré avec des actions à dividende",
+          correct: false,
+          explanation: "Ce compte génère du revenu imposable."
+        },
+        {
+          text: "Un CELI bien structuré",
           correct: true,
-          explanation: "L'intégrité des informations est cruciale pour une bonne évaluation."
+          explanation: "C’est l’outil idéal : flexible, non imposable, sans effet sur les prestations."
         },
         {
-          text: "Les embellir un peu",
+          text: "Un REER utilisé pour des retraits rapides",
           correct: false,
-          explanation: "Modifier les informations est contraire à l'éthique et illégal !"
+          explanation: "Les retraits du REER sont imposables, ce qui peut nuire aux prestations."
         },
         {
-          text: "Les traduire en emoji",
+          text: "Un compte de courtage spéculatif",
           correct: false,
-          explanation: "Les informations doivent rester professionnelles et précises !"
-        },
-        {
-          text: "Les transformer en histoire drôle",
-          correct: false,
-          explanation: "L'évaluation des risques est un processus sérieux !"
+          explanation: "Risque élevé et revenus imposables — ce n’est pas optimal."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'risk-evaluator',
-    title: "L'Évaluateur de Risques",
+    type: 'asset-strategy',
+    title: "💰 L’Arène des Actifs",
     description: `
-      🎮 Devenez l'Évaluateur de Risques dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Analysez les profils de risque
-      - Évaluez les conditions médicales
-      - Déterminez les primes appropriées
-      - Gérez les couvertures provisoires
-      
-      Attention aux déclarations incomplètes et aux risques cachés !
+      🎮 Déployez vos tactiques dans une simulation où chaque actif peut changer l’issue du scénario !
+
+      Mission :
+      - Choisir le bon type de compte (CELI, REER, etc.)
+      - Minimiser l’impact fiscal
+      - Maximiser la préservation des prestations
+
+      Attention : les mauvaises décisions peuvent coûter cher !
     `,
     rewards: {
-      xp: 550,
-      badge: "Maître Évaluateur",
-      title: "Oracle des Risques"
+      xp: 400,
+      badge: "Architecte Financier",
+      title: "Maître des Actifs"
     }
   },
 
   boss: {
-    name: "Le Grand Souscripteur",
-    description: "Un boss méticuleux qui teste votre capacité à évaluer les risques avec précision !",
-    difficulty: 5,
+    name: "🧠 Le Stratège Fiscal",
+    description: "Il vous teste sur la compatibilité entre fiscalité et admissibilité aux prestations. Une erreur ? Et vos actifs fondent comme neige au soleil !",
+    difficulty: 4,
+    quiz: [
+      {
+        question: "Pourquoi les retraits d’un REER doivent-ils être évités durant une période d’invalidité ?",
+        choices: [
+          {
+            text: "Parce qu’ils déclenchent un impôt immédiat et peuvent affecter l’admissibilité aux prestations",
+            correct: true,
+            explanation: "Les retraits augmentent le revenu imposable, ce qui peut faire perdre des prestations."
+          },
+          {
+            text: "Parce qu’ils sont automatiquement refusés par les assureurs",
+            correct: false,
+            explanation: "Non, mais ils peuvent nuire financièrement."
+          },
+          {
+            text: "Parce qu’ils sont gelés jusqu’à la fin de l’invalidité",
+            correct: false,
+            explanation: "Ce n’est pas une restriction légale."
+          },
+          {
+            text: "Parce qu’ils suppriment les primes d’assurance",
+            correct: false,
+            explanation: "Les primes sont liées à la police, pas au compte."
+          }
+        ]
+      },
+      {
+        question: "Quel produit permet de générer des revenus à l’abri de l’impôt sans affecter les prestations ?",
+        choices: [
+          {
+            text: "REER",
+            correct: false,
+            explanation: "Les retraits du REER sont imposables."
+          },
+          {
+            text: "CELI",
+            correct: true,
+            explanation: "Exact ! Les retraits ne comptent pas comme revenus imposables."
+          },
+          {
+            text: "Compte non enregistré",
+            correct: false,
+            explanation: "Les revenus y sont imposables."
+          },
+          {
+            text: "Compte à frais modérés",
+            correct: false,
+            explanation: "Ce type de compte n’est pas défini dans le contexte fiscal."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 950,
-      badge: "Maître du Chapitre 6",
-      title: "Champion de l'Évaluation"
+      xp: 500,
+      badge: "Conquérant des Comptes",
+      title: "Stratège de la Préservation"
     }
   }
 };

@@ -2,128 +2,150 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter4: Chapter = {
   id: 'health-insurance-ch4',
-  title: 'Assurance offrant une protection de l\'épargne',
+  title: 'Les Frontières de la Couverture Médicale',
   summary: `
-    🎮 Agent, bienvenue dans le monde de la protection de l'épargne !
+    🧭 Agent, vous entrez dans la zone grise du système de santé : là où l’assurance publique s’arrête… et où l’assurance privée prend le relais !
 
-    Votre mission : maîtriser l'art de protéger les économies contre les imprévus de santé.
+    Dans ce chapitre, vous allez :
+    - Explorer les limites des régimes publics 🏛️
+    - Découvrir les besoins comblés (ou non) par l’État 📉
+    - Comprendre les solutions complémentaires 💼
+    - Évaluer les stratégies de couverture pour vos clients 🩺
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'assurance maladie complémentaire 💊
-    - L'art de la protection des économies 💰
-    - La magie des avantages fiscaux ✨
-    - Le pouvoir des régimes collectifs 🛡️
-
-    Souvenez-vous : Une épargne bien protégée est une retraite assurée ! 
+    Préparez votre loupe, votre contrat… et votre sens de la nuance !
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi est-il important d'avoir une assurance maladie complémentaire ?",
+      question: "🧠 Pourquoi les régimes publics comme la RAMQ ne suffisent-ils pas toujours à couvrir les besoins médicaux des Québécois ?",
       choices: [
         {
-          text: "Pour éviter d'épuiser son épargne en cas de dépenses médicales imprévues",
+          text: "Parce qu’ils excluent certains soins essentiels comme les soins dentaires, la vue ou les médicaments non couverts",
           correct: true,
-          explanation: "Elle protège vos économies en couvrant les frais médicaux non couverts par le régime public."
+          explanation: "Les régimes publics couvrent principalement les soins hospitaliers et médicaux de base. Beaucoup de dépenses importantes restent à la charge de l’individu."
         },
         {
-          text: "Pour avoir des médicaments gratuits à vie",
+          text: "Parce qu’ils ne couvrent jamais les urgences",
           correct: false,
-          explanation: "L'assurance couvre une partie des frais, elle ne rend pas tout gratuit !"
+          explanation: "Les urgences médicales sont bien couvertes par les régimes publics."
         },
         {
-          text: "Pour faire plaisir à son médecin",
+          text: "Parce qu’ils sont gérés par des extraterrestres bureaucrates",
           correct: false,
-          explanation: "L'assurance est pour votre protection financière, pas pour le plaisir du médecin !"
+          explanation: "C’est tentant, mais non. Les limites sont liées aux politiques et aux ressources provinciales."
         },
         {
-          text: "Pour collectionner des cartes d'assurance",
+          text: "Parce qu’ils changent de nom tous les ans",
           correct: false,
-          explanation: "Les cartes d'assurance ne sont pas des objets de collection !"
+          explanation: "Le nom reste le même, mais les couvertures peuvent varier."
         }
       ]
     },
     {
-      question: "Quelle est la différence entre une franchise et une coassurance ?",
+      question: "💼 Que couvre généralement une assurance complémentaire collective en entreprise ?",
       choices: [
         {
-          text: "La franchise est un montant fixe initial, la coassurance un pourcentage de partage des coûts",
+          text: "Les frais médicaux et paramédicaux non remboursés par le régime public",
           correct: true,
-          explanation: "La franchise se paie d'abord, puis la coassurance s'applique sur le reste."
+          explanation: "Ce type d’assurance comble les lacunes du régime public, incluant médicaments, soins dentaires, psychologues, chiropraticiens, etc."
         },
         {
-          text: "La franchise donne droit à des frites gratuites",
+          text: "Les promotions chez Starbucks",
           correct: false,
-          explanation: "Les franchises d'assurance n'ont rien à voir avec la restauration !"
+          explanation: "Même si ce serait agréable, ce n’est pas une garantie courante."
         },
         {
-          text: "La coassurance est une assurance pour votre cousine",
+          text: "Les factures de restaurants santé",
           correct: false,
-          explanation: "La coassurance est un partage des coûts, pas une assurance familiale !"
+          explanation: "Une saine alimentation est encouragée, mais rarement remboursée."
         },
         {
-          text: "Il n'y a pas de différence, c'est juste pour compliquer les choses",
+          text: "Les voyages en jet privé pour aller à l’hôpital",
           correct: false,
-          explanation: "Chaque terme a un sens précis et important !"
+          explanation: "L’assurance ne finance pas de mode VIP pour les soins !"
         }
       ]
     },
     {
-      question: "Quel est l'avantage fiscal principal d'une assurance maladie collective ?",
+      question: "🔍 Quel est l’intérêt d’une assurance individuelle lorsque le client n’a pas accès à une assurance collective ?",
       choices: [
         {
-          text: "Les primes payées par l'employeur sont un avantage non imposable pour l'employé",
+          text: "Elle permet d’avoir une couverture flexible et adaptée à ses besoins spécifiques",
           correct: true,
-          explanation: "C'est un avantage social qui n'augmente pas votre revenu imposable."
+          explanation: "L’assurance individuelle est personnalisable et essentielle pour ceux qui ne sont pas couverts par un régime d’employeur."
         },
         {
-          text: "Elle transforme les impôts en chocolat",
+          text: "Elle est obligatoire pour pouvoir aller chez le dentiste",
           correct: false,
-          explanation: "Les avantages fiscaux sont financiers, pas alimentaires !"
+          explanation: "Elle n’est pas obligatoire, mais elle permet d’être remboursé."
         },
         {
-          text: "Elle permet d'éviter tous les impôts",
+          text: "Elle donne droit à un abonnement Netflix",
           correct: false,
-          explanation: "L'avantage est spécifique aux primes d'assurance, pas à tous les impôts !"
+          explanation: "Non, ce n’est pas encore un avantage reconnu par les assureurs."
         },
         {
-          text: "Elle donne un bonus au comptable",
+          text: "Elle est offerte gratuitement par le gouvernement",
           correct: false,
-          explanation: "Les avantages fiscaux bénéficient à l'employé, pas au comptable !"
+          explanation: "L’assurance individuelle est payante car elle est souscrite de manière volontaire."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'savings-guardian',
-    title: "Le Gardien de l'Épargne",
+    type: 'coverage-architect',
+    title: "🎯 Le Stratège de la Couverture",
     description: `
-      🎮 Devenez le Gardien de l'Épargne dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Protégez l'épargne de vos clients
-      - Gérez les dépenses médicales
-      - Optimisez les avantages fiscaux
-      - Maximisez la protection financière
-      
-      Attention aux franchises et aux maximums annuels !
+      🧩 Dans ce mini-jeu, vous devrez :
+      - Identifier les zones non couvertes par les régimes publics
+      - Construire des plans d’assurance sur mesure pour différents profils clients
+      - Équilibrer budget, besoins et attentes !
+
+      ⚠️ Attention aux exclusions et aux limites contractuelles !
     `,
     rewards: {
       xp: 450,
-      badge: "Maître de l'Épargne",
-      title: "Protecteur des Économies"
+      badge: "Stratège Médical",
+      title: "Maître de la Complémentarité"
     }
   },
 
   boss: {
-    name: "Le Gardien du Trésor",
-    description: "Un boss redoutable qui teste votre capacité à protéger l'épargne !",
+    name: "👨‍⚖️ Le Juge des Lacunes",
+    description: "Il vous teste sur votre capacité à repérer les trous dans la couverture publique et à les combler intelligemment.",
     difficulty: 4,
+    quiz: [
+      {
+        question: "Quel soin suivant est souvent non couvert par la RAMQ mais pris en charge par une assurance privée ?",
+        choices: [
+          {
+            text: "Les soins dentaires",
+            correct: true,
+            explanation: "Les soins dentaires ne sont généralement pas couverts par la RAMQ sauf situations d’urgence."
+          },
+          {
+            text: "Les consultations médicales régulières",
+            correct: false,
+            explanation: "Celles-ci sont couvertes par le régime public."
+          },
+          {
+            text: "Les chirurgies vitales",
+            correct: false,
+            explanation: "Elles sont toujours couvertes en hôpital."
+          },
+          {
+            text: "Les vaccins contre la grippe saisonnière",
+            correct: false,
+            explanation: "Ces vaccins sont généralement gratuits via le système de santé."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 850,
+      xp: 800,
       badge: "Maître du Chapitre 4",
-      title: "Champion de l'Épargne"
+      title: "Expert en Lacunes Publiques"
     }
   }
 };

@@ -1,154 +1,154 @@
 import { Chapter } from '@/types/chapter';
 
 export const chapter1: Chapter = {
-  id: 'life-insurance-ch1',
-  title: 'La Grande Aventure de la Mortalité',
+  id: 'health-insurance-ch1',
+  title: "⚔️ L'Assaut Invisible : Introduction à l'assurance maladie",
   summary: `
-    🎮 Bienvenue, Agent d'Assurance en formation !
+    🧠 Bienvenue dans la Zone de Risque, Agent !
 
-    Vous entrez dans le royaume périlleux de l’assurance vie, où chaque décision peut sauver un foyer de la ruine !
+    L'assurance maladie n’est pas qu’un contrat, c’est un **bouclier stratégique** contre l’imprévisible.
 
-    Dans ce chapitre, vous découvrirez :
-    - Les ravages financiers du destin 💀
-    - Les contre-attaques magiques des polices d’assurance 🛡️
-    - Les premières techniques des héros du risque 🧙‍♂️
+    Dans ce chapitre, tu vas :
+    - Découvrir **les conséquences financières des maladies** et accidents 📉
+    - Identifier **les types de contrats** qui sauvent des vies (et des portefeuilles) 💸
+    - Déjouer **les pièges de l’imprudence** comme un véritable stratège 🕵️‍♂️
 
-    Préparez-vous à affronter la Faucheuse Financière et à devenir un véritable Gardien de la Stabilité !
+    Prépare-toi à affronter les premières attaques… sans mutuelle, pas de miracle. 😈
   `,
 
   quiz: [
     {
-      question: "🌟 Qu'est-ce qui menace le plus rapidement la stabilité d'une famille après la perte d'un soutien principal ?",
+      question: "🚨 Quelle situation illustre le mieux la nécessité d'une assurance maladie individuelle ?",
       choices: [
         {
-          text: "Une chute brutale du niveau de vie, avec incapacité à couvrir les dépenses essentielles",
+          text: "Un travailleur autonome victime d’un accident en vélo de montagne",
           correct: true,
-          explanation: "La perte de revenu peut entraîner des défauts de paiement, des pertes de logement et une précarité immédiate."
+          explanation: "Sans régime collectif, sa seule protection est une couverture individuelle. Sans elle, il devra puiser dans ses actifs."
         },
         {
-          text: "L’annulation des comptes de streaming",
+          text: "Un étudiant inscrit à la RAMQ avec sa carte soleil",
           correct: false,
-          explanation: "Ce n’est qu’un ajustement mineur, pas un enjeu vital."
+          explanation: "La RAMQ couvre déjà les soins essentiels. Une assurance privée est moins urgente dans ce cas."
         },
         {
-          text: "L'arrêt de la livraison hebdomadaire de sushi",
+          text: "Un retraité vivant paisiblement avec son chat et ses souvenirs",
           correct: false,
-          explanation: "Une perte certes triste, mais loin d’être la plus critique pour la survie financière."
+          explanation: "S’il n’a plus de revenu à protéger, la priorité est moindre (mais pas nulle !)."
         },
         {
-          text: "La fin du luxe pour le chat de la maison",
+          text: "Une personne qui éternue deux fois par an",
           correct: false,
-          explanation: "Minou devra patienter, mais ce n’est pas l’enjeu majeur ici."
+          explanation: "La fréquence des rhumes n’est pas un facteur suffisant pour juger de la nécessité d’une assurance."
         }
       ]
     },
     {
-      question: "🌍 Quelle stratégie de gestion du risque t’empêche de finir accroché à un parachute qui refuse de s’ouvrir ?",
+      question: "🧬 Parmi les protections suivantes, laquelle vise à **rembourser des soins médicaux spécifiques** ?",
       choices: [
         {
-          text: "L’évitement du risque",
+          text: "Assurance frais médicaux",
           correct: true,
-          explanation: "Éviter le saut en parachute, c’est éliminer le risque dès le départ : la stratégie la plus radicale !"
+          explanation: "Elle couvre directement les dépenses médicales admissibles."
         },
         {
-          text: "La méthode YOLO",
+          text: "Assurance invalidité",
           correct: false,
-          explanation: "YOLO est synonyme d'imprudence, pas de stratégie de gestion du risque."
+          explanation: "Elle remplace le revenu en cas d’incapacité, mais ne rembourse pas des frais médicaux."
         },
         {
-          text: "Le camouflage ninja",
+          text: "Assurance vie temporaire",
           correct: false,
-          explanation: "Même un ninja bien caché ne gère pas mieux le risque s’il saute sans plan."
+          explanation: "Elle n’a aucun lien avec les frais médicaux : elle verse un capital au décès."
         },
         {
-          text: "L'attitude autruche",
+          text: "Assurance soins de longue durée",
           correct: false,
-          explanation: "Ignorer un danger ne le fait pas disparaître — au contraire !"
+          explanation: "Elle couvre les besoins en cas de perte d’autonomie, mais pas les frais médicaux immédiats."
         }
       ]
     },
     {
-      question: "💼 Quel est l’impact du décès d’un employé clé dans une entreprise ?",
+      question: "💥 Quelle est la **conséquence immédiate** d’un accident grave non couvert par une assurance ?",
       choices: [
         {
-          text: "La fragilisation de la structure et de la continuité des opérations",
+          text: "Une ponction dans les économies personnelles ou un endettement accru",
           correct: true,
-          explanation: "La disparition d’une personne-clé peut désorganiser toute la production et impacter la croissance."
+          explanation: "Sans assurance, les frais peuvent forcer l’individu à liquider des actifs ou emprunter."
         },
         {
-          text: "La machine à café perd son utilisateur principal",
+          text: "Un avertissement de la RAMQ",
           correct: false,
-          explanation: "La cafetière survivra... mais peut-être pas les affaires."
+          explanation: "La RAMQ ne sanctionne pas les imprévoyants — elle couvre ou ne couvre pas, point."
         },
         {
-          text: "Le bureau devient moins décoré",
+          text: "Un changement de statut civil automatique",
           correct: false,
-          explanation: "L’esthétique est secondaire : les finances passent avant."
+          explanation: "Les accidents ne modifient pas le statut civil."
         },
         {
-          text: "Les mascottes de l’équipe perdent un fan",
+          text: "Une amende de la part de l’assureur",
           correct: false,
-          explanation: "Tant pis pour les peluches, l’entreprise doit surtout rester à flot."
+          explanation: "Ce serait cruel — et illégal !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'risk-manager',
-    title: "🛡️ Le Gestionnaire de Risques",
+    type: 'risk-detection',
+    title: "🧩 Scanner de Risques Médicaux",
     description: `
-      🎮 Mission : protéger une famille contre les dangers de la vie !
+      🚑 Détecte les dangers cachés dans la vie d’un client fictif.
 
-      En tant que Gardien de la Prévoyance, vous devez :
-      - Détecter les risques financiers dans différentes scènes
-      - Choisir les meilleures protections (assurance, prévention, etc.)
-      - Équilibrer budget, protection et imprévus pour survivre à l’année
+      Ta mission :
+      - Repérer les **zones à risque médical et financier**
+      - Proposer une **protection adaptée** à chaque profil
+      - Gagne en XP à chaque bonne décision !
 
-      Bonus : Des événements aléatoires viendront pimenter l’aventure !
+      Attention aux fausses protections et aux exclusions sournoises !
     `,
     rewards: {
-      xp: 100,
-      badge: "Protecteur Novice",
-      title: "Gardien des Polices"
+      xp: 150,
+      badge: "Détecteur de Danger",
+      title: "Agent du Bouclier Médical"
     }
   },
 
   boss: {
-    name: "☠️ Le Faucheur Financier",
-    description: "Un boss redoutable qui attaque votre ignorance sur les impacts financiers du décès. Il apparaît dans une dernière épreuve interactive où chaque bonne réponse lui enlève des points de vie !",
+    name: "👹 L’Imprévisible",
+    description: "Il surgit sans prévenir et attaque les imprévoyants. Seuls ceux qui ont compris la logique des protections peuvent le vaincre.",
     difficulty: 3,
     quiz: [
       {
-        question: "Quel est le rôle principal d'une assurance vie dans une planification successorale ?",
+        question: "🧠 Quel est l’objectif principal de l’assurance maladie privée complémentaire ?",
         choices: [
           {
-            text: "Permettre une distribution équitable de l'héritage",
-            correct: false,
-            explanation: "Ce n'est pas son rôle principal, même si cela peut en faire partie."
-          },
-          {
-            text: "Payer les droits de succession et stabiliser le revenu des survivants",
+            text: "Couvrir ce que la RAMQ ne couvre pas",
             correct: true,
-            explanation: "C’est le but principal : assurer la continuité financière après un décès."
+            explanation: "Exactement ! Elle vient compléter les lacunes du régime public."
           },
           {
-            text: "Offrir un capital pour investir dans l'immobilier",
+            text: "Remplacer la RAMQ dans son ensemble",
             correct: false,
-            explanation: "Ce n’est pas l’objectif principal d’une assurance vie."
+            explanation: "La RAMQ reste obligatoire. L’assurance privée ne la remplace pas."
           },
           {
-            text: "Éviter de rédiger un testament",
+            text: "Fournir un revenu à la retraite",
             correct: false,
-            explanation: "Un testament reste essentiel, assurance vie ou non."
+            explanation: "Ce rôle appartient à l’épargne ou aux rentes, pas à l’assurance maladie."
+          },
+          {
+            text: "Réduire les taxes sur les soins",
+            correct: false,
+            explanation: "Ce n’est pas une fonction directe de cette assurance."
           }
         ]
       }
     ],
     rewards: {
       xp: 500,
-      badge: "Maître du Chapitre 1",
-      title: "Vainqueur du Faucheur"
+      badge: "Maître du Bouclier Médical",
+      title: "Vainqueur de l’Imprévisible"
     }
   }
 };

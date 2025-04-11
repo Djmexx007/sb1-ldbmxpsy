@@ -8,6 +8,8 @@ import { TerminalMode } from './components/TerminalMode';
 import { DailyChallenge } from './components/DailyChallenge';
 import { MiniGames } from './components/MiniGames';
 import { PodcastSection } from './components/PodcastSections';
+import AnimatedXPBar from './components/ui/AnimatedXPBar';
+
 
 interface World {
   id: number;
@@ -108,37 +110,11 @@ function AppContent() {
 
   const handleModeSelect = (modeId: number) => {
     setSelectedMode(modeId);
-    if (modeId === 2) {
-      setShowMiniGames(true);
-      setShowQuiz(false);
-      setShowContent(false);
-      setShowDailyChallenge(false);
-      setShowTerminal(false);
-    } else if (modeId === 1) {
-      setShowContent(true);
-      setShowQuiz(false);
-      setShowMiniGames(false);
-      setShowDailyChallenge(false);
-      setShowTerminal(false);
-    } else if (modeId === 3) {
-      setShowDailyChallenge(true);
-      setShowContent(false);
-      setShowQuiz(false);
-      setShowMiniGames(false);
-      setShowTerminal(false);
-    } else if (modeId === 4) {
-      setShowTerminal(true);
-      setShowDailyChallenge(false);
-      setShowContent(false);
-      setShowQuiz(false);
-      setShowMiniGames(false);
-    } else {
-      setShowQuiz(false);
-      setShowContent(false);
-      setShowMiniGames(false);
-      setShowDailyChallenge(false);
-      setShowTerminal(false);
-    }
+    setShowContent(modeId === 1);
+    setShowMiniGames(modeId === 2);
+    setShowDailyChallenge(modeId === 3);
+    setShowTerminal(modeId === 4);
+    setShowQuiz(false);
   };
 
   const renderContent = () => {
@@ -149,7 +125,6 @@ function AppContent() {
 
     return (
       <>
-        {/* Game Modes */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
             <Swords className="w-6 h-6" />
@@ -164,8 +139,7 @@ function AppContent() {
                   p-6 rounded-xl border-2 transition-all duration-300
                   ${selectedMode === mode.id 
                     ? 'border-green-400 bg-green-900/30' 
-                    : 'border-green-900/50 hover:border-green-700 bg-black/30'
-                  }
+                    : 'border-green-900/50 hover:border-green-700 bg-black/30'}
                   ${!mode.available ? 'opacity-50 cursor-not-allowed' : ''}
                 `}
                 disabled={!mode.available}
@@ -178,10 +152,8 @@ function AppContent() {
           </div>
         </section>
 
-        {/* Podcast Section */}
         <PodcastSection />
 
-        {/* Study Tips */}
         <div className="mt-8 p-4 bg-black/50 border border-green-900/30 rounded-xl">
           <div className="flex items-center gap-2 mb-4">
             <Brain className="w-6 h-6 text-green-400" />
@@ -212,7 +184,6 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-green-400">
-      {/* Header */}
       <header className="border-b border-green-500/30 bg-black/50 backdrop-blur-sm fixed top-0 w-full z-50">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -224,15 +195,14 @@ function AppContent() {
               <Star className="w-4 h-4" />
               <span>Niveau {state.playerLevel}</span>
             </div>
-            <div className="flex items-center gap-1 px-3 py-1 bg-green-900/50 rounded-full text-sm">
+            <div className="flex items-center gap-1 px-3 py-1 bg-green-900/50 rounded-full text-sm w-40">
               <Brain className="w-4 h-4" />
-              <span>{state.playerXP} XP</span>
+              <AnimatedXPBar currentXP={state.playerXP} />
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 pt-20 pb-8">
         {renderContent()}
       </main>

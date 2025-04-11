@@ -2,128 +2,178 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter5: Chapter = {
   id: 'health-insurance-ch5',
-  title: 'Assurance offrant une protection aux entreprises',
+  title: 'Exploration des Obligations Contractuelles',
   summary: `
-    🎮 Agent, bienvenue dans le monde de la protection d'entreprise !
+    📜 Bienvenue dans le donjon administratif des contrats d'assurance !
 
-    Votre mission : maîtriser l'art de protéger les entreprises contre les aléas de la santé.
+    Agent, ta mission est d'apprendre à identifier, interpréter et honorer les obligations entre l'assureur et l'assuré. Car un contrat mal compris, c’est une protection compromise !
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de la protection des frais généraux 💼
-    - L'art de la protection des personnes clés 👥
-    - La magie des conventions de rachat 📜
-    - Le pouvoir des régimes collectifs 🏢
+    Dans ce chapitre :
+    - Tu manieras les définitions comme une épée affûtée ⚔️
+    - Tu découvriras les responsabilités réciproques et leurs conséquences 💼
+    - Tu affronteras les clauses cachées avec sagacité 🔍
 
-    Souvenez-vous : Une entreprise bien protégée est une entreprise qui dure ! 
+    En avant, Gardien de l’Équité Contractuelle !
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi une entreprise devrait-elle souscrire une assurance frais généraux ?",
+      question: "🧾 Quelle est l’obligation première de l’assureur dans un contrat d’assurance ?",
       choices: [
         {
-          text: "Pour couvrir les dépenses fixes pendant l'invalidité du propriétaire",
+          text: "Indemniser l’assuré selon les modalités prévues au contrat",
           correct: true,
-          explanation: "Elle permet de maintenir l'entreprise en activité malgré l'absence du propriétaire."
+          explanation: "C’est l’essence même du contrat d’assurance : fournir une prestation en cas de sinistre admissible."
         },
         {
-          text: "Pour payer les vacances des employés",
+          text: "Contacter l’assuré tous les mois pour prendre des nouvelles",
           correct: false,
-          explanation: "Les frais généraux concernent les dépenses essentielles, pas les extras !"
+          explanation: "La courtoisie n’est pas une obligation légale."
         },
         {
-          text: "Pour acheter une machine à café dernier cri",
+          text: "Proposer un nouveau contrat chaque année",
           correct: false,
-          explanation: "L'assurance couvre les dépenses existantes, pas les nouveaux achats !"
+          explanation: "L’offre est facultative, ce n’est pas une obligation."
         },
         {
-          text: "Pour organiser la fête de Noël",
+          text: "Remplir les formulaires à la place du client",
           correct: false,
-          explanation: "Les événements festifs ne sont pas des frais généraux essentiels !"
+          explanation: "C’est à l’assuré de divulguer l’information requise."
         }
       ]
     },
     {
-      question: "Qu'est-ce qu'une convention de rachat d'actions ?",
+      question: "🧠 Que signifie le devoir de renseignement de l’assuré ?",
       choices: [
         {
-          text: "Un accord prévoyant le rachat des parts d'un propriétaire invalide",
+          text: "L’obligation de répondre honnêtement aux questions de l’assureur",
           correct: true,
-          explanation: "Elle assure la stabilité de l'entreprise et protège la valeur des parts."
+          explanation: "Toute omission ou fausse déclaration peut entraîner la nullité du contrat."
         },
         {
-          text: "Une collection de cartes d'actions rares",
+          text: "Donner son opinion sur les produits d’assurance",
           correct: false,
-          explanation: "Ce n'est pas un jeu de collection, c'est un outil de protection d'entreprise !"
+          explanation: "Ce n’est pas une obligation contractuelle."
         },
         {
-          text: "Un concours de trading entre associés",
+          text: "S’assurer que son agent est sympathique",
           correct: false,
-          explanation: "La convention protège l'entreprise, elle n'organise pas de concours !"
+          explanation: "Le professionnalisme prime, pas la sociabilité."
         },
         {
-          text: "Une fête pour célébrer l'achat d'actions",
+          text: "Notifier l’assureur de ses projets de voyage",
           correct: false,
-          explanation: "C'est un document légal sérieux, pas un événement festif !"
+          explanation: "Sauf clause spécifique, ce n’est pas systématique."
         }
       ]
     },
     {
-      question: "Pourquoi protéger une personne clé dans l'entreprise ?",
+      question: "⚖️ Quelles sont les conséquences d’une fausse déclaration au moment de la souscription ?",
       choices: [
         {
-          text: "Pour compenser la perte financière liée à son absence",
+          text: "L’assureur peut refuser le paiement de la prestation ou annuler le contrat",
           correct: true,
-          explanation: "Certains employés sont essentiels au succès de l'entreprise."
+          explanation: "Cela constitue une violation majeure du contrat."
         },
         {
-          text: "Pour lui offrir une cape de super-héros",
+          text: "Le contrat devient automatiquement un prêt bancaire",
           correct: false,
-          explanation: "La protection est financière, pas vestimentaire !"
+          explanation: "Absolument aucune logique juridique ici."
         },
         {
-          text: "Pour la rendre immortelle",
+          text: "L’assuré gagne une réduction sur ses prochaines primes",
           correct: false,
-          explanation: "L'assurance protège contre les conséquences, pas contre les événements !"
+          explanation: "Au contraire, cela entraîne des conséquences sévères."
         },
         {
-          text: "Pour qu'elle gagne au loto",
+          text: "L’assureur offre une formation sur la transparence",
           correct: false,
-          explanation: "L'assurance n'est pas un jeu de hasard !"
+          explanation: "Les pénalités contractuelles s’appliquent, pas des formations."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'business-protector',
-    title: "Le Protecteur d'Entreprise",
+    type: 'contract-guardian',
+    title: "📝 Gardien des Clauses",
     description: `
-      🎮 Devenez le Protecteur d'Entreprise dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Gérez les risques d'entreprise
-      - Protégez les personnes clés
-      - Structurez les conventions de rachat
-      - Optimisez les régimes collectifs
-      
-      Attention aux imprévus qui peuvent affecter la stabilité de l'entreprise !
+      🎮 Mission : Identifier les obligations essentielles dans différents contrats !
+
+      Agent, à toi de :
+      - Distinguer les responsabilités des parties
+      - Interpréter des extraits contractuels
+      - Éviter les pièges des clauses restrictives
+
+      ⚠️ Attention : chaque mauvaise interprétation peut te faire perdre des points de crédibilité !
     `,
     rewards: {
-      xp: 500,
-      badge: "Maître des Entreprises",
-      title: "Gardien du Commerce"
+      xp: 300,
+      badge: "Déchiffreur de Contrats",
+      title: "Interprète Juridique"
     }
   },
 
   boss: {
-    name: "Le Titan des Affaires",
-    description: "Un boss redoutable qui teste votre maîtrise de la protection d'entreprise !",
-    difficulty: 5,
+    name: "📜 Le Cléarque du Contrat",
+    description: "Ce boss t’interroge sur les subtilités contractuelles. Oublie une obligation, et il en profite pour t’attaquer avec une clause d’exclusion bien placée !",
+    difficulty: 4,
+    quiz: [
+      {
+        question: "Quelle information est obligatoire lors de la souscription d’un contrat d’assurance santé ?",
+        choices: [
+          {
+            text: "Toute information influençant l’évaluation du risque",
+            correct: true,
+            explanation: "Cette transparence est essentielle pour un contrat valide."
+          },
+          {
+            text: "La couleur préférée de l’assuré",
+            correct: false,
+            explanation: "Aucun impact sur l’évaluation du risque."
+          },
+          {
+            text: "Les recettes de grand-maman",
+            correct: false,
+            explanation: "Aucune utilité contractuelle."
+          },
+          {
+            text: "Le code secret du WiFi",
+            correct: false,
+            explanation: "Aucun lien avec le contrat."
+          }
+        ]
+      },
+      {
+        question: "Quel document est émis par l’assureur pour résumer les garanties et conditions ?",
+        choices: [
+          {
+            text: "La proposition d’assurance",
+            correct: false,
+            explanation: "Ce document est rempli par l’assuré."
+          },
+          {
+            text: "La police d’assurance",
+            correct: true,
+            explanation: "C’est le document officiel confirmant le contrat."
+          },
+          {
+            text: "La facture d’honoraires",
+            correct: false,
+            explanation: "Cela ne concerne pas l’assurance."
+          },
+          {
+            text: "La déclaration d’impôts",
+            correct: false,
+            explanation: "Hors contexte !"
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 900,
-      badge: "Maître du Chapitre 5",
-      title: "Champion des Entreprises"
+      xp: 600,
+      badge: "Maître des Obligations",
+      title: "Vainqueur du Cléarque"
     }
   }
 };
