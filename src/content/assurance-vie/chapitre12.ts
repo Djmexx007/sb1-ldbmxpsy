@@ -2,128 +2,151 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter12: Chapter = {
   id: 'life-insurance-ch12',
-  title: 'Suivi et Mise à Jour des Besoins du Client',
+  title: '🏆 L’Examen du Gardien',
   summary: `
-    🎮 Agent, bienvenue au Centre de Suivi Client !
+🎓 Agent, te voilà face au **test ultime** !
 
-    Votre mission : maîtriser l'art du suivi et de la mise à jour des besoins clients.
+Ce chapitre spécial est un condensé de toutes les notions critiques d’assurance vie. Tu devras :
+- Combiner tes connaissances de produits, fiscalité et besoins clients
+- Démasquer les pièges théoriques
+- Réagir comme un vrai conseiller… éthique et stratégique !
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets du suivi client efficace 🔄
-    - L'art de la relation à long terme 🤝
-    - La magie de l'adaptation continue ✨
-    - Le pouvoir de la fidélisation 💫
-
-    Souvenez-vous : Un bon suivi transforme un client en ambassadeur ! 
+🎯 Seul un **Véritable Gardien** franchira cette épreuve sans trébucher.
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi est-il important de faire un suivi régulier avec les clients ?",
+      question: "🔐 Un client veut laisser un capital à ses enfants, mais veut éviter les frais successoraux. Que recommandes-tu ?",
       choices: [
         {
-          text: "Pour s'assurer que leur protection reste adaptée à leur situation changeante",
+          text: "Désigner directement les enfants comme bénéficiaires d’une police d’assurance vie",
           correct: true,
-          explanation: "Les besoins évoluent avec le temps et la protection doit suivre ces changements."
+          explanation: "Cela évite les délais et les frais associés à la succession tout en garantissant une transmission directe."
         },
         {
-          text: "Pour avoir plus de rendez-vous",
+          text: "Mettre l’assurance dans le testament",
           correct: false,
-          explanation: "Le suivi sert à protéger le client, pas à remplir l'agenda !"
+          explanation: "Cela rend la prestation imposable et la soumet aux créanciers potentiels."
         },
         {
-          text: "Pour vendre plus de produits",
+          text: "Ouvrir un compte épargne à son nom",
           correct: false,
-          explanation: "L'objectif est d'assurer une protection adéquate, pas de maximiser les ventes !"
+          explanation: "Les comptes bancaires ne sont pas à l’abri des frais successoraux."
         },
         {
-          text: "Pour respecter une règle administrative",
+          text: "Faire un don à son chat",
           correct: false,
-          explanation: "Le suivi est une responsabilité professionnelle, pas une formalité !"
+          explanation: "Les animaux ne peuvent pas être bénéficiaires légaux !"
         }
       ]
     },
     {
-      question: "Quand devrait-on effectuer un suivi avec un client ?",
+      question: "📉 Quelle action devrait déclencher une révision immédiate de la protection d’assurance vie d’un client ?",
       choices: [
         {
-          text: "Après des changements importants dans sa vie et au moins une fois par an",
+          text: "Un changement majeur dans sa situation personnelle ou financière",
           correct: true,
-          explanation: "Les événements de vie et une révision annuelle sont des moments clés pour le suivi."
+          explanation: "Nouveau mariage, enfant, emploi, entreprise… tout cela impacte les besoins de couverture."
         },
         {
-          text: "Uniquement quand il y a un nouveau produit",
+          text: "Un changement de coiffure",
           correct: false,
-          explanation: "Le suivi ne dépend pas des nouveaux produits mais des besoins du client !"
+          explanation: "Pas d’effet sur les risques assurables (sauf si c’est une coupe vraiment risquée ? 😅)"
         },
         {
-          text: "Seulement en cas de réclamation",
+          text: "La signature d’un bail",
           correct: false,
-          explanation: "Le suivi doit être proactif, pas réactif !"
+          explanation: "À moins d’une hypothèque, cela ne change pas grand-chose."
         },
         {
-          text: "Quand on s'ennuie au bureau",
+          text: "Une envie de changer de conseiller",
           correct: false,
-          explanation: "Le suivi est une responsabilité professionnelle sérieuse !"
+          explanation: "La police peut continuer malgré le changement de représentant."
         }
       ]
     },
     {
-      question: "Que doit-on vérifier lors d'un suivi client ?",
+      question: "⚖️ Quel est **le risque le plus fréquent** dans une désignation de bénéficiaire mal réfléchie ?",
       choices: [
         {
-          text: "La pertinence de la couverture, les bénéficiaires et les changements de situation",
+          text: "Qu’un ex-conjoint reçoive la prestation par erreur",
           correct: true,
-          explanation: "Un suivi complet examine tous les aspects de la protection du client."
+          explanation: "Les bénéficiaires doivent être revus régulièrement pour éviter les erreurs involontaires et les conflits."
         },
         {
-          text: "Uniquement le montant des primes",
+          text: "Que le notaire doive intervenir en costume",
           correct: false,
-          explanation: "Le coût n'est qu'un aspect parmi d'autres à vérifier !"
+          explanation: "Le code vestimentaire du notaire ne change rien au dossier."
         },
         {
-          text: "Si le client a changé de couleur préférée",
+          text: "Que l’assurance prenne feu",
           correct: false,
-          explanation: "Le suivi se concentre sur les éléments pertinents à la protection !"
+          explanation: "Une police n’est pas inflammable, heureusement !"
         },
         {
-          text: "Le nombre de likes sur ses réseaux sociaux",
+          text: "Que les héritiers se perdent en forêt",
           correct: false,
-          explanation: "Les réseaux sociaux ne sont pas pertinents pour évaluer les besoins d'assurance !"
+          explanation: "Même dans un conte de fées, ce n’est pas très probable..."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'client-guardian',
-    title: "Le Gardien des Clients",
+    type: 'final-challenge',
+    title: "🏁 Le Défi du Maître",
     description: `
-      🎮 Devenez le Gardien des Clients dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Gérez un portefeuille de clients
-      - Identifiez les moments clés pour le suivi
-      - Adaptez les protections selon les besoins
-      - Maintenez des relations durables
-      
-      Attention aux changements de situation et aux besoins non identifiés !
+🎮 Dans ce mini-jeu final, tu reçois plusieurs profils clients avec des défis croisés :
+
+- Besoins changeants
+- Budget limité
+- Objectifs contradictoires
+- Fiscalité à optimiser
+
+Sauras-tu recommander **la bonne couverture au bon moment** ?
     `,
     rewards: {
-      xp: 850,
-      badge: "Maître du Suivi",
-      title: "Gardien des Relations"
+      xp: 1000,
+      badge: "Gardien d'Or",
+      title: "Diplômé de l’OCRA"
     }
   },
 
   boss: {
-    name: "Le Sage des Relations",
-    description: "Un boss redoutable qui teste votre capacité à maintenir des relations clients durables !",
+    name: "🧠 Le Casseur de Logique",
+    description: "Il attaque les failles dans ton raisonnement. Il adore les recommandations bancales, les oublis fiscaux et les clauses contradictoires.",
     difficulty: 5,
+    quiz: [
+      {
+        question: "⚔️ Quelle recommandation serait jugée non conforme au devoir de conseil ?",
+        choices: [
+          {
+            text: "Suggérer une assurance vie sans avoir évalué les protections déjà existantes",
+            correct: true,
+            explanation: "Tu dois toujours analyser d’abord. Recommander sans analyser, c’est un manquement grave."
+          },
+          {
+            text: "Proposer un montant raisonnable selon les objectifs",
+            correct: false,
+            explanation: "C’est exactement ce qu’il faut faire !"
+          },
+          {
+            text: "Réviser une protection après un mariage",
+            correct: false,
+            explanation: "Parfaitement logique. Le besoin change avec les événements de vie."
+          },
+          {
+            text: "Recommander une assurance temporaire pour un besoin de 10 ans",
+            correct: false,
+            explanation: "C’est un bon réflexe. La durée du besoin = la durée du produit."
+          }
+        ]
+      }
+    ],
     rewards: {
       xp: 1500,
-      badge: "Maître du Chapitre 12",
-      title: "Champion du Suivi Client"
+      badge: "Érudit Finaliste",
+      title: "Légende de l’Assurance Vie"
     }
   }
 };

@@ -2,128 +2,152 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter8: Chapter = {
   id: 'life-insurance-ch8',
-  title: 'Assurance Vie en Entreprise',
+  title: '🏛️ Héritiers & Légendes',
   summary: `
-    🎮 Agent, bienvenue dans le monde stratégique de l'assurance vie corporative !
+📜 Agent, te voici maintenant Maître de l’Héritage !
 
-    Votre mission : maîtriser l'art de protéger les entreprises et leurs acteurs clés.
+L’assurance vie n’est pas qu’un outil de protection… c’est une **clé de transmission** pour construire un **patrimoine intergénérationnel**.
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'assurance personne clé 👥
-    - L'art des conventions de rachat 📜
-    - La magie de la protection d'entreprise 🏢
-    - Le pouvoir des stratégies corporatives ⚡
+Dans ce chapitre, tu apprendras à :
+- Utiliser la police comme un levier de planification successorale
+- Structurer les bénéficiaires pour éviter les pièges légaux et fiscaux
+- Préserver la paix familiale (et éviter la guerre des héritiers !)
 
-    Souvenez-vous : Une entreprise bien protégée est une entreprise qui prospère ! 
+🔐 Prépare-toi à écrire l’histoire d’un héritage sans faille.
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi une entreprise devrait-elle souscrire une assurance sur une personne clé ?",
+      question: "🧠 Quel est **l’avantage principal** d’une assurance vie dans une stratégie successorale ?",
       choices: [
         {
-          text: "Pour compenser la perte financière liée au décès d'un employé essentiel",
+          text: "Elle permet un transfert rapide et non imposable des capitaux",
           correct: true,
-          explanation: "L'assurance personne clé protège l'entreprise contre la perte d'un élément crucial."
+          explanation: "C’est la raison pour laquelle elle est si utilisée : efficacité, rapidité, fiscalité avantageuse."
         },
         {
-          text: "Pour organiser de meilleures fêtes de bureau",
+          text: "Elle remplace un testament notarié",
           correct: false,
-          explanation: "L'assurance sert à protéger l'entreprise, pas à financer des événements sociaux !"
+          explanation: "Faux. Le testament reste crucial même avec une bonne planification assurantielle."
         },
         {
-          text: "Pour avoir un meilleur classement boursier",
+          text: "Elle permet de tout transmettre à son animal de compagnie",
           correct: false,
-          explanation: "L'assurance protège contre les risques, elle n'influence pas directement la cote boursière !"
+          explanation: "Les animaux ne peuvent pas être bénéficiaires directs légalement."
         },
         {
-          text: "Pour impressionner les concurrents",
+          text: "Elle efface les dettes du défunt automatiquement",
           correct: false,
-          explanation: "L'assurance est un outil de protection, pas de prestige !"
+          explanation: "Elle peut y contribuer… mais pas les annuler magiquement."
         }
       ]
     },
     {
-      question: "Quel est le but principal d'une convention de rachat financée par l'assurance ?",
+      question: "📁 Pourquoi est-il **essentiel** de désigner un bénéficiaire dans une police d’assurance vie ?",
       choices: [
         {
-          text: "Permettre aux actionnaires survivants de racheter les parts d'un actionnaire décédé",
+          text: "Pour éviter que la prestation passe par la succession",
           correct: true,
-          explanation: "La convention assure une transition harmonieuse de la propriété de l'entreprise."
+          explanation: "Cela permet d’éviter les délais, les frais et les complications fiscales."
         },
         {
-          text: "Organiser des ventes aux enchères d'actions",
+          text: "Parce que la loi l’oblige",
           correct: false,
-          explanation: "La convention est un outil de planification successorale, pas une vente aux enchères !"
+          explanation: "La loi le permet, mais ce n’est pas une obligation. C’est une stratégie judicieuse."
         },
         {
-          text: "Créer un club d'investissement exclusif",
+          text: "Parce que c’est plus stylé",
           correct: false,
-          explanation: "C'est un outil de protection d'entreprise, pas un club social !"
+          explanation: "C’est stylé… mais surtout efficace fiscalement."
         },
         {
-          text: "Spéculer sur le marché boursier",
+          text: "Pour bloquer un héritier spécifique",
           correct: false,
-          explanation: "La convention sert à la continuité de l'entreprise, pas à la spéculation !"
+          explanation: "Ce n’est pas son objectif, même si cela peut influencer la répartition."
         }
       ]
     },
     {
-      question: "Comment l'assurance vie peut-elle aider à rembourser une dette commerciale ?",
+      question: "⚖️ Que peut-il se passer si aucun bénéficiaire n’est désigné ?",
       choices: [
         {
-          text: "En fournissant le capital nécessaire au remboursement si le dirigeant décède",
+          text: "La prestation entre dans la succession et devient potentiellement imposable",
           correct: true,
-          explanation: "L'assurance garantit le remboursement de la dette même en cas de décès."
+          explanation: "Elle perd son avantage fiscal et risque d’être soumise aux dettes et aux délais."
         },
         {
-          text: "En transformant la dette en actions",
+          text: "La prestation est automatiquement reversée à l’État",
           correct: false,
-          explanation: "L'assurance rembourse la dette, elle ne la transforme pas !"
+          explanation: "Pas immédiatement. Mais sans héritier et sans testament, ça peut y mener à long terme."
         },
         {
-          text: "En faisant disparaître magiquement la dette",
+          text: "Elle est convertie en don à une fondation au hasard",
           correct: false,
-          explanation: "L'assurance fournit les fonds pour le remboursement, elle n'efface pas la dette !"
+          explanation: "Les assureurs ne prennent pas ce genre de décisions."
         },
         {
-          text: "En négociant avec les extraterrestres",
+          text: "Elle reste bloquée 100 ans",
           correct: false,
-          explanation: "L'assurance est un outil financier sérieux, pas de la science-fiction !"
+          explanation: "Pas besoin d’attendre un siècle… mais la succession prend du temps !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'corporate-guardian',
-    title: "Le Gardien Corporatif",
+    type: 'legacy-strategist',
+    title: "📚 Le Stratège de l’Héritage",
     description: `
-      🎮 Devenez le Gardien Corporatif dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Protégez les personnes clés
-      - Structurez les conventions de rachat
-      - Gérez les dettes commerciales
-      - Optimisez la protection d'entreprise
-      
-      Attention aux risques corporatifs et aux transitions d'entreprise !
+🎮 Dans ce mini-jeu de simulation patrimoniale, tu devras :
+
+- Structurer des polices d’assurance vie pour différents clients
+- Choisir les bons bénéficiaires
+- Minimiser les conflits, les impôts, et maximiser la paix familiale
+
+Chaque erreur peut mener à un désastre notarial...
     `,
     rewards: {
       xp: 650,
-      badge: "Maître Corporatif",
-      title: "Gardien des Entreprises"
+      badge: "Architecte Successoral",
+      title: "Gardien des Héritiers"
     }
   },
 
   boss: {
-    name: "Le Titan du Commerce",
-    description: "Un boss redoutable qui teste votre maîtrise de l'assurance vie en entreprise !",
+    name: "⚔️ Le Conflit Successoral",
+    description: "Ce boss surgit quand un héritage est mal préparé. Il adore les erreurs de bénéficiaires et les familles fâchées.",
     difficulty: 5,
+    quiz: [
+      {
+        question: "👀 Quel est le **risque majeur** d’un bénéficiaire non mis à jour après un divorce ?",
+        choices: [
+          {
+            text: "Que l’ex-conjoint reçoive la prestation malgré une nouvelle union",
+            correct: true,
+            explanation: "C’est une des erreurs les plus fréquentes… et les plus douloureuses pour la famille actuelle."
+          },
+          {
+            text: "Que l’assurance se transforme en abonnement télé",
+            correct: false,
+            explanation: "Fantasme administratif non fondé 😅"
+          },
+          {
+            text: "Que l’enfant du nouveau couple perde son droit de jeu vidéo",
+            correct: false,
+            explanation: "Les consoles ne sont pas gérées par les contrats d’assurance !"
+          },
+          {
+            text: "Que le testament explose",
+            correct: false,
+            explanation: "Le testament n’explose pas… mais il risque d’être contesté !"
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 1100,
-      badge: "Maître du Chapitre 8",
-      title: "Champion Corporatif"
+      xp: 1000,
+      badge: "Protecteur des Familles",
+      title: "Maître des Successions"
     }
   }
 };

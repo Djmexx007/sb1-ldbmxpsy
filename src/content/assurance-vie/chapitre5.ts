@@ -2,128 +2,152 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter5: Chapter = {
   id: 'life-insurance-ch5',
-  title: 'Les Power-Ups de l\'Assurance',
+  title: "🎯 Les Power-Ups de la Protection",
   summary: `
-    🎮 Agent, bienvenue dans l'arsenal des avenants !
+🛠️ Agent, bienvenue dans l’atelier secret des avenants !
 
-    Découvrez comment transformer une simple police d'assurance en un super-héros de la protection financière !
+Ta mission ? Maîtriser l’art de modifier et d’amplifier une police d’assurance vie grâce aux garanties supplémentaires.
 
-    Dans ce chapitre, vous explorerez :
-    - La collection d'add-ons qui boostent vos polices 🎯
-    - Les super-pouvoirs cachés des garanties complémentaires 💪
-    - L'art de personnaliser la protection comme un pro 🛠️
-    - Les combos secrets pour une protection maximale 🔄
+Dans ce chapitre, tu apprendras :
+- À personnaliser une couverture comme un vrai architecte du risque
+- À transformer une simple police en armure de niveau légendaire
+- À composer des combos d’avenants dignes d’un RPG stratégique
 
-    Souvenez-vous : Un avenant bien choisi peut faire toute la différence ! 
-  `,
-  
+Prêt à booster ta protection ? 💪
+`,
+
   quiz: [
     {
-      question: "Qu'est-ce qu'un avenant en assurance vie ?",
+      question: "🧩 Qu’est-ce qu’un avenant en assurance vie ?",
       choices: [
         {
-          text: "Une option facultative qu'on peut ajouter à une police pour l'adapter aux besoins",
+          text: "Une option facultative qu’on ajoute à une police pour l’adapter",
           correct: true,
-          explanation: "Exactement ! C'est comme un DLC pour votre police d'assurance."
+          explanation: "C’est comme un module additionnel : l’avenant permet d’ajuster la couverture selon les besoins précis du client."
         },
         {
-          text: "Un petit oiseau qui apporte les polices d'assurance",
+          text: "Un formulaire de résiliation",
           correct: false,
-          explanation: "Les polices sont livrées par courrier, pas par des oiseaux !"
+          explanation: "L’avenant modifie ou améliore la police, il ne la termine pas."
         },
         {
-          text: "Une danse traditionnelle des assureurs",
+          text: "Un contrat séparé à souscrire en parallèle",
           correct: false,
-          explanation: "Les assureurs dansent peut-être, mais ce n'est pas ça un avenant !"
+          explanation: "Il est rattaché à une police principale, ce n’est pas un produit autonome."
         },
         {
-          text: "Un rituel secret pour invoquer un remboursement",
+          text: "Une clause d’exclusion déguisée",
           correct: false,
-          explanation: "Pas besoin de rituels, juste d'une bonne planification !"
+          explanation: "Au contraire, c’est souvent une extension, pas une réduction !"
         }
       ]
     },
     {
-      question: "Quel avenant double la prestation en cas de décès accidentel ?",
+      question: "💥 Quel avenant permet de doubler la prestation si le décès est accidentel ?",
       choices: [
         {
-          text: "L'avenant en cas de décès accidentel",
+          text: "L’avenant décès accidentel",
           correct: true,
-          explanation: "C'est exact ! Il double la mise si le décès est accidentel."
+          explanation: "Exact ! Il double la prestation de base si le décès est causé par un accident, selon les conditions prévues."
         },
         {
-          text: "L'avenant Doubleur Magique",
+          text: "L’avenant « SuperChance »",
           correct: false,
-          explanation: "La magie n'a rien à voir avec les avenants !"
+          explanation: "Ce n’est pas un jeu de hasard, mais un contrat d’assurance bien précis."
         },
         {
-          text: "L'avenant Coup de Chance",
+          text: "L’option turbo vie entière",
           correct: false,
-          explanation: "Un décès accidentel n'est jamais une chance..."
+          explanation: "Inventive, mais pas réelle !"
         },
         {
-          text: "L'avenant 2x Combo",
+          text: "L’avenant prévoyance extrême",
           correct: false,
-          explanation: "Ce n'est pas un jeu vidéo, même si ça y ressemble parfois !"
+          explanation: "Aucun avenant ne porte ce nom (même s’il sonne bien)."
         }
       ]
     },
     {
-      question: "Pourquoi utiliser des avenants plutôt que plusieurs polices séparées ?",
+      question: "🧠 Pourquoi est-il important de bien choisir ses avenants ?",
       choices: [
         {
-          text: "Pour optimiser les coûts et simplifier la gestion",
+          text: "Parce qu’ils peuvent adapter précisément la couverture à la réalité du client",
           correct: true,
-          explanation: "Bravo ! C'est plus efficace et souvent moins cher."
+          explanation: "Chaque avenant cible un besoin spécifique : invalidité, maladies graves, enfants assurés, etc."
         },
         {
-          text: "Pour impressionner ses amis avec un gros contrat",
+          text: "Parce qu’ils sont gratuits et donc utiles à tout prix",
           correct: false,
-          explanation: "La taille du contrat n'impressionne que les juristes !"
+          explanation: "Faux ! Ils entraînent souvent un coût supplémentaire."
         },
         {
-          text: "Pour faire travailler plus les arbres",
+          text: "Parce qu’ils remplacent le testament",
           correct: false,
-          explanation: "Au contraire, ça utilise moins de papier !"
+          explanation: "Aucun avenant ne remplace les documents juridiques de succession."
         },
         {
-          text: "Pour battre le record du monde du plus grand nombre d'avenants",
+          text: "Parce qu’ils garantissent une rentabilité assurée",
           correct: false,
-          explanation: "Ce record n'existe pas, et ce ne serait pas très utile !"
+          explanation: "Les avenants ne sont pas des produits d’investissement !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'avenant-master',
-    title: "Le Maître des Avenants",
+    type: 'rider-builder',
+    title: "🧱 L’Atelier des Avenants",
     description: `
-      🎮 Devenez le Maître des Avenants dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Composez la police parfaite pour chaque client
-      - Combinez les avenants de manière optimale
-      - Gérez votre budget de protection
-      - Évitez la sur-assurance
-      
-      Attention aux besoins changeants de vos clients !
+🎮 Crée la couverture d’assurance ultime en combinant plusieurs avenants :
+
+- Analyse les besoins du client (famille, revenu, risques)
+- Choisis les avenants appropriés (accident, invalidité, maladie grave, enfants, etc.)
+- Respecte le budget sans trop alourdir la prime
+
+Fais les bons choix, ou la police deviendra une armure pleine de trous !
     `,
     rewards: {
-      xp: 300,
-      badge: "Maître des Add-ons",
-      title: "Architecte des Garanties"
+      xp: 400,
+      badge: "Forgeur de Polices",
+      title: "Maître des Avenants"
     }
   },
 
   boss: {
-    name: "Le Collectionneur d'Avenants",
-    description: "Un boss obsédé par la perfection qui teste votre maîtrise des garanties complémentaires !",
+    name: "🧟‍♂️ L’Avenant Maudit",
+    description: "Ce boss surgit lorsqu’on choisit mal ses protections… et il adore exploiter les oublis de garanties !",
     difficulty: 4,
+    quiz: [
+      {
+        question: "🎓 Quelle erreur un conseiller doit-il absolument éviter avec les avenants ?",
+        choices: [
+          {
+            text: "Oublier d’expliquer leurs limites et exclusions",
+            correct: true,
+            explanation: "Un client mal informé pourrait croire être protégé… alors que ce n’est pas le cas. Et ça finit souvent au tribunal !"
+          },
+          {
+            text: "Ne pas offrir d’avenant pour les clients célibataires",
+            correct: false,
+            explanation: "Le statut marital ne détermine pas l’utilité d’un avenant."
+          },
+          {
+            text: "Ne jamais les combiner",
+            correct: false,
+            explanation: "Ils sont faits pour être combinés de façon stratégique !"
+          },
+          {
+            text: "Refuser tout avenant avant 40 ans",
+            correct: false,
+            explanation: "C’est l’analyse des besoins qui guide, pas l’âge en soi."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 750,
-      badge: "Maître du Chapitre 5",
-      title: "Champion des Avenants"
+      xp: 700,
+      badge: "Chasseur d’Omissions",
+      title: "Protecteur Absolu"
     }
   }
 };

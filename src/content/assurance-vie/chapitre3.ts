@@ -2,128 +2,151 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter3: Chapter = {
   id: 'life-insurance-ch3',
-  title: 'Les Gardiens de l\'Éternité',
+  title: "📜 Les Gardiens de l'Éternité",
   summary: `
-    🎮 Agent, bienvenue dans le royaume de l'assurance vie permanente !
+🌟 Agent, bienvenue dans le monde intemporel de l’assurance vie permanente !
 
-    Préparez-vous à découvrir le monde fascinant où les polices ne meurent jamais (tant que vous payez vos primes) !
+Dans cette mission, vous apprendrez à manier les polices éternelles comme un véritable stratège du patrimoine. Vous croiserez :
+- Des valeurs de rachat mystérieuses 💰
+- Des participations qui font fructifier vos contrats 📈
+- Des polices hybrides, mi-temporaire, mi-permanente 🤖
 
-    Dans ce chapitre, vous explorerez :
-    - Le combat épique : Temporaire VS Permanente ⚔️
-    - Les trésors cachés appelés "valeurs de rachat" 💎
-    - Le mystérieux T-100, l'hybride qui défie le temps 🕰️
-    - Les participations secrètes qui font grossir votre police 🌱
-
-    Souvenez-vous : Dans le monde de l'assurance permanente, la patience est votre meilleure alliée ! 
+Rappelez-vous : dans le royaume de la permanence, l’endurance est une vertu, et le long terme, une récompense.
   `,
-  
+
   quiz: [
     {
-      question: "Quelle est la principale différence entre l'assurance temporaire et permanente ?",
+      question: "⚖️ Quelle est la principale différence entre l'assurance temporaire et l'assurance permanente ?",
       choices: [
         {
-          text: "L'assurance permanente offre une couverture à vie avec valeur de rachat",
+          text: "L’assurance permanente couvre toute la vie et inclut une valeur de rachat",
           correct: true,
-          explanation: "Exactement ! C'est la caractéristique fondamentale qui distingue ces deux types d'assurance."
+          explanation: "C’est LA grande différence. La permanente protège à vie et accumule de la valeur."
         },
         {
-          text: "L'assurance permanente inclut un abonnement Netflix gratuit",
+          text: "L’assurance permanente offre un abonnement à vie à une salle de gym",
           correct: false,
-          explanation: "Les assureurs sont généreux, mais pas à ce point !"
+          explanation: "Ce serait bien, mais non. L’avantage est plutôt financier que musculaire."
         },
         {
-          text: "L'assurance permanente vous rend immortel",
+          text: "L’assurance temporaire est illégale au-delà de 65 ans",
           correct: false,
-          explanation: "Si seulement c'était possible..."
+          explanation: "Faux. Elle est disponible à tout âge tant que l’assureur l’accepte."
         },
         {
-          text: "L'assurance permanente est écrite avec une encre qui ne s'efface jamais",
+          text: "La permanente est une police rédigée en latin ancien",
           correct: false,
-          explanation: "La permanence concerne la durée de la couverture, pas le support physique !"
+          explanation: "Le langage peut être technique, mais il est tout à fait moderne !"
         }
       ]
     },
     {
-      question: "Que peut faire un assuré avec les participations de sa police ?",
+      question: "📈 Que peut faire un assuré avec les participations générées par une assurance vie avec participation ?",
       choices: [
         {
-          text: "Les encaisser, réduire ses primes, capitaliser ou acheter plus d'assurance",
+          text: "Les encaisser, réduire la prime, capitaliser ou acheter de l’assurance supplémentaire",
           correct: true,
-          explanation: "Bravo ! Ce sont les quatre options principales pour utiliser les participations."
+          explanation: "Ce sont les 4 usages classiques. Le client peut même en combiner certains selon les contrats."
         },
         {
-          text: "Les échanger contre des cartes Pokémon",
+          text: "Les convertir en cartes cadeaux Amazon",
           correct: false,
-          explanation: "Même si certaines cartes Pokémon valent cher, ce n'est pas une option !"
+          explanation: "Les assureurs sont modernes… mais pas à ce point !"
         },
         {
-          text: "Les utiliser comme monnaie au casino",
+          text: "Les transférer sur sa carte de crédit",
           correct: false,
-          explanation: "Les participations ne sont pas des jetons de casino !"
+          explanation: "Ce n’est pas un programme de récompenses bancaires."
         },
         {
-          text: "Les donner à son voisin préféré",
+          text: "Les offrir à son conseiller comme pourboire",
           correct: false,
-          explanation: "Les participations sont liées à votre police et ne sont pas transférables ainsi."
+          explanation: "Généreux… mais illégal !"
         }
       ]
     },
     {
-      question: "Qu'est-ce qui caractérise l'assurance vie T-100 ?",
+      question: "🔄 Qu’est-ce qu’une police combinée temporaire/permanente (T-100 hybride) ?",
       choices: [
         {
-          text: "Couverture jusqu'à 100 ans avec primes fixes mais sans valeur de rachat",
+          text: "Une assurance qui commence temporaire et devient permanente automatiquement",
           correct: true,
-          explanation: "C'est exact ! C'est un hybride entre la temporaire et la permanente."
+          explanation: "Exact ! Elle combine les deux types de protection, souvent pour maximiser la couverture dans le temps."
         },
         {
-          text: "Elle vous garantit de vivre jusqu'à 100 ans",
+          text: "Une assurance qui protège contre les robots",
           correct: false,
-          explanation: "L'assurance prolonge la protection, pas la vie !"
+          explanation: "Pas encore de couverture anti-cyborg, désolé."
         },
         {
-          text: "Elle coûte exactement 100 dollars par mois",
+          text: "Une assurance temporaire qui se régénère chaque année",
           correct: false,
-          explanation: "Le prix varie selon plusieurs facteurs, ce n'est pas fixé à 100$ !"
+          explanation: "Tu confonds avec la renouvelable annuelle."
         },
         {
-          text: "Elle vous donne 100 vies comme dans les jeux vidéo",
+          text: "Un concept inventé dans Terminator 2",
           correct: false,
-          explanation: "Malheureusement, nous ne sommes pas dans un jeu vidéo !"
+          explanation: "Le nom peut prêter à confusion, mais cette police est bien réelle !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'value-builder',
-    title: "L'Architecte des Valeurs",
+    type: 'permanent-builder',
+    title: "🏗️ L’Architecte de la Permanence",
     description: `
-      🎮 Devenez l'Architecte des Valeurs dans ce mini-jeu stratégique !
-      
-      Votre mission :
-      - Gérez une police d'assurance vie entière
-      - Optimisez l'utilisation des participations
-      - Construisez la valeur de rachat
-      - Équilibrez protection et accumulation
-      
-      Attention aux fluctuations du marché qui peuvent affecter vos participations !
+🎮 Construisez la meilleure stratégie patrimoniale à long terme :
+
+- Combinez différents types de polices
+- Gérez vos participations avec stratégie
+- Choisissez quand convertir ou racheter
+- Maximisez la valeur pour la succession
+
+Chaque décision compte… et un petit faux pas peut coûter cher (à vos héritiers).
     `,
     rewards: {
-      xp: 200,
-      badge: "Maître de la Permanence",
-      title: "Architecte de l'Éternité"
+      xp: 300,
+      badge: "Bâtisseur Éternel",
+      title: "Maître du Patrimoine"
     }
   },
 
   boss: {
-    name: "L'Éternel Gardien",
-    description: "Un boss immortel qui teste votre compréhension des assurances permanentes !",
+    name: "👑 Le Gardien de la Valeur",
+    description: "Un boss patient… mais impitoyable. Il teste vos connaissances sur les valeurs de rachat, les participations et les stratégies de long terme.",
     difficulty: 4,
+    quiz: [
+      {
+        question: "🧠 Pourquoi les valeurs de rachat peuvent-elles jouer un rôle clé dans une stratégie financière ?",
+        choices: [
+          {
+            text: "Elles représentent un actif accessible, utilisable en cas de besoin ou de stratégie planifiée",
+            correct: true,
+            explanation: "Exact. Elles permettent d’emprunter, de racheter ou d’ajuster la couverture."
+          },
+          {
+            text: "Elles permettent de devenir actionnaire de l’assureur",
+            correct: false,
+            explanation: "Non, mais vous pouvez bénéficier des profits si la police est participative."
+          },
+          {
+            text: "Elles réduisent automatiquement les impôts",
+            correct: false,
+            explanation: "Non. Elles peuvent avoir un impact fiscal… mais ce n’est pas toujours positif !"
+          },
+          {
+            text: "Elles garantissent un revenu à vie",
+            correct: false,
+            explanation: "Seules certaines rentes ou options permettent cela, pas la valeur de rachat en elle-même."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 700,
-      badge: "Maître du Chapitre 3",
-      title: "Champion de l'Éternité"
+      xp: 800,
+      badge: "Gardien de la Valeur",
+      title: "Stratège Éternel"
     }
   }
 };

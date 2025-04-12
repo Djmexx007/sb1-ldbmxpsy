@@ -2,127 +2,149 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter2: Chapter = {
   id: 'life-insurance-ch2',
-  title: 'Les Chroniques Temporaires',
+  title: '⏳ Les Chroniques Temporaires',
   summary: `
-    🎮 Agent, votre nouvelle mission vous attend !
+🕵️‍♂️ Agent, votre nouvelle mission est une course contre le temps !
 
-    Plongez dans le monde fascinant de l'assurance vie temporaire, où le temps est votre meilleur allié... ou votre pire ennemi !
+Dans ce chapitre, vous apprendrez :
+- À manier les polices d’assurance temporaire comme des gadgets d’espion
+- Quand la protection s’active (ou disparaît) pile au bon moment
+- À choisir la bonne stratégie pour couvrir les risques sans ruiner votre client
 
-    Dans ce chapitre, vous découvrirez :
-    - Comment jouer avec le temps sans être Doctor Strange 🕰️
-    - Les secrets des polices qui disparaissent comme des messages d'espion 📜
-    - L'art de protéger les gens sans vider leur compte en banque 💰
+Rappelez-vous : l’assurance temporaire est comme un extincteur — inutile… jusqu’à ce qu’elle devienne vitale !
+`,
 
-    Souvenez-vous : Une assurance temporaire, c'est comme un parachute - mieux vaut l'avoir et ne pas en avoir besoin, que l'inverse ! 
-  `,
-  
   quiz: [
     {
-      question: "Qu'arrive-t-il à la fin de la période d'une assurance vie temporaire si l'assuré est toujours vivant ?",
+      question: "⏱ Que se passe-t-il si l’assuré survit à la fin de sa période d’assurance vie temporaire ?",
       choices: [
         {
-          text: "Aucun paiement n'est effectué",
+          text: "Aucun montant n’est versé",
           correct: true,
-          explanation: "C'est exact ! L'assurance temporaire ne verse une prestation qu'en cas de décès pendant la période de couverture."
+          explanation: "C’est une assurance pure : elle ne paie qu’en cas de décès pendant la durée couverte."
         },
         {
-          text: "L'assureur organise une fête surprise",
+          text: "L’assuré reçoit une médaille de longévité",
           correct: false,
-          explanation: "Les assureurs sont sympas, mais pas à ce point !"
+          explanation: "Malheureusement non. Il n’y a pas de récompense pour avoir survécu, à part... la vie !"
         },
         {
-          text: "On gagne un bon point et un autocollant",
+          text: "Un remboursement partiel est effectué",
           correct: false,
-          explanation: "La survie est sa propre récompense dans ce cas !"
+          explanation: "Ce n’est vrai que pour les produits avec remboursement, pas la protection standard."
         },
         {
-          text: "L'assuré reçoit un t-shirt 'J'ai survécu à mon assurance temporaire'",
+          text: "Le contrat devient automatiquement une assurance permanente",
           correct: false,
-          explanation: "Ce serait cool, mais non, rien n'est versé à l'échéance."
+          explanation: "Pas sans clause spéciale de conversion. Sinon, il se termine sans versement."
         }
       ]
     },
     {
-      question: "Quelle est la différence entre une police conjointe-premier décès et dernier décès ?",
+      question: "💔 Quelle est la différence entre une police conjointe au premier décès et au dernier décès ?",
       choices: [
         {
-          text: "La prestation est versée au premier ou au dernier décès selon le type",
+          text: "Le versement est effectué au premier ou au dernier décès selon la police choisie",
           correct: true,
-          explanation: "Exactement ! C'est la principale différence entre ces deux types de polices."
+          explanation: "Exact ! La conjointe-premier décès paie à la première personne décédée. La conjointe-dernier décès attend les deux."
         },
         {
-          text: "L'une est écrite en rouge, l'autre en bleu",
+          text: "Elles dépendent du revenu du couple",
           correct: false,
-          explanation: "La couleur du contrat n'a rien à voir avec le type de police !"
+          explanation: "La distinction est basée sur le moment du décès, pas sur les finances."
         },
         {
-          text: "L'une sent la vanille, l'autre le chocolat",
+          text: "L’une couvre le divorce aussi",
           correct: false,
-          explanation: "Les polices d'assurance n'ont malheureusement pas d'odeur particulière."
+          explanation: "Aucune assurance vie ne couvre les ruptures sentimentales !"
         },
         {
-          text: "L'une est plus lourde que l'autre",
+          text: "Elles s’annulent si les deux décèdent le même jour",
           correct: false,
-          explanation: "Le poids du contrat n'est pas un critère de différenciation !"
+          explanation: "Non, la prestation sera quand même versée selon la clause de priorité."
         }
       ]
     },
     {
-      question: "Pourquoi l'assurance temporaire est-elle moins chère que l'assurance permanente ?",
+      question: "🔁 Que permet une clause de conversion dans une assurance vie temporaire ?",
       choices: [
         {
-          text: "Elle ne couvre qu'une période déterminée sans valeur de rachat",
+          text: "Transformer le contrat en assurance permanente sans preuve médicale",
           correct: true,
-          explanation: "C'est exact ! La durée limitée et l'absence de valeur de rachat réduisent son coût."
+          explanation: "Oui, tant que la conversion est faite durant la période prévue, elle est garantie."
         },
         {
-          text: "Les assureurs font des soldes d'été",
+          text: "Allonger automatiquement la durée de protection",
           correct: false,
-          explanation: "Les assureurs ne font pas de soldes saisonnières !"
+          explanation: "Ce serait bien, mais la clause permet une transformation, pas une extension de durée."
         },
         {
-          text: "Elle est fabriquée avec des matériaux recyclés",
+          text: "Réduire le montant de la prime chaque année",
           correct: false,
-          explanation: "L'assurance n'est pas un produit physique !"
+          explanation: "Au contraire, la prime peut augmenter avec l’âge ou si le produit est renouvelable."
         },
         {
-          text: "C'est la version 'lite' de l'assurance vie",
+          text: "Offrir des points de fidélité",
           correct: false,
-          explanation: "Même si c'est drôle, ce n'est pas la vraie raison !"
+          explanation: "L’assurance vie ne fonctionne pas comme un programme de récompenses."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'time-guardian',
-    title: "Le Gardien du Temps",
+    type: 'temp-policy-planner',
+    title: "🧠 L’Architecte Temporaire",
     description: `
-      🎮 Devenez le Gardien du Temps dans ce mini-jeu palpitant !
-      
-      Votre mission :
-      - Gérez différents contrats temporaires
-      - Surveillez les échéances et les renouvellements
-      - Transformez les polices au bon moment
-      - Évitez les périodes sans couverture
-      
-      Attention aux clients qui oublient de renouveler leur police !
+🎮 Dans ce mini-jeu, tu dois choisir les meilleures stratégies d’assurance temporaire :
+- Protège tes clients au bon moment (durée, montant)
+- Évite les trous de couverture
+- Applique les conversions au bon moment
+
+Si tu joues mal... Game Over (et pas d’indemnité !) 😬
     `,
     rewards: {
-      xp: 150,
-      badge: "Maître du Temps",
-      title: "Chronométreur des Polices"
+      xp: 200,
+      badge: "Chronomancien d’Assurance",
+      title: "Maître de la Temporaire"
     }
   },
 
   boss: {
-    name: "Le Seigneur des Échéances",
-    description: "Un boss méticuleux qui teste votre maîtrise des contrats temporaires et de leurs subtilités !",
+    name: "🧟‍♂️ Le Fantôme de l'Échéance",
+    description: "Ce boss adore les contrats échus sans versement. Montre-lui que tu sais quand protéger — et surtout comment convertir au bon moment !",
     difficulty: 4,
+    quiz: [
+      {
+        question: "Pourquoi la clause de conversion est-elle un outil stratégique pour le conseiller ?",
+        choices: [
+          {
+            text: "Elle permet de transformer la protection sans nouveau questionnaire médical",
+            correct: true,
+            explanation: "C’est crucial pour les clients dont la santé pourrait se détériorer avec le temps."
+          },
+          {
+            text: "Elle supprime tous les frais liés au nouveau contrat",
+            correct: false,
+            explanation: "Il peut y avoir des coûts liés à la conversion, même sans preuve médicale."
+          },
+          {
+            text: "Elle permet de doubler la protection",
+            correct: false,
+            explanation: "Non, elle remplace, elle ne multiplie pas."
+          },
+          {
+            text: "Elle génère un rendement garanti",
+            correct: false,
+            explanation: "Seuls certains contrats permanents participent aux bénéfices, pas les temporaires."
+          }
+        ]
+      }
+    ],
     rewards: {
       xp: 600,
-      badge: "Maître du Chapitre 2",
-      title: "Dompteur du Temps"
+      badge: "Maître du Temporel",
+      title: "Dominateur de l’Échéance"
     }
   }
 };

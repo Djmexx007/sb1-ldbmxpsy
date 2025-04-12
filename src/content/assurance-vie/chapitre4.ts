@@ -2,128 +2,151 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter4: Chapter = {
   id: 'life-insurance-ch4',
-  title: 'L\'Univers des Possibilités',
+  title: '🌌 L’Univers des Possibilités',
   summary: `
-    🎮 Agent, bienvenue dans le monde fascinant de l'assurance vie universelle !
+🛰️ Agent, bienvenue dans le système solaire de l’assurance vie universelle !
 
-    Préparez-vous à découvrir un produit aussi flexible qu'un contorsionniste et aussi mystérieux que l'univers lui-même !
+Prépare-toi à explorer :
+- Une flexibilité intergalactique 💫
+- Un investissement propulsé à la vitesse lumière 💹
+- Une stratégie de protection qui défie le temps et la fiscalité 📜
 
-    Dans ce chapitre, vous explorerez :
-    - Le mariage parfait entre protection et investissement 💑
-    - La danse des primes flexibles 💃
-    - Le coffre-fort fiscal qui fait rager les impôts 🏦
-    - Les secrets du compte de placement caché 🎯
+Souviens-toi : l’assurance universelle est comme une fusée bien pilotée… ou un trou noir pour ceux qui n’y comprennent rien.
+`,
 
-    Souvenez-vous : Dans l'univers de la VU, la flexibilité est votre super-pouvoir ! 
-  `,
-  
   quiz: [
     {
-      question: "Qu'est-ce qui caractérise l'assurance vie universelle ?",
+      question: "🚀 Qu’est-ce qui définit une assurance vie universelle par rapport aux autres ?",
       choices: [
         {
-          text: "C'est une assurance permanente combinée à un véhicule de placement",
+          text: "C’est une assurance permanente avec un volet de placement intégré",
           correct: true,
-          explanation: "Exactement ! C'est ce qui la rend unique et flexible."
+          explanation: "C’est précisément ce qui la distingue : protection + croissance dans un même vaisseau !"
         },
         {
-          text: "C'est une assurance qui couvre l'univers entier",
+          text: "Elle vous permet de vivre éternellement",
           correct: false,
-          explanation: "Même si le nom est trompeur, elle ne couvre pas les extraterrestres !"
+          explanation: "C’est une assurance, pas une potion magique."
         },
         {
-          text: "C'est une assurance qui vous permet de voyager dans l'espace",
+          text: "Elle couvre les accidents interstellaires",
           correct: false,
-          explanation: "Pour ça, il faudrait voir avec Elon Musk..."
+          explanation: "Malheureusement, la couverture cosmique n’est pas encore offerte."
         },
         {
-          text: "C'est une assurance qui parle toutes les langues de l'univers",
+          text: "Elle peut être utilisée comme passeport spatial",
           correct: false,
-          explanation: "La traduction universelle n'est pas incluse dans le contrat !"
+          explanation: "Le bureau des assurances ne délivre pas encore de visas pour Mars."
         }
       ]
     },
     {
-      question: "Quelle est la différence entre une prestation de type 1 et de type 2 ?",
+      question: "🔄 Quelle est la principale différence entre les prestations de type 1 et de type 2 ?",
       choices: [
         {
-          text: "Type 1 est nivelé, Type 2 inclut la valeur de placement",
+          text: "Le type 1 verse seulement le capital de base ; le type 2 ajoute la valeur accumulée",
           correct: true,
-          explanation: "Bravo ! Le Type 2 combine le capital de base et la valeur accumulée."
+          explanation: "Exact ! Le type 2 augmente le versement, mais demande une prime plus élevée."
         },
         {
-          text: "Type 1 est en français, Type 2 en klingon",
+          text: "Le type 1 est bilingue ; le type 2 parle martien",
           correct: false,
-          explanation: "Les prestations sont toujours dans la langue du contrat !"
+          explanation: "Peu importe la langue, la différence est financière."
         },
         {
-          text: "Type 1 sent la vanille, Type 2 le chocolat",
+          text: "Le type 1 donne droit à un t-shirt gratuit",
           correct: false,
-          explanation: "Les prestations n'ont pas d'arôme particulier..."
+          explanation: "Hélas, pas de goodies dans les polices universelles."
         },
         {
-          text: "Type 1 est pour les humains, Type 2 pour les superhéros",
+          text: "Le type 2 inclut des billets pour SpaceX",
           correct: false,
-          explanation: "Les deux types sont disponibles pour tous les terriens !"
+          explanation: "Ce serait génial, mais non."
         }
       ]
     },
     {
-      question: "Quel est l'avantage fiscal principal de la VU ?",
+      question: "💡 Que permet de faire la flexibilité des primes dans une assurance vie universelle ?",
       choices: [
         {
-          text: "Les gains ne sont pas imposés tant qu'ils restent dans la police",
+          text: "Adapter le montant et la fréquence des paiements selon la situation du client",
           correct: true,
-          explanation: "C'est l'un des grands avantages de ce produit !"
+          explanation: "C’est l’un des grands avantages : la liberté de cotisation (dans certaines limites)."
         },
         {
-          text: "Elle transforme vos impôts en chocolat",
+          text: "Changer de conseiller tous les mois",
           correct: false,
-          explanation: "Malheureusement, la magie fiscale a ses limites..."
+          explanation: "Le conseiller peut changer, mais ce n’est pas lié à la prime."
         },
         {
-          text: "Elle fait disparaître le fisc dans un trou noir",
+          text: "Utiliser les primes pour acheter des actions de l’assureur",
           correct: false,
-          explanation: "Le fisc est plus résistant que ça !"
+          explanation: "Les primes vont dans le contrat, pas en bourse."
         },
         {
-          text: "Elle vous téléporte dans un paradis fiscal",
+          text: "Payer uniquement les années bissextiles",
           correct: false,
-          explanation: "La téléportation n'est pas une option fiscale légale !"
+          explanation: "Ce serait fun, mais pas viable pour l’assureur !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'universal-manager',
-    title: "Le Maître de l'Univers",
+    type: 'universal-planner',
+    title: "🧠 Le Stratège Universel",
     description: `
-      🎮 Devenez le Maître de l'Univers dans ce mini-jeu de gestion !
-      
-      Votre mission :
-      - Équilibrez protection et investissement
-      - Gérez les flux de primes flexibles
-      - Optimisez les rendements du compte de placement
-      - Surfez sur les vagues du marché
-      
-      Attention aux fluctuations économiques qui peuvent affecter vos placements !
+🎮 Dans ce mini-jeu cosmique, vous devrez :
+
+- Choisir les bonnes combinaisons de prestation (type 1 ou 2)
+- Ajuster les primes selon les profils
+- Réagir aux marchés (croissance ou baisse du compte)
+- Préserver l’équilibre entre protection et investissement
+
+Un seul faux pas, et votre client se retrouve dans un trou fiscal !
     `,
     rewards: {
-      xp: 250,
-      badge: "Maître de l'Universel",
-      title: "Architecte des Possibilités"
+      xp: 400,
+      badge: "Voyageur de l’Univers",
+      title: "Maître de la Vie Universelle"
     }
   },
 
   boss: {
-    name: "Le Gardien de l'Univers",
-    description: "Un boss cosmique qui teste votre maîtrise de l'assurance vie universelle !",
+    name: "🌠 Le Trou Noir Fiscal",
+    description: "Ce boss imprévisible adore les mauvaises décisions de placement et les primes mal calculées. Montrez-lui que vous êtes un stratège éclairé de l’assurance universelle !",
     difficulty: 5,
+    quiz: [
+      {
+        question: "👨‍🚀 Pourquoi faut-il surveiller de près le compte de placement dans une police universelle ?",
+        choices: [
+          {
+            text: "Parce qu’un rendement insuffisant peut entraîner la chute de la police",
+            correct: true,
+            explanation: "Si le compte ne génère pas assez, il se vide... et la protection s’éteint. Game over !"
+          },
+          {
+            text: "Parce que c’est là que l’assurance stocke vos souvenirs",
+            correct: false,
+            explanation: "Ce n’est pas une archive émotionnelle… juste un outil fiscal et stratégique."
+          },
+          {
+            text: "Parce qu’on peut y cacher de la crypto",
+            correct: false,
+            explanation: "Non, ce n’est pas un portefeuille numérique illégal !"
+          },
+          {
+            text: "Parce qu’il est surveillé par la NASA",
+            correct: false,
+            explanation: "Même la NASA ne peut vous sauver d’une mauvaise stratégie."
+          }
+        ]
+      }
+    ],
     rewards: {
-      xp: 800,
-      badge: "Maître du Chapitre 4",
-      title: "Seigneur de l'Univers"
+      xp: 1000,
+      badge: "Dominateur Galactique",
+      title: "Éclaireur de la VU"
     }
   }
 };

@@ -1,11 +1,10 @@
-// GameState.ts — Gestion centralisée de l'état du jeu avec validation, sauvegarde et progression
 import React, {
   createContext,
   useContext,
-  useState,
   useEffect,
-  useCallback,
   useRef,
+  useState,
+  useCallback,
 } from 'react';
 import { modules } from '../content';
 import { calculateProgressFromModules } from '@/hooks/useGameProgress';
@@ -15,8 +14,6 @@ interface Achievement {
   name: string;
   description: string;
   type: 'badge' | 'title';
-  condition: string;
-  icon: string;
   obtained: boolean;
   timestamp?: number;
 }
@@ -42,9 +39,6 @@ interface GameState {
       percentage: number;
     };
   };
-  lastSaved?: number;
-  version: string;
-  checksum?: string;
 }
 
 interface GameContextType {
@@ -56,16 +50,8 @@ interface GameContextType {
   setCurrentChapter: (chapterId: string | null) => void;
   addBadge: (badge: string) => void;
   addTitle: (title: string) => void;
-  updateStreak: () => void;
-  resetGlobalProgress: () => void;
-  calculateModuleProgress: (moduleId: number) => { completed: number; total: number; percentage: number };
+  resetProgress: () => void;
 }
-
-const STATE_VERSION = '1.0.0';
-const STORAGE_KEY = 'gameState';
-const BACKUP_KEY = 'gameState_backup';
-
-const defaultProgress = calculateProgressFromModules(modules);
 
 const initialState: GameState = {
   playerLevel: 1,
@@ -81,25 +67,21 @@ const initialState: GameState = {
     daily: 0,
     lastPlayed: '',
   },
-  moduleProgress: defaultProgress,
-  version: STATE_VERSION,
+  moduleProgress: calculateProgressFromModules([]),
 };
+
+const STORAGE_KEY = 'gameState';
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
 
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, setState] = useState<GameState>(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : initialState;
-    } catch {
-      return initialState;
-    }
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : initialState;
   });
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    localStorage.setItem(BACKUP_KEY, JSON.stringify(state));
   }, [state]);
 
   const addXP = useCallback((xp: number) => {
@@ -115,75 +97,54 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const completeChapter = useCallback((chapterId: string) => {
-    setState(prev => {
-      const updated = new Set([...prev.completedChapters, chapterId]);
-      return {
-        ...prev,
-        completedChapters: Array.from(updated),
-        moduleProgress: calculateProgressFromModules(modules, Array.from(updated)),
-      };
-    });
+    setState(prev => ({
+      ...prev,
+      completedChapters: Array.from(new Set([...prev.completedChapters, chapterId])),
+      moduleProgress: calculateProgressFromModules([
+        ...prev.completedChapters,
+        chapterId,
+      ]),
+    }));
   }, []);
 
   const unlockWorld = useCallback((worldId: number) => {
     setState(prev => ({
       ...prev,
-      unlockedWorlds: [...new Set([...prev.unlockedWorlds, worldId])],
+      unlockedWorlds: Array.from(new Set([...prev.unlockedWorlds, worldId])),
     }));
   }, []);
 
   const setCurrentWorld = useCallback((worldId: number | null) => {
-    setState(prev => ({ ...prev, currentWorld: worldId }));
+    setState(prev => ({
+      ...prev,
+      currentWorld: worldId,
+    }));
   }, []);
 
   const setCurrentChapter = useCallback((chapterId: string | null) => {
-    setState(prev => ({ ...prev, currentChapter: chapterId }));
+    setState(prev => ({
+      ...prev,
+      currentChapter: chapterId,
+    }));
   }, []);
 
   const addBadge = useCallback((badge: string) => {
     setState(prev => ({
       ...prev,
-      badges: [...new Set([...prev.badges, badge])],
+      badges: Array.from(new Set([...prev.badges, badge])),
     }));
   }, []);
 
   const addTitle = useCallback((title: string) => {
     setState(prev => ({
       ...prev,
-      titles: [...new Set([...prev.titles, title])],
+      titles: Array.from(new Set([...prev.titles, title])),
     }));
   }, []);
 
-  const updateStreak = useCallback(() => {
-    const today = new Date().toDateString();
-    const yesterday = new Date(Date.now() - 86400000).toDateString();
-
-    setState(prev => {
-      let daily = prev.streaks.daily;
-      if (prev.streaks.lastPlayed !== today) {
-        daily = prev.streaks.lastPlayed === yesterday ? daily + 1 : 1;
-      }
-      return {
-        ...prev,
-        streaks: {
-          daily,
-          lastPlayed: today,
-        },
-      };
-    });
+  const resetProgress = useCallback(() => {
+    setState(initialState);
   }, []);
-
-  const resetGlobalProgress = useCallback(() => {
-    setState({ ...initialState });
-  }, []);
-
-  const calculateModuleProgress = useCallback((moduleId: number) => {
-    const module = modules.find(m => m.id === moduleId);
-    if (!module) return { completed: 0, total: 0, percentage: 0 };
-    const completed = state.completedChapters.filter(id => module.chapters.some(c => c.id === id)).length;
-    const total = module.chapters.length;
-    return { completed, total, percentage: (completed / total) * 100 };
-  }, [state.completedChapters]);
 
   return (
     <GameContext.Provider
@@ -196,9 +157,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setCurrentChapter,
         addBadge,
         addTitle,
-        updateStreak,
-        resetGlobalProgress,
-        calculateModuleProgress,
+        resetProgress,
       }}
     >
       {children}
@@ -208,6 +167,6 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 export const useGame = () => {
   const context = useContext(GameContext);
-  if (!context) throw new Error('useGame must be used within a GameProvider');
+  if (!context) throw new Error('useGame must be used within GameProvider');
   return context;
 };

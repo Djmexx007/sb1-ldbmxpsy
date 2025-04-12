@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useGame } from './GameState';
-import { Book, Brain, Trophy, ArrowRight, Star, Shield, Target, Sparkles } from 'lucide-react';
-import { Chapter, Question, Boss } from '../types/chapter';
+import { Book, Brain, Trophy, ArrowRight, Sparkles, Shield, Star, Target } from 'lucide-react';
+import { Chapter } from '../types/chapter';
 
 interface ChapterContentProps {
   chapter: Chapter;
@@ -13,195 +13,171 @@ export const ChapterContent: React.FC<ChapterContentProps> = ({ chapter, onCompl
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
-  const [quizCompleted, setQuizCompleted] = useState(false);
   const [score, setScore] = useState(0);
   const [shuffledChoices, setShuffledChoices] = useState<any[]>([]);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
-    if (!chapter?.quiz?.[currentQuestionIndex]?.choices) return;
-    const choices = [...chapter.quiz[currentQuestionIndex].choices];
-    for (let i = choices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [choices[i], choices[j]] = [choices[j], choices[i]];
+    if (chapter.quiz && chapter.quiz[currentQuestionIndex]) {
+      const choices = [...chapter.quiz[currentQuestionIndex].choices];
+      setShuffledChoices(choices.sort(() => Math.random() - 0.5));
     }
-    setShuffledChoices(choices);
-  }, [chapter?.quiz, currentQuestionIndex]);
+  }, [chapter.quiz, currentQuestionIndex]);
 
-  const handleAnswer = (answerIndex: number) => {
-    if (!chapter?.quiz?.[currentQuestionIndex] || showExplanation) return;
-    setSelectedAnswer(answerIndex);
+  const handleAnswer = (index: number) => {
+    if (showExplanation || !chapter.quiz) return;
+
+    setSelectedAnswer(index);
     setShowExplanation(true);
-    const currentQuestion = chapter.quiz[currentQuestionIndex];
-    const selectedChoice = shuffledChoices[answerIndex];
-    if (selectedChoice?.correct) {
+    const selected = shuffledChoices[index];
+    if (selected?.correct) {
       setScore(score + 1);
     }
   };
 
   const handleNextQuestion = () => {
-    if (!chapter?.quiz) return;
+    if (!chapter.quiz) return;
+
     if (currentQuestionIndex < chapter.quiz.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
       setShowExplanation(false);
     } else {
-      completeChapter();
+      completeQuiz();
     }
   };
 
-  const completeChapter = () => {
-    const totalQuestions = chapter.quiz?.length || 0;
-    const accuracy = totalQuestions > 0 ? score / totalQuestions : 0;
-    const baseXP = chapter.boss?.rewards?.xp || 100;
-    const earnedXP = Math.floor(baseXP * accuracy);
+  const completeQuiz = () => {
+    setQuizCompleted(true);
 
-    addXP(earnedXP);
+    if (chapter.boss) {
+      const xp = Math.floor((score / chapter.quiz.length) * chapter.boss.rewards.xp);
+      addXP(xp);
 
-    if (score === totalQuestions && chapter.boss) {
-      addBadge(chapter.boss.rewards.badge);
-      addTitle(chapter.boss.rewards.title);
+      if (score === chapter.quiz.length) {
+        addBadge(chapter.boss.rewards.badge);
+        addTitle(chapter.boss.rewards.title);
+      }
     }
 
-    setQuizCompleted(true);
     onComplete();
   };
 
-  if (!chapter) {
-    return (
-      <div className="p-6 bg-black/30 rounded-xl border-2 border-green-500/30">
-        <p className="text-center text-green-400">Chargement du chapitre...</p>
-      </div>
-    );
-  }
-
   const currentQuestion = chapter.quiz?.[currentQuestionIndex];
-  const totalQuestions = chapter.quiz?.length || 0;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div className="p-6 bg-black/30 rounded-xl border-2 border-green-500/30">
-        <h2 className="text-2xl font-bold text-green-400 flex items-center gap-2 mb-4">
+    <div className="space-y-8 max-w-4xl mx-auto">
+      {/* Résumé du chapitre */}
+      <div className="p-6 rounded-xl bg-green-900/10 border border-green-600/30">
+        <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-green-400">
           <Book className="w-6 h-6" />
           {chapter.title}
         </h2>
-        <div className="prose prose-invert max-w-none">
-          <div className="whitespace-pre-wrap text-green-300/90 mb-6">
-            {chapter.summary}
-          </div>
-        </div>
+        <p className="whitespace-pre-wrap text-green-200">{chapter.summary}</p>
 
         {chapter.boss && (
-          <div className="mt-6 p-4 bg-red-900/20 rounded-lg border border-red-500/30">
-            <div className="flex items-center gap-3 mb-2">
-              <Shield className="w-6 h-6 text-red-400" />
-              <h3 className="text-lg font-bold text-red-400">Boss: {chapter.boss.name}</h3>
+          <div className="mt-6 p-4 rounded-lg bg-red-900/10 border border-red-500/20 text-red-300">
+            <div className="flex items-center gap-2 font-bold text-red-400 mb-2">
+              <Shield className="w-5 h-5" />
+              Boss : {chapter.boss.name}
             </div>
-            <p className="text-red-300/90">{chapter.boss.description}</p>
-            <div className="mt-3 flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Target className="w-4 h-4 text-red-400" />
-                <span className="text-sm">Difficulté: {chapter.boss.difficulty}/5</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-yellow-400" />
-                <span className="text-sm">{chapter.boss.rewards.xp} XP à gagner</span>
-              </div>
+            <p>{chapter.boss.description}</p>
+            <div className="flex gap-4 mt-2 text-sm">
+              <span className="flex items-center gap-1">
+                <Target className="w-4 h-4" /> Difficulté : {chapter.boss.difficulty}/5
+              </span>
+              <span className="flex items-center gap-1">
+                <Star className="w-4 h-4" /> XP max : {chapter.boss.rewards.xp}
+              </span>
             </div>
           </div>
         )}
       </div>
 
+      {/* Quiz */}
       {!quizCompleted && currentQuestion && (
-        <div className="p-6 bg-black/30 rounded-xl border-2 border-green-500/30">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold text-green-400 flex items-center gap-2">
-              <Brain className="w-6 h-6" />
-              Question {currentQuestionIndex + 1} sur {totalQuestions}
+        <div className="p-6 rounded-xl bg-black/30 border border-green-500/30">
+          <div className="flex justify-between mb-4 text-green-300">
+            <h3 className="font-bold flex gap-2 items-center">
+              <Brain className="w-5 h-5" />
+              Question {currentQuestionIndex + 1} / {chapter.quiz?.length}
             </h3>
-            <div className="px-4 py-2 bg-green-900/30 rounded-full">
-              Score: {score}/{totalQuestions}
-            </div>
+            <div className="text-sm opacity-80">Score : {score}</div>
           </div>
 
-          <div className="mb-6">
-            <div className="p-4 bg-green-900/20 rounded-lg border border-green-500/30 mb-6">
-              <p className="text-lg text-green-300">{currentQuestion.question}</p>
-            </div>
+          <div className="text-lg font-medium text-green-100 mb-4">{currentQuestion.question}</div>
 
-            <div className="grid grid-cols-1 gap-3">
-              {shuffledChoices.map((choice, index) => (
+          <div className="space-y-3">
+            {shuffledChoices.map((choice, idx) => {
+              const isCorrect = choice.correct;
+              const isSelected = selectedAnswer === idx;
+
+              const baseStyle =
+                "w-full p-4 rounded-lg text-left transition-all duration-300 border";
+
+              const finalStyle = !showExplanation
+                ? `${baseStyle} bg-black/20 border-green-500/20 hover:border-green-400`
+                : isCorrect
+                ? `${baseStyle} bg-green-500/20 border-green-400 text-green-200`
+                : isSelected
+                ? `${baseStyle} bg-red-500/20 border-red-500 text-red-200`
+                : `${baseStyle} bg-black/10 border-green-800/20 opacity-50`;
+
+              return (
                 <button
-                  key={index}
-                  onClick={() => handleAnswer(index)}
+                  key={idx}
+                  onClick={() => handleAnswer(idx)}
+                  className={finalStyle}
                   disabled={showExplanation}
-                  className={`
-                    w-full p-4 rounded-lg text-left transition-all duration-300
-                    ${showExplanation
-                      ? choice.correct
-                        ? 'bg-green-500/20 border-2 border-green-500'
-                        : selectedAnswer === index
-                          ? 'bg-red-500/20 border-2 border-red-500'
-                          : 'bg-black/30 border-2 border-transparent opacity-50'
-                      : 'bg-black/30 border-2 border-green-500/30 hover:border-green-500/60'
-                    }
-                  `}
                 >
                   {choice.text}
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
+          {/* Explication */}
           {showExplanation && (
             <>
-              <div className="p-4 rounded-lg bg-green-900/30 border border-green-500/30 mb-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-5 h-5 text-yellow-400" />
-                  <span className="font-bold">Explication</span>
+              <div className="mt-6 bg-green-800/20 border border-green-500/30 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-1 text-yellow-300">
+                  <Sparkles className="w-5 h-5" />
+                  Explication
                 </div>
-                <p className="text-green-300">
-                  {shuffledChoices.find(choice => choice.correct)?.explanation}
+                <p className="text-green-200">
+                  {shuffledChoices.find(c => c.correct)?.explanation}
                 </p>
               </div>
 
               <button
                 onClick={handleNextQuestion}
-                className="w-full p-3 rounded-lg bg-green-500/20 border-2 border-green-500 hover:bg-green-500/30 transition-all flex items-center justify-center gap-2"
+                className="mt-6 w-full p-3 rounded-lg bg-green-600 hover:bg-green-700 transition text-white font-bold flex justify-center gap-2"
               >
-                {currentQuestionIndex < totalQuestions - 1 ? 'Question suivante' : 'Terminer le quiz'}
-                <ArrowRight className="w-4 h-4" />
+                {currentQuestionIndex < chapter.quiz.length - 1 ? 'Question Suivante' : 'Terminer le quiz'}
+                <ArrowRight className="w-5 h-5" />
               </button>
             </>
           )}
         </div>
       )}
 
+      {/* Résultat final */}
       {quizCompleted && (
-        <div className="p-6 bg-green-900/30 rounded-xl border-2 border-green-500">
-          <Trophy className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-center text-green-400 mb-2">
-            Chapitre Terminé !
-          </h3>
-          <p className="text-xl text-center mb-4">
-            Score final : {score}/{totalQuestions}
+        <div className="p-6 rounded-xl bg-green-700/10 border border-green-500/30 text-center">
+          <Trophy className="w-14 h-14 text-yellow-400 mx-auto mb-3" />
+          <h3 className="text-xl font-bold text-green-300 mb-1">Chapitre Terminé !</h3>
+          <p className="text-green-200 mb-2">
+            Score final : {score} / {chapter.quiz?.length}
           </p>
-          {score === totalQuestions && chapter.boss && (
-            <div className="text-center text-green-300">
-              <p className="mb-2">🏆 Parfait ! Vous avez maîtrisé ce chapitre !</p>
-              <p>Vous avez gagné :</p>
-              <ul className="list-none space-y-2 mt-4">
-                <li className="flex items-center justify-center gap-2">
-                  <Trophy className="w-5 h-5 text-yellow-400" />
-                  {chapter.boss.rewards.badge}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <Star className="w-5 h-5 text-yellow-400" />
-                  {chapter.boss.rewards.title}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <Brain className="w-5 h-5 text-yellow-400" />
-                  {chapter.boss.rewards.xp} XP
-                </li>
+
+          {score === chapter.quiz?.length && chapter.boss && (
+            <div className="mt-4 text-green-400">
+              <p>🏆 Bravo, tu as parfaitement maîtrisé ce chapitre !</p>
+              <p className="mt-1 text-sm">Tu gagnes :</p>
+              <ul className="mt-2 space-y-1">
+                <li>🎖️ Badge : {chapter.boss.rewards.badge}</li>
+                <li>📛 Titre : {chapter.boss.rewards.title}</li>
+                <li>✨ XP : {chapter.boss.rewards.xp}</li>
               </ul>
             </div>
           )}

@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import { useGame } from './GameState';
-import { Gamepad2, Brain, Timer, Trophy, ArrowLeft } from 'lucide-react';
+import { Gamepad2, ArrowLeft } from 'lucide-react';
 import { MemoryGame } from './games/MemoryGame';
 import { SpeedGame } from './games/SpeedGame';
 import { PuzzleGame } from './games/PuzzleGame';
 import { MatchingGame } from './games/MatchingGame';
 import { Tutorial } from './games/Tutorial';
+import { AnimatedBadge } from './ui/AnimatedBadge';
+
 interface MiniGamesProps {
   onBack: () => void;
 }
 
 export const MiniGames: React.FC<MiniGamesProps> = ({ onBack }) => {
-  const { addXP } = useGame();
+  const { addXP, addBadge } = useGame();
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
   const [showTutorial, setShowTutorial] = useState(true);
+  const [badgeEarned, setBadgeEarned] = useState<string | null>(null);
 
   const handleGameComplete = (score: number) => {
     const baseXP = 100;
     const earnedXP = Math.floor((score / 100) * baseXP);
     addXP(earnedXP);
+
+    if (score >= 80) {
+      const badgeName = `Champion du jeu : ${selectedGame}`;
+      addBadge(badgeName);
+      setBadgeEarned(badgeName);
+    }
   };
 
   const handleStartGame = (gameId: string) => {
@@ -57,7 +66,10 @@ export const MiniGames: React.FC<MiniGamesProps> = ({ onBack }) => {
         <div className="mt-8 p-6 bg-black/30 rounded-xl border-2 border-green-500/30">
           <div className="flex justify-between items-center mb-6">
             <button
-              onClick={() => setShowTutorial(true)}
+              onClick={() => {
+                setShowTutorial(true);
+                setSelectedGame(null);
+              }}
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-black/30 border border-green-500/30 hover:bg-green-900/30 transition-all"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -67,6 +79,13 @@ export const MiniGames: React.FC<MiniGamesProps> = ({ onBack }) => {
           {renderGame()}
         </div>
       ) : null}
+
+      {badgeEarned && (
+        <AnimatedBadge
+          badgeName={badgeEarned}
+          onClose={() => setBadgeEarned(null)}
+        />
+      )}
     </div>
   );
 };

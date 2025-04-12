@@ -1,25 +1,25 @@
-// 📁 src/components/ui/AnimatedBadge.tsx
-
 import React from 'react';
-import { Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Sparkles, BadgeCheck } from 'lucide-react';
 
-interface AnimatedBadgeProps {
-  label: string;
+interface Props {
+  badgeName: string;
+  onClose: () => void;
 }
 
-export const AnimatedBadge: React.FC<AnimatedBadgeProps> = ({ label }) => {
+export const AnimatedBadge: React.FC<Props> = ({ badgeName, onClose }) => {
   return (
-    <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-800/40 border border-green-500 text-green-300 text-sm shadow-lg"
-    >
-      <Sparkles className="w-4 h-4 text-yellow-400 animate-ping-slow" />
-      {label}
-    </motion.div>
+    <div className="fixed top-10 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="bg-green-800/90 border-2 border-green-500 p-6 rounded-xl shadow-xl animate-pulse text-center space-y-2">
+        <BadgeCheck className="w-10 h-10 text-yellow-400 mx-auto animate-bounce" />
+        <h3 className="text-lg font-bold text-green-100">Nouveau Badge !</h3>
+        <p className="text-green-300">{badgeName}</p>
+        <button
+          onClick={onClose}
+          className="mt-2 px-4 py-1 border border-green-300 rounded-md text-sm hover:bg-green-700/30 transition"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
   );
 };
-
-export default AnimatedBadge;

@@ -2,128 +2,150 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter6: Chapter = {
   id: 'life-insurance-ch6',
-  title: 'La Guilde des Assurés',
+  title: '🏰 La Guilde des Assurés',
   summary: `
-    🎮 Agent, bienvenue dans le monde fascinant de l'assurance collective !
+🤝 Bienvenue, Agent ! Vous entrez dans la guilde des grandes protections collectives.
 
-    Découvrez comment les guildes modernes (entreprises) protègent leurs membres avec des stratégies d'assurance groupe.
+Aujourd’hui, vous apprendrez :
+- Les secrets des contrats d’assurance groupe 🛡️
+- Les avantages pour les membres (et les pièges à éviter) 🎁
+- Comment un héros solitaire peut prolonger sa protection même après avoir quitté la guilde 🧳
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets des contrats de groupe 🏢
-    - L'art de la protection collective 🛡️
-    - Les avantages d'être dans une guilde d'assurés 💪
-    - Les stratégies de conversion pour les aventuriers solitaires 🔄
-
-    Souvenez-vous : L'union fait la force, surtout en assurance ! 
+Rappelez-vous : en assurance, l’union fait la force… mais la sortie du groupe, ça se prépare !
   `,
-  
+
   quiz: [
     {
-      question: "Pourquoi l'assurance collective est-elle généralement moins chère ?",
+      question: "🤔 Pourquoi l’assurance collective coûte-t-elle souvent moins cher qu’une assurance individuelle ?",
       choices: [
         {
-          text: "Le risque est réparti sur un grand nombre de personnes",
+          text: "Parce que le risque est mutualisé sur plusieurs personnes",
           correct: true,
-          explanation: "Exactement ! C'est le principe de la mutualisation du risque à grande échelle."
+          explanation: "Exact ! Plus il y a de membres dans la guilde, plus le coût est partagé, ce qui diminue la prime pour chacun."
         },
         {
-          text: "Les assureurs font des soldes de groupe",
+          text: "Parce que les employeurs lancent des promotions secrètes",
           correct: false,
-          explanation: "Ce n'est pas une question de soldes, mais de répartition du risque !"
+          explanation: "Les primes sont calculées selon les principes actuariels, pas les soldes du vendredi fou !"
         },
         {
-          text: "Les employés partagent la même police d'assurance",
+          text: "Parce que le gouvernement subventionne toutes les protections collectives",
           correct: false,
-          explanation: "Chacun a sa propre protection, même si le contrat est collectif."
+          explanation: "Certaines déductions fiscales existent, mais le prix dépend surtout de la masse assurée."
         },
         {
-          text: "L'employeur connaît un sort magique de réduction",
+          text: "Parce que l’assurance collective est moins bonne",
           correct: false,
-          explanation: "La magie n'a rien à voir avec les tarifs avantageux !"
+          explanation: "Elle peut être très efficace, mais standardisée."
         }
       ]
     },
     {
-      question: "Que se passe-t-il avec l'assurance collective quand on quitte son emploi ?",
+      question: "🚪 Que se passe-t-il avec votre protection d’assurance collective lorsque vous quittez votre emploi ?",
       choices: [
         {
-          text: "On peut la convertir en assurance individuelle sans preuve médicale",
+          text: "Vous pouvez la transformer en assurance individuelle sans preuve médicale",
           correct: true,
-          explanation: "C'est le droit de transformation, une option très importante !"
+          explanation: "C’est la fameuse clause de conversion : très précieuse surtout en cas de problème de santé."
         },
         {
-          text: "Elle nous suit comme un animal de compagnie fidèle",
+          text: "Vous la gardez à vie comme un souvenir",
           correct: false,
-          explanation: "L'assurance collective est liée à l'emploi, elle ne vous suit pas automatiquement."
+          explanation: "Non, elle s’éteint automatiquement à la fin du lien d’emploi, sauf conversion."
         },
         {
-          text: "Elle disparaît dans un nuage de fumée",
+          text: "Elle vous suit à la maison comme une mascotte invisible",
           correct: false,
-          explanation: "Elle se termine, mais vous avez des options de conversion."
+          explanation: "Aucune assurance n’a ce superpouvoir !"
         },
         {
-          text: "Elle devient une carte de collection rare",
+          text: "Elle devient une loterie fiscale",
           correct: false,
-          explanation: "Les polices d'assurance ne sont pas des cartes à collectionner !"
+          explanation: "Ce serait chaotique, et non réglementaire."
         }
       ]
     },
     {
-      question: "Quel est l'avantage principal de l'assurance vie complémentaire collective ?",
+      question: "🎓 Pourquoi les assureurs offrent-ils parfois l’assurance collective sans sélection médicale ?",
       choices: [
         {
-          text: "Augmenter sa protection à moindre coût avec peu de formalités",
+          text: "Parce qu’ils appliquent une acceptation garantie à l’entrée dans le groupe",
           correct: true,
-          explanation: "C'est l'avantage clé : plus de protection, facilement accessible !"
+          explanation: "C’est un des grands avantages du collectif : couverture sans questionnaire pour les nouveaux membres."
         },
         {
-          text: "Recevoir un badge 'Super Assuré'",
+          text: "Parce qu’ils veulent aller plus vite que leur ombre",
           correct: false,
-          explanation: "Les badges sont cool, mais ce n'est pas un avantage réel de l'assurance !"
+          explanation: "C’est une question d’accessibilité, pas de rapidité far west !"
         },
         {
-          text: "Avoir accès au salon VIP des assurés",
+          text: "Parce qu’ils ont trop de stylos à utiliser",
           correct: false,
-          explanation: "Il n'existe pas de salon VIP pour les assurés collectifs !"
+          explanation: "Aucune corrélation entre fournitures et politiques de souscription !"
         },
         {
-          text: "Débloquer des achievements spéciaux",
+          text: "Parce que ça rend les polices plus jolies",
           correct: false,
-          explanation: "L'assurance n'est pas un jeu vidéo, même si on aime la gamifier !"
+          explanation: "On parle d'efficacité, pas de design de document !"
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'guild-master',
-    title: "Le Maître de Guilde",
+    type: 'guild-conversion',
+    title: "🧙‍♂️ Le Convertisseur de Guildes",
     description: `
-      🎮 Devenez le Maître de Guilde dans ce mini-jeu de gestion !
-      
-      Votre mission :
-      - Gérez une guilde d'assurés
-      - Optimisez les protections collectives
-      - Négociez les meilleures conditions
-      - Aidez les membres à convertir leur protection
-      
-      Attention aux départs et aux nouveaux membres !
+🎮 Votre mission :
+
+- Recrutez des membres dans une guilde avec des protections collectives
+- Gérez leur parcours (embauche, sortie, retraite)
+- Offrez des conversions adaptées avant qu’ils se retrouvent sans couverture !
+
+Mais attention : un oubli, et votre héros se retrouve nu face au risque...
     `,
     rewards: {
-      xp: 350,
-      badge: "Maître de Guilde",
-      title: "Protecteur Collectif"
+      xp: 450,
+      badge: "Protecteur Syndical",
+      title: "Gardien des Contrats Collectifs"
     }
   },
 
   boss: {
-    name: "Le Grand Administrateur",
-    description: "Un boss méticuleux qui teste votre compréhension des contrats collectifs !",
+    name: "🕳️ Le Vide Assurantiel",
+    description: "Ce boss sournois attend que vous quittiez la guilde sans conversion... et il frappe fort !",
     difficulty: 4,
+    quiz: [
+      {
+        question: "👀 Quelle erreur grave un agent pourrait-il commettre avec un client quittant un régime collectif ?",
+        choices: [
+          {
+            text: "Oublier d’expliquer son droit de transformation",
+            correct: true,
+            explanation: "Cette omission pourrait laisser un client sans couverture, et causer des ennuis... légaux et moraux."
+          },
+          {
+            text: "Suggérer de devenir moine",
+            correct: false,
+            explanation: "Changer de vie est noble, mais ça ne remplace pas une assurance !"
+          },
+          {
+            text: "Convertir la police en abonnement de streaming",
+            correct: false,
+            explanation: "On ne parle pas d’un forfait multimédia, mais de sécurité financière."
+          },
+          {
+            text: "Faire signer le nouveau contrat avec une baguette magique",
+            correct: false,
+            explanation: "Les contrats doivent être légaux, pas enchantés."
+          }
+        ]
+      }
+    ],
     rewards: {
       xp: 800,
-      badge: "Maître du Chapitre 6",
-      title: "Champion de la Collectivité"
+      badge: "Dompteur du Vide",
+      title: "Stratège Collectif"
     }
   }
 };

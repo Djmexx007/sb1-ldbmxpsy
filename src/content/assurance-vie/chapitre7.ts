@@ -2,128 +2,151 @@ import { Chapter } from '@/types/chapter';
 
 export const chapter7: Chapter = {
   id: 'life-insurance-ch7',
-  title: 'Imposition et Stratégies Fiscales',
+  title: '⚖️ L’Impôt Invisible',
   summary: `
-    🎮 Agent, bienvenue au Bureau des Stratégies Fiscales !
+🎩 Agent, vous voilà promu au rang de stratège fiscal !
 
-    Votre mission : maîtriser l'art complexe de l'imposition en assurance vie.
+Dans ce chapitre, vous allez :
+- Décoder l’exonération magique de la prestation de décès
+- Distinguer ce qui est imposable de ce qui ne l’est pas
+- Maîtriser les stratégies de transmission
+- Éviter les pièges fiscaux comme un ninja de la finance
 
-    Dans ce chapitre, vous explorerez :
-    - Les secrets de l'exonération fiscale 💰
-    - L'art de la planification successorale 📋
-    - La magie des stratégies corporatives 🏢
-    - Le pouvoir des avantages fiscaux ⚖️
-
-    Souvenez-vous : Une bonne stratégie fiscale est la clé d'une protection optimale ! 
+💡 Règle d’or : La meilleure stratégie d’assurance est celle qui respecte la loi… et minimise l’impôt intelligemment.
   `,
-  
+
   quiz: [
     {
-      question: "Quelle est la règle générale concernant l'imposition de la prestation de décès ?",
+      question: "💸 Dans quelle situation la prestation de décès est-elle imposable ?",
       choices: [
         {
-          text: "Elle n'est pas imposable lorsque versée à un bénéficiaire désigné",
+          text: "Lorsque la prestation est versée à la succession sans bénéficiaire désigné",
           correct: true,
-          explanation: "La prestation de décès est généralement libre d'impôt quand un bénéficiaire est nommé dans la police."
+          explanation: "C’est exact ! Dans ce cas, la prestation est intégrée à la succession et peut devenir imposable."
         },
         {
-          text: "Elle est toujours imposable à 50%",
+          text: "Quand elle est versée à un ami Facebook",
           correct: false,
-          explanation: "La prestation de décès n'est généralement pas imposable !"
+          explanation: "Peu importe le lien social — c’est le statut juridique du bénéficiaire qui compte."
         },
         {
-          text: "Elle dépend de la phase de la lune",
+          text: "Quand l’assuré est né un 29 février",
           correct: false,
-          explanation: "L'imposition suit des règles précises, pas des phénomènes astronomiques !"
+          explanation: "L’anniversaire n’a aucun effet fiscal, promis."
         },
         {
-          text: "Elle varie selon l'humeur du fisc",
+          text: "Si le bénéficiaire est végétarien",
           correct: false,
-          explanation: "Les règles fiscales sont objectives et définies par la loi !"
+          explanation: "Le régime alimentaire ne modifie pas le régime fiscal."
         }
       ]
     },
     {
-      question: "Dans quel cas la prestation pourrait-elle devenir imposable ?",
+      question: "🏦 Pourquoi désigner un bénéficiaire directement dans une police d’assurance vie ?",
       choices: [
         {
-          text: "Quand la police est versée à la succession sans bénéficiaire désigné",
+          text: "Pour que la prestation ne passe pas par la succession",
           correct: true,
-          explanation: "Sans bénéficiaire désigné, la prestation fait partie de la succession et peut être imposée."
+          explanation: "C’est la clé : cela évite les frais de succession et protège la somme d’impôt potentiel."
         },
         {
-          text: "Si on paie les primes en chocolat",
+          text: "Pour éviter que le testament soit trop long",
           correct: false,
-          explanation: "Le mode de paiement des primes n'affecte pas l'imposition de la prestation !"
+          explanation: "Même si c’est pratique, ce n’est pas une raison juridique."
         },
         {
-          text: "Si l'assuré aimait trop les jeux vidéo",
+          text: "Pour empêcher un ex jaloux de réclamer",
           correct: false,
-          explanation: "Les loisirs de l'assuré n'ont aucun impact sur l'imposition !"
+          explanation: "L’intention est valide, mais ce n’est pas une justification fiscale !"
         },
         {
-          text: "Si la police a été signée un vendredi 13",
+          text: "Pour que le bénéficiaire gagne au loto",
           correct: false,
-          explanation: "La date de signature n'a aucun effet sur le traitement fiscal !"
+          explanation: "C’est une police, pas un billet de loterie."
         }
       ]
     },
     {
-      question: "Quelle est l'utilité fiscale principale de l'assurance vie en entreprise ?",
+      question: "📊 Pourquoi les entreprises souscrivent-elles une assurance vie sur la tête d’un employé clé ?",
       choices: [
         {
-          text: "Permettre le transfert d'un capital libre d'impôt au décès d'un actionnaire",
+          text: "Pour compenser une perte financière en cas de décès",
           correct: true,
-          explanation: "L'assurance vie permet une transmission efficace fiscalement en contexte d'entreprise."
+          explanation: "La perte d’un employé stratégique peut entraîner des pertes économiques majeures. Cette protection compense l’impact."
         },
         {
-          text: "Réduire les impôts sur le café du bureau",
+          text: "Pour faire plaisir à l’employé",
           correct: false,
-          explanation: "L'assurance vie n'a rien à voir avec les dépenses courantes de l'entreprise !"
+          explanation: "Ce n’est pas un cadeau. C’est une stratégie de gestion des risques !"
         },
         {
-          text: "Obtenir plus de vacances fiscales",
+          text: "Pour faire des blagues fiscales",
           correct: false,
-          explanation: "L'assurance vie n'influence pas les congés des employés !"
+          explanation: "La fiscalité, c’est sérieux… surtout en entreprise."
         },
         {
-          text: "Rendre l'entreprise invisible au fisc",
+          text: "Pour se protéger contre les congés maladie",
           correct: false,
-          explanation: "L'assurance vie offre des avantages légaux, pas de l'évasion fiscale !"
+          explanation: "Ce serait une autre forme de protection : assurance invalidité ou salaire."
         }
       ]
     }
   ],
 
   minigame: {
-    type: 'tax-strategist',
-    title: "Le Stratège Fiscal",
+    type: 'fiscal-ninja',
+    title: "🧾 Le Ninja Fiscal",
     description: `
-      🎮 Devenez le Stratège Fiscal dans ce mini-jeu captivant !
-      
-      Votre mission :
-      - Optimisez les stratégies fiscales
-      - Gérez les transferts de patrimoine
-      - Maximisez les avantages fiscaux
-      - Protégez le capital des clients
-      
-      Attention aux pièges fiscaux et aux règles complexes !
+🎮 Mission : éviter tous les pièges fiscaux en naviguant à travers des situations réelles !
+
+- Distingue ce qui est imposable de ce qui est exonéré
+- Applique les bons bénéficiaires aux polices
+- Utilise les clauses de désignation et les stratégies corporatives pour optimiser le patrimoine
+
+Le ninja fiscal ne paie pas plus que ce que la loi impose. 🥷💼
     `,
     rewards: {
       xp: 600,
-      badge: "Maître Fiscal",
-      title: "Stratège de l'Imposition"
+      badge: "Maître Fiscaliste",
+      title: "Ninja de la Transmission"
     }
   },
 
   boss: {
-    name: "Le Gardien du Fisc",
-    description: "Un boss redoutable qui teste votre maîtrise des stratégies fiscales !",
+    name: "🧟‍♂️ Le Revenu Fantôme",
+    description: "Ce boss surgit quand une prestation oubliée devient imposable. Il hante les déclarations mal préparées…",
     difficulty: 5,
+    quiz: [
+      {
+        question: "😱 Qu’est-ce qu’un revenu fantôme en assurance vie ?",
+        choices: [
+          {
+            text: "Un montant imposable même si le client ne le reçoit pas directement",
+            correct: true,
+            explanation: "C’est typiquement ce qui peut arriver si un gain est attribué, mais non encaissé (comme dans certains rachats partiels)."
+          },
+          {
+            text: "Une somme payée en billets invisibles",
+            correct: false,
+            explanation: "Ça, c’est de la magie… pas de la fiscalité !"
+          },
+          {
+            text: "Une vieille police oubliée",
+            correct: false,
+            explanation: "On parle ici d’un revenu technique, pas d’un souvenir d’archive."
+          },
+          {
+            text: "Un revenu généré par un fantôme réel",
+            correct: false,
+            explanation: "Même les audits paranormaux ne taxent pas les esprits !"
+          }
+        ]
+      }
+    ],
     rewards: {
       xp: 1000,
-      badge: "Maître du Chapitre 7",
-      title: "Champion Fiscal"
+      badge: "Chasseur d’Ombres Fiscales",
+      title: "Stratège de l’Invisible"
     }
   }
 };
