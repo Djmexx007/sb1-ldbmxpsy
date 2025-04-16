@@ -10,6 +10,7 @@ interface ChapterContentProps {
 
 export const ChapterContent: React.FC<ChapterContentProps> = ({ chapter, onComplete }) => {
   const { addXP, addBadge, addTitle } = useGame();
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -29,9 +30,10 @@ export const ChapterContent: React.FC<ChapterContentProps> = ({ chapter, onCompl
 
     setSelectedAnswer(index);
     setShowExplanation(true);
+
     const selected = shuffledChoices[index];
     if (selected?.correct) {
-      setScore(score + 1);
+      setScore((prev) => prev + 1);
     }
   };
 
@@ -39,7 +41,7 @@ export const ChapterContent: React.FC<ChapterContentProps> = ({ chapter, onCompl
     if (!chapter.quiz) return;
 
     if (currentQuestionIndex < chapter.quiz.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex((prev) => prev + 1);
       setSelectedAnswer(null);
       setShowExplanation(false);
     } else {
@@ -48,15 +50,16 @@ export const ChapterContent: React.FC<ChapterContentProps> = ({ chapter, onCompl
   };
 
   const completeQuiz = () => {
+    if (quizCompleted) return; // ⚠️ éviter double appel
     setQuizCompleted(true);
 
     if (chapter.boss) {
-      const xp = Math.floor((score / chapter.quiz.length) * chapter.boss.rewards.xp);
-      addXP(xp);
+      const xpEarned = Math.floor((score / chapter.quiz.length) * chapter.boss.rewards.xp);
+      if (typeof addXP === 'function') addXP(xpEarned);
 
       if (score === chapter.quiz.length) {
-        addBadge(chapter.boss.rewards.badge);
-        addTitle(chapter.boss.rewards.title);
+        if (typeof addBadge === 'function') addBadge(chapter.boss.rewards.badge);
+        if (typeof addTitle === 'function') addTitle(chapter.boss.rewards.title);
       }
     }
 

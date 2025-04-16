@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CheckCircle, XCircle, Flame, RotateCcw, ShieldAlert, Swords, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CheckCircle, XCircle, Flame, RotateCcw, Swords } from 'lucide-react';
 
 interface BossQuestion {
   question: string;
@@ -18,46 +18,53 @@ interface BossBattleProps {
 }
 
 export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLose }) => {
-  if (!quiz || !Array.isArray(quiz) || quiz.length === 0) {
-    return (
-      <div className="p-4 text-red-400 bg-red-900/20 border border-red-500 rounded-lg">
-        Erreur : aucun quiz chargé pour ce boss.
-      </div>
-    );
-  }
-
   const [current, setCurrent] = useState(0);
   const [bossHP, setBossHP] = useState(quiz.length);
   const [lives, setLives] = useState(1);
   const [showResult, setShowResult] = useState<{ correct: boolean; explanation: string } | null>(null);
   const [completed, setCompleted] = useState<'win' | 'lose' | null>(null);
+  const [locked, setLocked] = useState(false);
+
+  useEffect(() => {
+    if (completed === 'win') {
+      const timeout = setTimeout(() => {
+        onWin(); // ✅ Évite le black screen, timing ajusté
+      }, 1200);
+      return () => clearTimeout(timeout);
+    }
+  }, [completed, onWin]);
 
   const handleChoice = (isCorrect: boolean, explanation: string) => {
-    if (isCorrect) setBossHP(hp => hp - 1);
-    else setLives(l => l - 1);
+    if (completed || locked) return;
+    setLocked(true);
 
+    const newBossHP = isCorrect ? bossHP - 1 : bossHP;
+    const newLives = isCorrect ? lives : lives - 1;
+
+    setBossHP(newBossHP);
+    setLives(newLives);
     setShowResult({ correct: isCorrect, explanation });
 
     setTimeout(() => {
       setShowResult(null);
+      setLocked(false);
 
-      const lastQuestion = current >= quiz.length - 1;
-      const bossDefeated = bossHP - (isCorrect ? 1 : 0) <= 0;
-      const noMoreLives = !isCorrect && lives - 1 <= 0;
+      const isLast = current >= quiz.length - 1;
+      const hasLost = newLives <= 0;
+      const hasWon = newBossHP <= 0;
 
-      if (noMoreLives) {
+      if (hasLost) {
         setCompleted('lose');
         onLose?.();
-      } else if (lastQuestion) {
-        if (bossDefeated) {
+      } else if (isLast) {
+        if (hasWon) {
           setCompleted('win');
-          setTimeout(() => onWin(), 2000);
         } else {
           setCompleted('lose');
           onLose?.();
         }
       } else {
-        setCurrent(i => i + 1);
+        setCurrent((i) => i + 1);
       }
     }, 1800);
   };
@@ -67,7 +74,17 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
     setBossHP(quiz.length);
     setLives(1);
     setCompleted(null);
+    setShowResult(null);
+    setLocked(false);
   };
+
+  if (!quiz || quiz.length === 0) {
+    return (
+      <div className="p-4 text-red-400 bg-red-900/20 border border-red-500 rounded-lg">
+        Erreur : aucun quiz chargé pour ce boss.
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -97,6 +114,7 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
                 key={idx}
                 onClick={() => handleChoice(choice.correct, choice.explanation)}
                 className="w-full p-4 rounded-lg bg-red-500/10 border border-red-500 hover:bg-red-500/20 text-left transition-all duration-300"
+                disabled={!!showResult || locked}
               >
                 <Swords className="inline-block w-4 h-4 mr-2 text-red-400" />
                 {choice.text}

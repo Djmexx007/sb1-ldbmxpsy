@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGame } from './GameState';
 import { ChapterContent } from './ChapterContent';
 import { Book, ArrowLeft } from 'lucide-react';
-import { BossBattle } from "./BossBattle"; // si le fichier est dans le même dossier
-import { chapter1 } from '@/chapters/chapter1';
+import { BossBattle } from './BossBattle';
 
 interface ChapterViewProps {
   chapter: any;
@@ -11,14 +10,28 @@ interface ChapterViewProps {
 }
 
 export const ChapterView: React.FC<ChapterViewProps> = ({ chapter, onBack }) => {
-  const { completeChapter, state } = useGame();
+  const { state, markChapterCompleted } = useGame();
   const [bossDefeated, setBossDefeated] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
+
   const chapterAlreadyCompleted = state.completedChapters.includes(chapter.id);
 
   const handleChapterComplete = () => {
     setQuizCompleted(true);
   };
+
+  const handleBossWin = () => {
+    setBossDefeated(true);
+    markChapterCompleted(chapter.id); // ✅ Assure que la fonction reçoit bien le bon paramètre
+  };
+
+  // Si le chapitre est déjà terminé dans le state (en revenant), on affiche directement victoire
+  useEffect(() => {
+    if (chapterAlreadyCompleted) {
+      setBossDefeated(true);
+      setQuizCompleted(true);
+    }
+  }, [chapterAlreadyCompleted]);
 
   return (
     <div className="space-y-4">
@@ -38,27 +51,21 @@ export const ChapterView: React.FC<ChapterViewProps> = ({ chapter, onBack }) => 
 
       {!chapterAlreadyCompleted && (
         <>
-          {/* Contenu du chapitre */}
           <ChapterContent chapter={chapter} onComplete={handleChapterComplete} />
 
-          {/* Message tant que le quiz n'est pas complété */}
           {chapter.boss && !quizCompleted && (
             <div className="p-4 text-yellow-300 bg-yellow-800/10 border border-yellow-500 rounded-lg text-center">
               🧠 Complétez le quiz pour débloquer le boss final !
             </div>
           )}
 
-          {/* Affichage conditionnel du boss */}
           {chapter.boss && quizCompleted && !bossDefeated && (
             <div className="mt-8">
               <h2 className="text-2xl font-bold text-red-500">⚔️ Combat Final : {chapter.boss.name}</h2>
               <BossBattle
                 name={chapter.boss.name}
                 quiz={chapter.boss.quiz}
-                onWin={() => {
-                  setBossDefeated(true);
-                  completeChapter(chapter.id);
-                }}
+                onWin={handleBossWin}
                 onLose={() => {
                   console.log("Défaite contre le boss. Réessaie !");
                 }}

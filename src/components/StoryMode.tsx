@@ -35,12 +35,14 @@ export const StoryMode: React.FC<StoryProps> = ({ onBack }) => {
     setShowIntro(false);
   };
 
-  const isWorldUnlocked = (worldId: number) => {
-    return state.unlockedWorlds.includes(worldId);
-  };
+ const isWorldUnlocked = (worldId: number) => {
+  if (worldId === 1) return true; // Le monde 1 est toujours débloqué
+  return Array.isArray(state.unlockedWorlds) && state.unlockedWorlds.includes(worldId);
+};
+
 
   const isChapterCompleted = (chapterId: string) => {
-    return state.completedChapters.includes(chapterId);
+    return Array.isArray(state.completedChapters) && state.completedChapters.includes(chapterId);
   };
 
   const renderWorldIntro = () => (
@@ -115,40 +117,47 @@ export const StoryMode: React.FC<StoryProps> = ({ onBack }) => {
       </button>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {world?.chapters.map((chapter, index) => (
-          <button
-            key={chapter.id}
-            onClick={() => handleChapterSelect(chapter.id)}
-            className={`
-              p-6 rounded-xl border-2 transition-all duration-300 text-left
-              ${isChapterCompleted(chapter.id)
-                ? 'border-green-400 bg-green-900/30'
-                : index === 0 || isChapterCompleted(world.chapters[index - 1].id)
-                  ? 'border-green-900/50 hover:border-green-700 bg-black/30'
-                  : 'border-red-900/50 bg-black/30 opacity-50 cursor-not-allowed'
-              }
-            `}
-            disabled={index > 0 && !isChapterCompleted(world.chapters[index - 1].id)}
-          >
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-lg font-bold">Chapitre {index + 1}</h3>
-              {isChapterCompleted(chapter.id) && (
-                <Trophy className="w-5 h-5 text-yellow-400" />
-              )}
-            </div>
-            <h4 className="text-green-400 mb-2">{chapter.title}</h4>
-            <p className="text-green-300/70 text-sm">{chapter.summary}</p>
-            {chapter.boss && (
-              <div className="mt-4 p-3 bg-black/30 rounded-lg border border-green-500/30">
-                <div className="flex items-center gap-2 text-sm text-green-400 mb-2">
-                  <Swords className="w-4 h-4" />
-                  Boss: {chapter.boss.name}
-                </div>
-                <p className="text-green-300/70 text-sm">{chapter.boss.description}</p>
+        {world?.chapters.map((chapter, index) => {
+          const isUnlocked =
+            index === 0 && world.id === 1
+              ? true // Débloquer le tout premier chapitre automatiquement
+              : index === 0 || isChapterCompleted(world.chapters[index - 1].id);
+
+          return (
+            <button
+              key={chapter.id}
+              onClick={() => handleChapterSelect(chapter.id)}
+              className={`
+                p-6 rounded-xl border-2 transition-all duration-300 text-left
+                ${isChapterCompleted(chapter.id)
+                  ? 'border-green-400 bg-green-900/30'
+                  : isUnlocked
+                    ? 'border-green-900/50 hover:border-green-700 bg-black/30'
+                    : 'border-red-900/50 bg-black/30 opacity-50 cursor-not-allowed'
+                }
+              `}
+              disabled={!isUnlocked}
+            >
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-lg font-bold">Chapitre {index + 1}</h3>
+                {isChapterCompleted(chapter.id) && (
+                  <Trophy className="w-5 h-5 text-yellow-400" />
+                )}
               </div>
-            )}
-          </button>
-        ))}
+              <h4 className="text-green-400 mb-2">{chapter.title}</h4>
+              <p className="text-green-300/70 text-sm">{chapter.summary}</p>
+              {chapter.boss && (
+                <div className="mt-4 p-3 bg-black/30 rounded-lg border border-green-500/30">
+                  <div className="flex items-center gap-2 text-sm text-green-400 mb-2">
+                    <Swords className="w-4 h-4" />
+                    Boss: {chapter.boss.name}
+                  </div>
+                  <p className="text-green-300/70 text-sm">{chapter.boss.description}</p>
+                </div>
+              )}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

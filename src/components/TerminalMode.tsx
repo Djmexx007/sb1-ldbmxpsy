@@ -29,7 +29,6 @@ Commandes disponibles :
   version         - Version système
   exam            - Lance le mode Examen
   testsuite       - Lance les tests techniques
-  hack            - Déploie une attaque visuelle
   reset           - ⚠️ Réinitialise TOUTE la progression
   exit            - Quitter le terminal
 `,
@@ -80,7 +79,23 @@ export const TerminalMode: React.FC<TerminalModeProps> = ({ onBack }) => {
     if (command === 'exit') return onBack();
     if (command === 'exam') return setShowExam(true);
     if (command === 'testsuite') return setShowTest(true);
-    if (command === 'hack') return setShowHack(true);
+   if (command === 'hack') {
+  if (!usedEasterEggs.has('hack')) {
+    addXP(10);
+    setUsedEasterEggs(prev => new Set(prev).add('hack'));
+  }
+  setHistory(prev => [
+    ...prev,
+    {
+      command: raw,
+      response: '🎉 Accès root temporaire débloqué. Initialisation du protocole...',
+      isSuccess: true
+    }
+  ]);
+  setTimeout(() => setShowHack(true), 800);
+  return;
+};
+
     if (command === 'reset') {
       resetProgress();
       response = '🗑️ Données réinitialisées avec succès !';

@@ -1,160 +1,156 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-} from 'react';
-import { modules } from '../content';
-import { calculateProgressFromModules } from '@/hooks/useGameProgress';
+import React, { createContext, useContext, useReducer } from 'react';
 
-interface Achievement {
+interface Chapter {
   id: string;
+  title: string;
+  completed?: boolean;
+}
+
+interface Module {
+  id: number;
   name: string;
-  description: string;
-  type: 'badge' | 'title';
-  obtained: boolean;
-  timestamp?: number;
+  chapters?: Chapter[];
+}
+
+interface Progress {
+  id: number;
+  progress: number;
 }
 
 interface GameState {
-  playerLevel: number;
+  modules: Module[];
+  progress: Progress[];
   playerXP: number;
+  playerLevel: number;
+  badges: string[];
+  titles: string[];
   completedChapters: string[];
   unlockedWorlds: number[];
   currentWorld: number | null;
   currentChapter: string | null;
-  badges: string[];
-  titles: string[];
-  achievements: Achievement[];
-  streaks: {
-    daily: number;
-    lastPlayed: string;
-  };
-  moduleProgress: {
-    [key: string]: {
-      completed: number;
-      total: number;
-      percentage: number;
-    };
-  };
-}
-
-interface GameContextType {
-  state: GameState;
-  addXP: (xp: number) => void;
-  completeChapter: (chapterId: string) => void;
-  unlockWorld: (worldId: number) => void;
-  setCurrentWorld: (worldId: number | null) => void;
-  setCurrentChapter: (chapterId: string | null) => void;
-  addBadge: (badge: string) => void;
-  addTitle: (title: string) => void;
-  resetProgress: () => void;
 }
 
 const initialState: GameState = {
-  playerLevel: 1,
+  modules: [],
+  progress: [],
   playerXP: 0,
+  playerLevel: 1,
+  badges: [],
+  titles: [],
   completedChapters: [],
   unlockedWorlds: [1],
   currentWorld: null,
   currentChapter: null,
-  badges: [],
-  titles: [],
-  achievements: [],
-  streaks: {
-    daily: 0,
-    lastPlayed: '',
-  },
-  moduleProgress: calculateProgressFromModules([]),
 };
 
-const STORAGE_KEY = 'gameState';
+type Action =
+  | { type: 'SET_MODULES'; payload: Module[] }
+  | { type: 'MARK_CHAPTER_COMPLETED'; chapterId: string };
 
-const GameContext = createContext<GameContextType | undefined>(undefined);
+const GameContext = createContext<{
+  state: GameState;
+  dispatch: React.Dispatch<Action>;
+  setCurrentWorld: (id: number) => void;
+  setCurrentChapter: (id: string) => void;
+  markChapterCompleted: (chapterId: string) => void;
+  addXP: (amount: number) => void;
+  addBadge: (badge: string) => void;
+  addTitle: (title: string) => void;
+  resetProgress: () => void;
+}>({} as any);
+
+// Calcul du progrès à partir des modules
+function calculateProgressFromModules(modules: Module[]): Progress[] {
+  return modules.map((module) => {
+    const chapters = Array.isArray(module.chapters) ? module.chapters : [];
+    const completed = chapters.filter((ch) => ch.completed).length;
+    const total = chapters.length;
+    return {
+      id: module.id,
+      progress: total > 0 ? completed / total : 0,
+    };
+  });
+}
+
+// Reducer
+function reducer(state: GameState, action: Action): GameState {
+  switch (action.type) {
+    case 'SET_MODULES':
+      return {
+        ...state,
+        modules: action.payload,
+        progress: calculateProgressFromModules(action.payload),
+      };
+
+    case 'MARK_CHAPTER_COMPLETED':
+      if (state.completedChapters.includes(action.chapterId)) return state;
+
+      return {
+        ...state,
+        completedChapters: [...state.completedChapters, action.chapterId],
+      };
+
+    default:
+      return state;
+  }
+}
 
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [state, setState] = useState<GameState>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : initialState;
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  }, [state]);
+  const setCurrentWorld = (id: number) => {
+    state.currentWorld = id;
+  };
 
-  const addXP = useCallback((xp: number) => {
-    setState(prev => {
-      const newXP = prev.playerXP + xp;
-      const newLevel = Math.floor(newXP / 1000) + 1;
-      return {
-        ...prev,
-        playerXP: newXP,
-        playerLevel: newLevel,
-      };
-    });
-  }, []);
+  const setCurrentChapter = (id: string) => {
+    state.currentChapter = id;
+  };
 
-  const completeChapter = useCallback((chapterId: string) => {
-    setState(prev => ({
-      ...prev,
-      completedChapters: Array.from(new Set([...prev.completedChapters, chapterId])),
-      moduleProgress: calculateProgressFromModules([
-        ...prev.completedChapters,
-        chapterId,
-      ]),
-    }));
-  }, []);
+  const markChapterCompleted = (chapterId: string) => {
+    dispatch({ type: 'MARK_CHAPTER_COMPLETED', chapterId });
+  };
 
-  const unlockWorld = useCallback((worldId: number) => {
-    setState(prev => ({
-      ...prev,
-      unlockedWorlds: Array.from(new Set([...prev.unlockedWorlds, worldId])),
-    }));
-  }, []);
+  const addXP = (amount: number) => {
+    const newXP = state.playerXP + amount;
+    const newLevel = Math.floor(newXP / 1000) + 1;
 
-  const setCurrentWorld = useCallback((worldId: number | null) => {
-    setState(prev => ({
-      ...prev,
-      currentWorld: worldId,
-    }));
-  }, []);
+    state.playerXP = newXP;
+    state.playerLevel = newLevel;
 
-  const setCurrentChapter = useCallback((chapterId: string | null) => {
-    setState(prev => ({
-      ...prev,
-      currentChapter: chapterId,
-    }));
-  }, []);
+    // Déblocage automatique de mondes si niveau atteint
+    const newUnlocked = [...state.unlockedWorlds];
+    if (newLevel >= 5 && !newUnlocked.includes(2)) newUnlocked.push(2);
+    if (newLevel >= 10 && !newUnlocked.includes(3)) newUnlocked.push(3);
+    if (newLevel >= 15 && !newUnlocked.includes(4)) newUnlocked.push(4);
 
-  const addBadge = useCallback((badge: string) => {
-    setState(prev => ({
-      ...prev,
-      badges: Array.from(new Set([...prev.badges, badge])),
-    }));
-  }, []);
+    state.unlockedWorlds = newUnlocked;
+  };
 
-  const addTitle = useCallback((title: string) => {
-    setState(prev => ({
-      ...prev,
-      titles: Array.from(new Set([...prev.titles, title])),
-    }));
-  }, []);
+  const addBadge = (badge: string) => {
+    if (!state.badges.includes(badge)) {
+      state.badges.push(badge);
+    }
+  };
 
-  const resetProgress = useCallback(() => {
-    setState(initialState);
-  }, []);
+  const addTitle = (title: string) => {
+    if (!state.titles.includes(title)) {
+      state.titles.push(title);
+    }
+  };
+
+  const resetProgress = () => {
+    Object.assign(state, initialState);
+  };
 
   return (
     <GameContext.Provider
       value={{
         state,
-        addXP,
-        completeChapter,
-        unlockWorld,
+        dispatch,
         setCurrentWorld,
         setCurrentChapter,
+        markChapterCompleted,
+        addXP,
         addBadge,
         addTitle,
         resetProgress,
@@ -165,8 +161,4 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 };
 
-export const useGame = () => {
-  const context = useContext(GameContext);
-  if (!context) throw new Error('useGame must be used within GameProvider');
-  return context;
-};
+export const useGame = () => useContext(GameContext);
