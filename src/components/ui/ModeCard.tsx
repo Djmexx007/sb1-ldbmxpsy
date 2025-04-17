@@ -1,35 +1,45 @@
-// src/components/ui/ModeCard.tsx
-import React from "react";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface ModeCardProps {
-  icon: React.ReactNode;
   title: string;
   description: string;
+  icon: React.ReactNode;
   onClick?: () => void;
-  active?: boolean;
+  disabled?: boolean;
+  className?: string;
 }
 
 export const ModeCard: React.FC<ModeCardProps> = ({
-  icon,
   title,
   description,
+  icon,
   onClick,
-  active = false,
+  disabled = false,
+  className = '',
 }) => {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={cn(
-        "p-6 text-left rounded-xl transition-all duration-300 shadow-sm border border-gray-200 bg-white hover:shadow-md",
-        active && "ring-2 ring-emerald-400 ring-offset-2"
+        'group relative w-full rounded-2xl border border-emerald-700 p-5 shadow-md bg-emerald-950/50 text-emerald-100 transition-all duration-200 hover:shadow-lg hover:bg-emerald-900/80 disabled:opacity-50 disabled:cursor-not-allowed',
+        className
       )}
     >
-      <div className="flex items-center gap-3 mb-2">
-        <div className="text-emerald-500">{icon}</div>
-        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+      <div className="flex items-start gap-4">
+        <div className="text-3xl opacity-80">{icon}</div>
+        <div className="flex flex-col text-left">
+          <h3 className="text-lg font-bold">{title}</h3>
+          <p className="text-sm text-emerald-200/80">{description}</p>
+        </div>
+        <div className="ml-auto text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          <ArrowRight />
+        </div>
       </div>
-      <p className="text-sm text-gray-600">{description}</p>
     </button>
   );
 };
+
+export default ModeCard;

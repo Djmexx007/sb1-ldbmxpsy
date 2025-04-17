@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useGame } from './GameState';
 import { ChapterContent } from './ChapterContent';
 import { Book, ArrowLeft } from 'lucide-react';
-import { BossBattle } from './BossBattle';
+import BossBattle from './BossBattle';
+
 
 interface ChapterViewProps {
   chapter: any;

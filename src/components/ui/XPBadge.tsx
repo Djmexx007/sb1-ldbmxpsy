@@ -1,26 +1,30 @@
-// src/components/ui/XPBadge.tsx
-import React from "react";
+import React from 'react';
+import { Sparkles } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface XPBadgeProps {
-  currentXP: number;
-  maxXP?: number;
+  xp: number;
+  className?: string;
 }
 
-export const AnimatedXPBar: React.FC<XPBadgeProps> = ({
-  currentXP,
-  maxXP = 1000,
-}) => {
-  const percent = Math.min((currentXP / maxXP) * 100, 100);
+const getLevel = (xp: number) => {
+  return Math.floor(xp / 100); // 100 XP = 1 niveau
+};
+
+export const XPBadge: React.FC<XPBadgeProps> = ({ xp, className = '' }) => {
+  const level = getLevel(xp);
 
   return (
-    <div className="relative w-28 h-4 bg-emerald-200 rounded-full overflow-hidden">
-      <div
-        className="h-full bg-emerald-500 transition-all duration-500 ease-out"
-        style={{ width: `${percent}%` }}
-      />
-      <div className="absolute inset-0 flex justify-center items-center text-xs text-white font-semibold">
-        {Math.min(currentXP, maxXP)} XP
-      </div>
+    <div
+      className={cn(
+        'inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-600 bg-emerald-800/60 text-sm text-emerald-100 shadow-inner backdrop-blur-sm',
+        className
+      )}
+    >
+      <Sparkles className="h-4 w-4 text-emerald-300 animate-pulse" />
+      Niveau {level} • {xp} XP
     </div>
   );
 };
+
+export default XPBadge;

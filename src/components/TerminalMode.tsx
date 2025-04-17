@@ -5,7 +5,7 @@ import {
   Sparkles, DownloadCloud, ShieldCheck
 } from 'lucide-react';
 import { Exam } from './Exam';
-import { TestSuite } from '../tests/TestSuite';
+import TestSuite from "./TestSuite";
 import { HackingAnimation } from './HackingAnimation';
 
 interface Command {

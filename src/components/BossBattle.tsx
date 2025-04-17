@@ -17,7 +17,7 @@ interface BossBattleProps {
   onLose?: () => void;
 }
 
-export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLose }) => {
+const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLose }) => {
   const [current, setCurrent] = useState(0);
   const [bossHP, setBossHP] = useState(quiz.length);
   const [lives, setLives] = useState(1);
@@ -28,7 +28,7 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
   useEffect(() => {
     if (completed === 'win') {
       const timeout = setTimeout(() => {
-        onWin(); // ✅ Évite le black screen, timing ajusté
+        onWin();
       }, 1200);
       return () => clearTimeout(timeout);
     }
@@ -104,7 +104,6 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
         </div>
       </div>
 
-      {/* Combat en cours */}
       {completed === null && (
         <div className="p-5 bg-black/30 rounded-xl border border-red-500/30 space-y-4">
           <div className="text-lg font-semibold text-green-100">{quiz[current].question}</div>
@@ -124,7 +123,6 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
         </div>
       )}
 
-      {/* Résultat (bonne ou mauvaise réponse) */}
       {showResult && (
         <div className={`p-4 rounded-lg flex items-center gap-2 text-sm transition-all ${
           showResult.correct ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'
@@ -134,7 +132,6 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
         </div>
       )}
 
-      {/* Victoire */}
       {completed === 'win' && (
         <div className="p-6 bg-green-700/10 border border-green-500 rounded-xl text-center space-y-2 animate-pulse">
           <h3 className="text-xl font-bold text-green-200">🎉 Victoire totale !</h3>
@@ -143,7 +140,6 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
         </div>
       )}
 
-      {/* Défaite */}
       {completed === 'lose' && (
         <div className="p-6 bg-red-700/10 border border-red-500 rounded-xl text-center space-y-2 animate-shake">
           <h3 className="text-xl font-bold text-red-300">💀 Défaite...</h3>
@@ -160,3 +156,5 @@ export const BossBattle: React.FC<BossBattleProps> = ({ name, quiz, onWin, onLos
     </div>
   );
 };
+
+export default BossBattle;

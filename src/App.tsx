@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Gamepad2, Swords, Trophy, Brain, Book, Terminal, Star } from 'lucide-react';
+import {
+  Gamepad2,
+  Swords,
+  Trophy,
+  Brain,
+  Book,
+  Terminal,
+  Star
+} from 'lucide-react';
 import { GameProvider, useGame } from './components/GameState';
 import { StoryMode } from './components/StoryMode';
 import { TerminalMode } from './components/TerminalMode';
@@ -7,6 +15,9 @@ import { DailyChallenge } from './components/DailyChallenge';
 import { MiniGames } from './components/MiniGames';
 import { PodcastSection } from './components/PodcastSections';
 import { AnimatedXPBar } from '@/components/ui/AnimatedXPBar';
+import ModeCard from './components/ui/ModeCard';
+import XPBadge from './components/ui/XPBadge';
+import HeaderBar from './components/ui/HeaderBar';
 
 interface GameMode {
   id: number;
@@ -79,20 +90,13 @@ function AppContent() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {gameModes.map((mode) => (
-              <button
+              <ModeCard
                 key={mode.id}
+                title={mode.name}
+                description={mode.description}
+                icon={<mode.icon className="w-6 h-6" />}
                 onClick={() => handleModeSelect(mode.id)}
-                className={`p-6 rounded-xl transition-all duration-300 shadow hover:shadow-lg border text-left
-                  ${
-                    selectedMode === mode.id
-                      ? 'bg-emerald-950 border-emerald-400 text-emerald-100'
-                      : 'bg-emerald-900/20 hover:bg-emerald-800/40 border-emerald-600 text-emerald-100'
-                  }`}
-              >
-                <mode.icon className="w-7 h-7 mb-3 opacity-90" />
-                <h3 className="text-lg font-bold">{mode.name}</h3>
-                <p className="text-sm opacity-70 mt-1">{mode.description}</p>
-              </button>
+              />
             ))}
           </div>
         </section>
@@ -119,25 +123,18 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-emerald-950 to-black text-emerald-100 font-sans">
-      {/* Header */}
-      <header className="border-b border-emerald-700 bg-emerald-950/80 backdrop-blur-sm fixed top-0 w-full z-50 shadow">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Book className="w-6 h-6 text-emerald-300" />
-            <h1 className="text-xl font-bold tracking-wide text-emerald-100">PQAP Study</h1>
-          </div>
+      <HeaderBar
+        title="PQAP Study"
+        rightElement={
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-3 py-1 bg-emerald-800 rounded-full text-sm border border-emerald-600">
               <Star className="w-4 h-4 text-emerald-300" />
               <span>Niveau {state.playerLevel}</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1 bg-emerald-800 rounded-full text-sm border border-emerald-600">
-              <Brain className="w-4 h-4 text-emerald-300" />
-              <AnimatedXPBar currentXP={state.playerXP} />
-            </div>
+            <XPBadge xp={state.playerXP} />
           </div>
-        </div>
-      </header>
+        }
+      />
 
       <main className="container mx-auto px-4 pt-28 pb-16">
         {renderContent()}

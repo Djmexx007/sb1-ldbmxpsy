@@ -1,31 +1,40 @@
-// src/components/ui/HeaderBar.tsx
-import React from "react";
-import { useGame } from "../GameState";
-import { Book, Star, Brain } from "lucide-react";
-import { AnimatedXPBar } from "./AnimatedXPBar";
+import React from 'react';
+import { Brain, Menu } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-export const HeaderBar: React.FC = () => {
-  const { state } = useGame();
+interface HeaderBarProps {
+  title?: string;
+  rightElement?: React.ReactNode;
+  onMenuClick?: () => void;
+  className?: string;
+}
 
+export const HeaderBar: React.FC<HeaderBarProps> = ({
+  title = 'PQAP Study',
+  rightElement,
+  onMenuClick,
+  className = '',
+}) => {
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Book className="w-6 h-6 text-emerald-600" />
-          <h1 className="text-xl font-bold text-gray-800 tracking-tight">PQAP Study</h1>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 px-3 py-1 bg-emerald-100 rounded-full text-sm border border-emerald-300">
-            <Star className="w-4 h-4 text-emerald-600" />
-            <span className="text-emerald-800">Niveau {state.playerLevel}</span>
-          </div>
-          <div className="flex items-center gap-2 px-3 py-1 bg-emerald-100 rounded-full text-sm border border-emerald-300">
-            <Brain className="w-4 h-4 text-emerald-600" />
-            <AnimatedXPBar currentXP={state.playerXP} />
-          </div>
-        </div>
+    <header
+      className={cn(
+        'w-full sticky top-0 z-50 flex items-center justify-between border-b border-emerald-700 bg-emerald-950/80 px-4 py-3 backdrop-blur-md shadow-md text-emerald-100',
+        className
+      )}
+    >
+      <div className="flex items-center gap-3">
+        <button
+          className="md:hidden p-1.5 rounded-lg hover:bg-emerald-800/60 transition"
+          onClick={onMenuClick}
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+        <Brain className="w-5 h-5 text-emerald-300" />
+        <span className="font-bold tracking-wide text-lg">{title}</span>
       </div>
+      <div className="flex items-center gap-3">{rightElement}</div>
     </header>
   );
 };
+
+export default HeaderBar;
